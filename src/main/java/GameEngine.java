@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameEngine implements IGameEngine{
-    BaseGameHeroes listHero;
+    private BaseGameHeroes heroes;
     private Scanner sc = new Scanner(System.in);
     private IParty playerParty;
     private IParty cpuParty;
@@ -13,7 +13,7 @@ public class GameEngine implements IGameEngine{
     }
 
     public void setHeroes (BaseGameHeroes heroes){
-        this.listHero = heroes;
+        this.heroes = heroes;
     }
 
     @Override
@@ -48,10 +48,12 @@ public class GameEngine implements IGameEngine{
     }
 
     public void start (){
+        display.brawlHeroes();
         display.menuGame();
-        String select = sc.nextLine();
+
         boolean isTrue = true;
-        do {
+        while (isTrue){
+            String select = sc.nextLine();
             switch (select) {
                 case "a" -> {
                     isTrue = false;
@@ -62,12 +64,16 @@ public class GameEngine implements IGameEngine{
                     _loadGame();
                 }
                 case "c" -> {
-                    _exitGame();
                     isTrue = false;
+                    _exitGame();
                 }
-                default -> System.out.println("Please choose between (a | b | c) !!!");
+                default -> {
+                    System.out.println("Please choose between (a | b | c) !!!");
+                    System.out.print("Your Choice : ");
+                }
             }
-        }while (isTrue);
+        }
+
     }
 
     private void _newGame (){
@@ -103,16 +109,23 @@ public class GameEngine implements IGameEngine{
 
     private void _createPartyForPlayer (){
         display.createTeam();
+
         String partyName = sc.nextLine();
 
-        System.out.println("Choose your 3 heroes !!!");
         display.listHero();
-        ICharacter [] characters = new ICharacter[3];
+
+        ArrayList <String> numbers = new ArrayList<>(3);
+        ArrayList <Hero> heroes = new ArrayList<>(3);
+
+
         for (int i = 0; i < 3; i++) {
+            System.out.println("Heroes " + (i + 1) + " : ");
+            String select = sc.nextLine();
+            numbers.add(select);
 
         }
 
-        this.playerParty = createPlayerParty(partyName, characters[0], characters[1], characters[2]);
+        this.playerParty = createPlayerParty(partyName, heroes.get(0), heroes.get(1), heroes.get(2));
 
 
         display.readyGameDisplay(this.playerParty);
@@ -154,5 +167,39 @@ public class GameEngine implements IGameEngine{
 
     private void _createHero (){
 
+    }
+
+    private Hero selectHero (String select) {
+        Hero temp = null;
+
+        ArrayList<Hero> listHeroes = heroes.getBaseGameHeroes();
+
+        if (select.equals("1")){
+            temp = heroes.getHero("Murby");
+        } else if (select.equals("2")) {
+            temp = heroes.getHero("Helda");
+        } else if (select.equals("3")) {
+            temp = heroes.getHero("Veldora");
+        } else if (select.equals("4")){
+            temp = heroes.getHero("Deus");
+        } else if (select.equals("5")){
+            temp = heroes.getHero("Greysn");
+        } else if (select.equals("6")){
+            temp = heroes.getHero("Elisa");
+        } else if (select.equals("7")){
+            temp = heroes.getHero("Lily");
+        } else if (select.equals("8")){
+            temp = heroes.getHero("Fara");
+        } else if (select.equals("9")){
+            temp = heroes.getHero("Theseus");
+        } else if (select.equals("10")){
+            temp = heroes.getHero("Atla");
+        } else if (select.equals("11")){
+            temp = heroes.getHero("Pomi");
+        } else if (select.equals("12")){
+            temp = heroes.getHero("Marie");
+        }
+
+        return temp;
     }
 }
