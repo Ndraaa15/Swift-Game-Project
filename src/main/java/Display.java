@@ -127,12 +127,12 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                            LIST HERO                              |");
         System.out.println("|===================================================================|");
-        System.out.println("|         Fire         |        Water        |        Grass         |");
+        System.out.println("|         Fire         |        Grass        |        Water         |");
         System.out.println("|===================================================================|");
-        System.out.println("|                      |                     |                      |");
-        System.out.println("|                      |                     |                      |");
-        System.out.println("|                      |                     |                      |");
-        System.out.println("|                      |                     |                      |");
+        System.out.println("| [1] Murby  | Fighter | [5] Zilva | Tank    | [9]  Wallen | Tank   |");
+        System.out.println("| [2] Helda  | Tank    | [6] Elisa | Mage    | [10] Fanny  | Archer |");
+        System.out.println("| [3] Rexana | Mage    | [7] Maya  | Archer  | [11] Pomi   | Support|");
+        System.out.println("| [4] Jarix  | Archer  | [8] Fara  | Support | [12] Terry  | Fighter|");
         System.out.println("|                      |                     |                      |");
         System.out.println("|===================================================================|");
         System.out.print("Your Choice : ");

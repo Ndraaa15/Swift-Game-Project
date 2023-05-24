@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameEngine implements IGameEngine{
+    ArrayList<ICharacter> heroes;
     private Scanner sc = new Scanner(System.in);
     private IParty playerParty;
     private IParty cpuParty;
@@ -102,8 +104,21 @@ public class GameEngine implements IGameEngine{
         System.out.println("Choose your 3 heroes !!!");
         display.listHero();
         ICharacter [] characters = new ICharacter[3];
+
         for (int i = 0; i < 3; i++) {
-            characters[i] = new Character();
+            System.out.println("Heroes " + (i+1) + " : ");
+            String select = sc.nextLine();
+            if (select.equals("1")){
+                characters[i] = searchHero("Murby");
+            } else if (select.equals("2")) {
+
+            } else if (select.equals("3")) {
+
+            } else if (select.equals("4")){
+
+            } else if (select.equals("5")) {
+
+            }
         }
 
         this.playerParty = createPlayerParty(partyName, characters[0], characters[1], characters[2]);
@@ -138,9 +153,9 @@ public class GameEngine implements IGameEngine{
     private void _createPartyForCPU (){
         String partyName = "COM";
         ICharacter [] characters = new ICharacter[3];
-        for (int i = 0; i < 3; i++) {
-            characters[i] = new Character();
-        }
+//        for (int i = 0; i < 3; i++) {
+//            characters[i] = new Character();
+//        }
 
         this.cpuParty = createCPUParty(partyName, characters[0], characters[1], characters[2]);
 
@@ -148,5 +163,19 @@ public class GameEngine implements IGameEngine{
 
     private void _createHero (){
 
+    }
+
+
+    private ICharacter searchHero (String heroesName){
+        ICharacter result = null;
+
+        for (ICharacter hero: this.heroes) {
+            if (hero.getName().equals(heroesName)){
+                result = hero;
+                break;
+            }
+        }
+
+        return result;
     }
 }
