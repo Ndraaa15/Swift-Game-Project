@@ -107,20 +107,7 @@ class Hero implements ICharacter{
             System.out.println(getName() + " is defeated");
         }
     }
-
-    public HeroElement getHeroElement() {
-        return heroElement;
-    }
-
-    @Override
-    public boolean isDefeated() {
-        return isDefeated;
-    }
-
-    public void makeAlive() {
-        isDefeated = false;
-    }
-
+    // HERO ATRIBUTES (SETTER)
     @Override
     public void setName(String name) {
         this.name = name;
@@ -158,6 +145,7 @@ class Hero implements ICharacter{
         this.heroLore = heroLore;
     }
 
+    // HERO ATRIBUTES (GETTER)
     @Override
     public String getName() {
         return name;
@@ -198,6 +186,11 @@ class Hero implements ICharacter{
         return heroRole;
     }
 
+    public HeroElement getHeroElement() {
+        return heroElement;
+    }
+
+    // SKILLS
     public Effect getEffect() {
         return effect;
     }
@@ -226,6 +219,59 @@ class Hero implements ICharacter{
         return skill2;
     }
 
+    public SkillTarget getSkill1Target() {
+        if (!hasSkill1()) return null;
+        return skill1.getTarget();
+    }
+
+    public SkillTarget getSkill2Target() {
+        if (!hasSkill2()) return null;
+        return skill2.getTarget();
+    }
+
+    public boolean hasEnoughManaSkill1() {
+        if (!hasSkill1()) return false;
+        return skill1.hasEnoughMana(this);
+    }
+
+    public boolean hasEnoughManaSkill2() {
+        if (!hasSkill2()) return false;
+        return skill2.hasEnoughMana(this);
+    }
+
+    // SKILL USAGE
+    public void useSkill1(ArrayList<Hero> targets) {
+        if (!hasSkill1() || !hasEnoughManaSkill1()) return;
+        skill1.useSkill(this, targets);
+    }
+
+    public void useSkill1(Hero target) {
+        if (!hasSkill1() || !hasEnoughManaSkill1()) return;
+        skill1.useSkill(this, target);
+    }
+
+    public void useSkill2(ArrayList<Hero> targets) {
+        if (!hasSkill2() || !hasEnoughManaSkill2()) return;
+        skill1.useSkill(this, targets);
+    }
+
+    public void useSkill2(Hero target) {
+        if (!hasSkill2() || !hasEnoughManaSkill2()) return;
+        skill1.useSkill(this, target);
+    }
+
+    // CONDITION
+
+    @Override
+    public boolean isDefeated() {
+        return isDefeated;
+    }
+
+    public void makeAlive() {
+        isDefeated = false;
+    }
+
+    // DISPLAY
     public void printHero() {
         System.out.println(getName());
         System.out.println(getHP());
