@@ -79,6 +79,7 @@ class Effect {
 
     public void setAtkBuffDuration(int atkBuffDuration) {
         this.atkBuffDuration = atkBuffDuration;
+        if (atkBuffDuration < 0) atkBuffDuration = 0;
         if (atkBuffDuration == 0) atkBuffModifier = 0;
     }
 
@@ -89,6 +90,11 @@ class Effect {
     public void decrementAtkBuffDuration() {
         atkBuffDuration--;
         if (atkBuffDuration == 0) atkBuffModifier = 0;
+    }
+
+    public void nullifyAtkBuff() {
+        setAtkBuffDuration(0);
+        setAtkBuffModifier(0);
     }
 
     // DEF BUFF
@@ -104,9 +110,10 @@ class Effect {
         return defBuffModifier;
     }
 
-    public void setDefBuffDuration(int atkBuffDuration) {
+    public void setDefBuffDuration(int defBuffDuration) {
         this.defBuffDuration = defBuffDuration;
-        if (atkBuffDuration == 0) defBuffModifier = 0;
+        if (defBuffDuration < 0) defBuffDuration = 0;
+        if (defBuffDuration == 0) defBuffModifier = 0;
     }
 
     public void setDefBuffModifier(int atkBuffModifier) {
@@ -118,12 +125,23 @@ class Effect {
         if (defBuffDuration == 0) defBuffModifier = 0;
     }
 
+    public void nullifyDefBuff() {
+        setDefBuffDuration(0);
+        setDefBuffModifier(0);
+    }
+
     // ALL
     public void nullifyAll() {
-
+        nullifyStun();
+        nullifyTaunt();
+        nullifyAtkBuff();
+        nullifyDefBuff();
     }
 
     public void decrementAll() {
-
+        decrementStunDuration();
+        decrementTauntDuration();
+        decrementAtkBuffDuration();
+        decrementDefBuffDuration();
     }
 }

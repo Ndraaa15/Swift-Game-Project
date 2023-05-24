@@ -56,6 +56,7 @@ class Hero implements ICharacter{
         this.heroElement = hero.getHeroElement();
         this.heroRole = hero.getHeroRole();
         this.effect = new Effect();
+
         this.isDefeated = false;
 
         this.heroDescription = hero.getHeroDescription();
@@ -113,7 +114,11 @@ class Hero implements ICharacter{
 
     @Override
     public boolean isDefeated() {
-        return hp <= 0;
+        return isDefeated;
+    }
+
+    public void makeAlive() {
+        isDefeated = false;
     }
 
     @Override
@@ -182,6 +187,10 @@ class Hero implements ICharacter{
 
     public HeroRole getHeroRole() {
         return heroRole;
+    }
+
+    public Effect getEffect() {
+        return effect;
     }
 
     public boolean hasSkill1() {

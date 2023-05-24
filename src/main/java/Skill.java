@@ -53,13 +53,15 @@ class Skill {
 }
 
 class Heal extends Skill {
-    public Heal(String name, int manaCost, SkillTarget target, String description) {
+    private int healMultiplier;
+    public Heal(String name, int manaCost, SkillTarget target, String description, int healMultiplier) {
         super(name, manaCost, target, description);
+        this.healMultiplier = healMultiplier;
     }
 
     @Override
     public void useSkill(Hero hero, Hero target) {
-        int totalHeal = hero.getAttack() * 2;
+        int totalHeal = hero.getAttack() * healMultiplier;
         target.setHP(target.getHP() + totalHeal);
         if (target.getHP() > target.getMaxHp()) target.setHP(target.getMaxHp());
         System.out.println("HEAL");
@@ -78,5 +80,29 @@ class ShadowArrow extends Skill {
             target.setHP(target.getHP() - totalAtk);
             target.updateIsDefeated();
         }
+    }
+}
+
+class Stun extends Skill {
+    private int duration;
+
+    public Stun(String name, int manaCost, SkillTarget target, String description, int duration) {
+        super(name, manaCost, target, description);
+        this.duration = duration;
+    }
+    public void useSkill(Hero hero, Hero target) {
+        hero.getEffect().setStunDuration(duration);
+        System.out.println(target.getName() + " is stunned for" + duration + " turns");
+    }
+}
+
+class Resurrect extends Skill {
+    public Resurrect(String name, int manaCost, SkillTarget target, String description) {
+        super(name, manaCost, target, description);
+    }
+
+    public void useSkill(Hero hero, Hero target) {
+        target.makeAlive();
+        target.setHP((int) (0.5 * target.getMaxHp()));
     }
 }
