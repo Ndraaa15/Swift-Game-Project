@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added more effect, skill, and edited Hero Class">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added more skill (Purify, AoE, Resurrect)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
     </list>
@@ -128,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684933130921</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added more skill (Purify, AoE, Resurrect)">
+      <created>1684935289775</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684935289775</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +159,7 @@
     <MESSAGE value="Added hero cloning" />
     <MESSAGE value="Seperate Effect Class and add more effect" />
     <MESSAGE value="Added more effect, skill, and edited Hero Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more effect, skill, and edited Hero Class" />
+    <MESSAGE value="Added more skill (Purify, AoE, Resurrect)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more skill (Purify, AoE, Resurrect)" />
   </component>
 </project>

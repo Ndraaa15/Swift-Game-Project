@@ -5,8 +5,6 @@ enum SkillTarget {
     ALL_ENEMY,
     SINGLE_ALLY,
     ALL_ALLY,
-    AUTO_ENEMY,
-    AUTO_ALLY,
     DEAD_ALLY,
 }
 
