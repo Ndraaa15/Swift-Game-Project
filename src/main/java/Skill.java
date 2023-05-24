@@ -121,3 +121,17 @@ class Purify extends Skill {
         System.out.println("EFFECT NULLIFIED");
     }
 }
+
+class Taunt extends Skill {
+    private int duration;
+    public Taunt(String name, int manaCost, String description, int duration) {
+        super(name, manaCost, SkillTarget.SINGLE_ENEMY, description);
+        this.duration = duration;
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        target.getEffect().setTauntDuration(duration);
+        target.getEffect().setTauntingHero(hero);
+    }
+}
