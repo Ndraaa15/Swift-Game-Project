@@ -131,6 +131,11 @@ class Hero implements ICharacter{
         this.hp = hp;
     }
 
+    public void setMana(int mana) {
+        this.mana = mana;
+        if (this.mana < 0) this.mana = 0;
+    }
+
     @Override
     public void setAttack(int attack) {
         this.atk = attack;
@@ -161,6 +166,10 @@ class Hero implements ICharacter{
     @Override
     public int getHP() {
         return hp;
+    }
+
+    public int getMana() {
+        return mana;
     }
 
     public int getMaxHp() {

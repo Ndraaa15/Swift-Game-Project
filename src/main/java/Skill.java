@@ -29,6 +29,14 @@ class Skill {
         return manaCost;
     }
 
+    public boolean hasEnoughMana(Hero hero) {
+        return hero.getMana() < manaCost;
+    }
+
+    public void deductMana(Hero hero) {
+        hero.setMana(hero.getMana() - getManaCost());
+    }
+
     public SkillTarget getTarget() {
         return target;
     }
@@ -42,11 +50,11 @@ class Skill {
     }
 
     public void useSkill(Hero hero, Hero target) {
-        System.out.println("PLACEHOLDER SINGLE");
+        System.out.println("ERR 1");
     }
 
     public void useSkill(Hero hero, ArrayList<Hero> targets) {
-        System.out.println("PLACEHOLDER MULTI");
+        System.out.println("ERR 2");
     }
 }
 
@@ -80,14 +88,16 @@ class AoE extends Skill {
             if (totalAtk <= 0) totalAtk = 1;
             target.setHP(target.getHP() - totalAtk);
             target.updateIsDefeated();
+
+            deductMana(hero);
         }
     }
 }
 
-class Stun extends Skill {
+class SingleStun extends Skill {
     private int duration;
 
-    public Stun(String name, int manaCost, String description, int duration) {
+    public SingleStun(String name, int manaCost, String description, int duration) {
         super(name, manaCost, SkillTarget.SINGLE_ENEMY, description);
         this.duration = duration;
     }
@@ -96,22 +106,26 @@ class Stun extends Skill {
     public void useSkill(Hero hero, Hero target) {
         hero.getEffect().setStunDuration(duration);
         System.out.println(target.getName() + " is stunned for" + duration + " turns");
+
+        deductMana(hero);
     }
 }
 
-class Resurrect extends Skill {
-    public Resurrect(String name, int manaCost, String description) {
+class SingleResurrect extends Skill {
+    public SingleResurrect(String name, int manaCost, String description) {
         super(name, manaCost, SkillTarget.DEAD_ALLY, description);
     }
     @Override
     public void useSkill(Hero hero, Hero target) {
         target.makeAlive();
         target.setHP((int) (0.5 * target.getMaxHp()));
+
+        deductMana(hero);
     }
 }
 
-class Purify extends Skill {
-    public Purify(String name, int manaCost, String description) {
+class SinglePurify extends Skill {
+    public SinglePurify(String name, int manaCost, String description) {
         super(name, manaCost, SkillTarget.SINGLE_ALLY, description);
     }
 
@@ -119,12 +133,14 @@ class Purify extends Skill {
     public void useSkill(Hero hero, Hero target) {
         target.getEffect().nullifyAll();
         System.out.println("EFFECT NULLIFIED");
+
+        deductMana(hero);
     }
 }
 
-class Taunt extends Skill {
+class SingleTaunt extends Skill {
     private int duration;
-    public Taunt(String name, int manaCost, String description, int duration) {
+    public SingleTaunt(String name, int manaCost, String description, int duration) {
         super(name, manaCost, SkillTarget.SINGLE_ENEMY, description);
         this.duration = duration;
     }
@@ -133,5 +149,23 @@ class Taunt extends Skill {
     public void useSkill(Hero hero, Hero target) {
         target.getEffect().setTauntDuration(duration);
         target.getEffect().setTauntingHero(hero);
+
+        deductMana(hero);
+    }
+}
+
+class SingleManaDrain extends Skill {
+    private double drainMultiplier;
+    public SingleManaDrain(String name, int manaCost, String description, double atkMultiplier) {
+        super(name, manaCost, SkillTarget.SINGLE_ENEMY, description);
+        this.drainMultiplier = atkMultiplier;
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        int totalDrain = (int) (hero.getAttack() * drainMultiplier);
+        target.setMana(target.getMana() - totalDrain);
+
+        deductMana(hero);
     }
 }
