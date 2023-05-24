@@ -19,6 +19,7 @@ class Hero implements ICharacter{
     private int hp;
     private int maxHp;
     private int mana;
+    private int maxMana;
     private int atk;
     private int def;
     private HeroElement heroElement;
@@ -38,6 +39,7 @@ class Hero implements ICharacter{
         this.hp = hp;
         this.maxHp = hp;
         this.mana = 100;
+        this.maxMana = 100;
         this.atk = atk;
         this.def = def;
         this.heroElement = heroElement;
@@ -52,6 +54,7 @@ class Hero implements ICharacter{
         this.hp = hero.getHP();
         this.maxHp = hero.getMaxHp();
         this.mana = 100;
+        this.maxMana = 100;
         this.atk = hero.getAttack();
         this.def = hero.getDefense();
         this.heroElement = hero.getHeroElement();
@@ -107,6 +110,12 @@ class Hero implements ICharacter{
             setHP(0);
             System.out.println(getName() + " is defeated");
         }
+    }
+
+    public void manaRegenPerTurn() {
+        int regenPerTurn = 10;
+        mana += regenPerTurn;
+        if (mana > maxMana) mana = maxMana;
     }
 
     // HERO ATRIBUTES (SETTER)
@@ -169,6 +178,10 @@ class Hero implements ICharacter{
 
     public int getMana() {
         return mana;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
     }
 
     @Override
