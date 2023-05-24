@@ -80,14 +80,17 @@ class Hero implements ICharacter{
     private Skill skill1;
     private Skill skill2;
 
+    private String heroDescription;
+    private String heroLore;
+
     private boolean isDefeated;
 
 
-    public Hero(String name, int hp, int mana, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
+    public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
         this.name = name;
         this.hp = hp;
         this.maxHp = hp;
-        this.mana = mana;
+        this.mana = 100;
         this.atk = atk;
         this.def = def;
         this.heroElement = heroElement;
@@ -171,6 +174,14 @@ class Hero implements ICharacter{
         isDefeated = defeated;
     }
 
+    public void setHeroDescription(String heroDescription) {
+        this.heroDescription = heroDescription;
+    }
+
+    public void setHeroLore(String heroLore) {
+        this.heroLore = heroLore;
+    }
+
     @Override
     public String getName() {
         return name;
@@ -193,6 +204,14 @@ class Hero implements ICharacter{
     @Override
     public int getDefense() {
         return def;
+    }
+
+    public String getHeroDescription() {
+        return heroDescription;
+    }
+
+    public String getHeroLore() {
+        return heroLore;
     }
 
     public boolean hasSkill1() {
