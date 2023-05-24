@@ -131,7 +131,7 @@ class SinglePurify extends Skill {
 
     @Override
     public void useSkill(Hero hero, Hero target) {
-        target.getEffect().nullifyAll();
+        target.getEffect().nullifyAllDebuff();
         System.out.println("EFFECT NULLIFIED");
 
         deductMana(hero);
