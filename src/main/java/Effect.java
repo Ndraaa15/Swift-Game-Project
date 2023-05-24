@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Effect {
     private int stunDuration;
 
@@ -9,6 +11,12 @@ class Effect {
 
     private int defBuffDuration;
     private int defBuffModifier;
+
+    private int atkDebuffDuration;
+    private int atkDebuffModifier;
+
+    private int defDebuffDuration;
+    private int defDebuffModifier;
 
 
     //STUN
@@ -55,6 +63,7 @@ class Effect {
     }
 
     public void decrementTauntDuration() {
+        if (tauntDuration == 0) return;
         tauntDuration--;
         if (tauntDuration == 0) setTauntingHero(null);
     }
@@ -88,6 +97,7 @@ class Effect {
     }
 
     public void decrementAtkBuffDuration() {
+        if (atkBuffDuration == 0) return;
         atkBuffDuration--;
         if (atkBuffDuration == 0) atkBuffModifier = 0;
     }
@@ -116,11 +126,12 @@ class Effect {
         if (defBuffDuration == 0) defBuffModifier = 0;
     }
 
-    public void setDefBuffModifier(int atkBuffModifier) {
+    public void setDefBuffModifier(int defBuffModifier) {
         this.defBuffModifier = defBuffModifier;
     }
 
     public void decrementDefBuffDuration() {
+        if (defBuffDuration == 0) return;
         defBuffDuration--;
         if (defBuffDuration == 0) defBuffModifier = 0;
     }
@@ -130,12 +141,89 @@ class Effect {
         setDefBuffModifier(0);
     }
 
+    // ATK DEBUFF
+    public boolean hasAtkDebuff() {
+        return atkDebuffDuration != 0;
+    }
+
+    public int getAtkDebuffDuration() {
+        return atkDebuffDuration;
+    }
+
+    public int getAtkDebuffModifier() {
+        return atkDebuffModifier;
+    }
+
+    public void setAtkDebuffDuration(int atkDebuffDuration) {
+        this.atkDebuffDuration = atkDebuffDuration;
+        if (atkDebuffDuration < 0) atkDebuffDuration = 0;
+        if (atkDebuffDuration == 0) atkDebuffModifier = 0;
+    }
+
+    public void setAtkDebuffModifier(int atkDebuffModifier) {
+        this.atkDebuffModifier = atkDebuffModifier;
+    }
+
+    public void decrementAtkDebuffDuration() {
+        if (atkDebuffDuration == 0) return;
+        atkDebuffDuration--;
+        if (atkDebuffDuration == 0) atkDebuffModifier = 0;
+    }
+
+    public void nullifyAtkDebuff() {
+        setAtkDebuffDuration(0);
+        setAtkDebuffModifier(0);
+    }
+
+    // DEF DEBUFF
+    public boolean hasDefDebuff() {
+        return defDebuffDuration != 0;
+    }
+
+    public int getDefDebuffDuration() {
+        return defDebuffDuration;
+    }
+
+    public int getDefDebuffModifier() {
+        return defDebuffModifier;
+    }
+
+    public void setDefDebuffDuration(int defDebuffDuration) {
+        this.defDebuffDuration = defDebuffDuration;
+        if (defDebuffDuration < 0) defDebuffDuration = 0;
+        if (defDebuffDuration == 0) defDebuffModifier = 0;
+    }
+
+    public void setDefDebuffModifier(int defDebuffModifier) {
+        this.defDebuffModifier = defDebuffModifier;
+    }
+
+    public void decrementDefDebuffDuration() {
+        if (defDebuffDuration == 0) return;
+        defDebuffDuration--;
+        if (defDebuffDuration == 0) defDebuffModifier = 0;
+    }
+
+    public void nullifyDefDebuff() {
+        setDefDebuffDuration(0);
+        setDefDebuffModifier(0);
+    }
+
     // ALL
     public void nullifyAll() {
         nullifyStun();
         nullifyTaunt();
         nullifyAtkBuff();
         nullifyDefBuff();
+        nullifyAtkDebuff();
+        nullifyDefDebuff();
+    }
+
+    public void nullifyAllDebuff() {
+        nullifyStun();
+        nullifyTaunt();
+        nullifyAtkDebuff();
+        nullifyDefDebuff();
     }
 
     public void decrementAll() {
@@ -143,5 +231,23 @@ class Effect {
         decrementTauntDuration();
         decrementAtkBuffDuration();
         decrementDefBuffDuration();
+        decrementAtkDebuffDuration();
+        decrementDefDebuffDuration();
+    }
+
+    public boolean hasAnyEffect() {
+        ArrayList<Boolean> hasEffects = new ArrayList<>();
+        hasEffects.add(isStunned());
+        hasEffects.add(isTaunted());
+        hasEffects.add(hasAtkBuff());
+        hasEffects.add(hasDefBuff());
+        hasEffects.add(hasAtkDebuff());
+        hasEffects.add(hasDefDebuff());
+
+        boolean hasAnyEffect = false;
+        for (boolean hasEffect : hasEffects) {
+            hasAnyEffect = hasAnyEffect || hasEffect;
+        }
+        return hasAnyEffect;
     }
 }

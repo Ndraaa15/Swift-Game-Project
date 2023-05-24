@@ -22,8 +22,10 @@ class Hero implements ICharacter{
     private int maxMana;
     private int atk;
     private int def;
+
     private HeroElement heroElement;
     private HeroRole heroRole;
+
     private Effect effect;
     private Skill skill1;
     private Skill skill2;
@@ -32,7 +34,6 @@ class Hero implements ICharacter{
     private String heroLore;
 
     private boolean isDefeated;
-
 
     public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
         this.name = name;

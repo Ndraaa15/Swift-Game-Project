@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Bug Fix: fix hero use skill">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added maxMana and mana regen method per turn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684942192842</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added maxMana and mana regen method per turn">
+      <created>1684944568800</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684944568800</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +217,7 @@
     <MESSAGE value="Added mana deduction and Mana Drain Skill" />
     <MESSAGE value="Added further Hero skill interface" />
     <MESSAGE value="Bug Fix: fix hero use skill" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix: fix hero use skill" />
+    <MESSAGE value="Added maxMana and mana regen method per turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added maxMana and mana regen method per turn" />
   </component>
 </project>
