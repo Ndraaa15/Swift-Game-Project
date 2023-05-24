@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameEngine implements IGameEngine{
+    BaseGameHeroes listHero;
     private Scanner sc = new Scanner(System.in);
     private IParty playerParty;
     private IParty cpuParty;
@@ -8,6 +10,10 @@ public class GameEngine implements IGameEngine{
 
     public void setDisplay(Display display) {
         this.display = display;
+    }
+
+    public void setHeroes (BaseGameHeroes heroes){
+        this.listHero = heroes;
     }
 
     @Override

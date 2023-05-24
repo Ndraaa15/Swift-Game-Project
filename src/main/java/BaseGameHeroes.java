@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BaseGameHeroes {
+class BaseGameHeroes {
     private ArrayList<Hero> baseGameHeroes = new ArrayList<>();
 
     public BaseGameHeroes() {

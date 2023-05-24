@@ -7,7 +7,11 @@
     <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Create : character class &amp; skill">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Character.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
