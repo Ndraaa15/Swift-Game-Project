@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added mana deduction and Mana Drain Skill">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added further Hero skill interface">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684938390692</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added further Hero skill interface">
+      <created>1684939823558</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684939823558</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +191,7 @@
     <MESSAGE value="Change Skill Target Type" />
     <MESSAGE value="Added Taunt skill" />
     <MESSAGE value="Added mana deduction and Mana Drain Skill" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mana deduction and Mana Drain Skill" />
+    <MESSAGE value="Added further Hero skill interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added further Hero skill interface" />
   </component>
 </project>

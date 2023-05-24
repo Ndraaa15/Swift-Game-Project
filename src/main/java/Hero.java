@@ -107,6 +107,7 @@ class Hero implements ICharacter{
             System.out.println(getName() + " is defeated");
         }
     }
+
     // HERO ATRIBUTES (SETTER)
     @Override
     public void setName(String name) {
@@ -114,8 +115,8 @@ class Hero implements ICharacter{
     }
 
     @Override
-    public void setHP(int hp) {
-        this.hp = hp;
+    public void setAttack(int attack) {
+        this.atk = attack;
     }
 
     public void setMana(int mana) {
@@ -124,8 +125,8 @@ class Hero implements ICharacter{
     }
 
     @Override
-    public void setAttack(int attack) {
-        this.atk = attack;
+    public void setHP(int hp) {
+        this.hp = hp;
     }
 
     @Override
@@ -133,8 +134,8 @@ class Hero implements ICharacter{
         this.def = defense;
     }
 
-    public void setDefeated(boolean defeated) {
-        isDefeated = defeated;
+    public void setDefeated(boolean isDefeated) {
+        this.isDefeated = isDefeated;
     }
 
     public void setHeroDescription(String heroDescription) {
@@ -156,10 +157,6 @@ class Hero implements ICharacter{
         return hp;
     }
 
-    public int getMana() {
-        return mana;
-    }
-
     public int getMaxHp() {
         return maxHp;
     }
@@ -169,9 +166,21 @@ class Hero implements ICharacter{
         return atk;
     }
 
+    public int getMana() {
+        return mana;
+    }
+
     @Override
     public int getDefense() {
         return def;
+    }
+
+    public HeroElement getHeroElement() {
+        return heroElement;
+    }
+
+    public HeroRole getHeroRole() {
+        return heroRole;
     }
 
     public String getHeroDescription() {
@@ -180,14 +189,6 @@ class Hero implements ICharacter{
 
     public String getHeroLore() {
         return heroLore;
-    }
-
-    public HeroRole getHeroRole() {
-        return heroRole;
-    }
-
-    public HeroElement getHeroElement() {
-        return heroElement;
     }
 
     // SKILLS
@@ -252,16 +253,15 @@ class Hero implements ICharacter{
 
     public void useSkill2(ArrayList<Hero> targets) {
         if (!hasSkill2() || !hasEnoughManaSkill2()) return;
-        skill1.useSkill(this, targets);
+        skill2.useSkill(this, targets);
     }
 
     public void useSkill2(Hero target) {
         if (!hasSkill2() || !hasEnoughManaSkill2()) return;
-        skill1.useSkill(this, target);
+        skill2.useSkill(this, target);
     }
 
     // CONDITION
-
     @Override
     public boolean isDefeated() {
         return isDefeated;
