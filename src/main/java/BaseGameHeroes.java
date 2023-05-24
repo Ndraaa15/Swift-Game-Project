@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 class BaseGameHeroes {
     private ArrayList<Hero> baseGameHeroes = new ArrayList<>();
+    private ArrayList<Boolean> heroIsUsed = new ArrayList<>();
 
     public BaseGameHeroes() {
         Hero hero0 = new Hero("Murby", 400, 55,  16, HeroElement.FIRE, HeroRole.FIGHTER);
@@ -19,22 +20,26 @@ class BaseGameHeroes {
         Hero hero10 = new Hero("Pomitar", 375, 40,  18, HeroElement.WATER, HeroRole.SUPPORT);
         Hero hero11 = new Hero("Terryza", 425, 60,  16, HeroElement.WATER, HeroRole.FIGHTER);
 
-        baseGameHeroes.add(hero0);
-        baseGameHeroes.add(hero1);
-        baseGameHeroes.add(hero2);
-        baseGameHeroes.add(hero3);
+        add(hero0);
+        add(hero1);
+        add(hero2);
+        add(hero3);
 
-        baseGameHeroes.add(hero4);
-        baseGameHeroes.add(hero5);
-        baseGameHeroes.add(hero6);
-        baseGameHeroes.add(hero7);
+        add(hero4);
+        add(hero5);
+        add(hero6);
+        add(hero7);
 
-        baseGameHeroes.add(hero8);
-        baseGameHeroes.add(hero9);
-        baseGameHeroes.add(hero10);
-        baseGameHeroes.add(hero11);
+        add(hero8);
+        add(hero9);
+        add(hero10);
+        add(hero11);
     }
 
+    private void add(Hero hero) {
+        baseGameHeroes.add(hero);
+        heroIsUsed.add(false);
+    }
     public ArrayList<Hero> getBaseGameHeroes() {
         return baseGameHeroes;
     }
@@ -52,4 +57,33 @@ class BaseGameHeroes {
         if (index > baseGameHeroes.size() || index < 0) return null;
         return baseGameHeroes.get(index);
     }
+
+    public boolean isUsed(String name) {
+        for (int i = 0; i < baseGameHeroes.size(); i++) {
+            if (baseGameHeroes.get(i).getName().equals(name)) {
+                return heroIsUsed.get(i);
+            }
+        }
+        return false;
+    }
+
+    public boolean isUsed(int index) {
+        if (index > baseGameHeroes.size() || index < 0) return false;
+        return heroIsUsed.get(index);
+    }
+
+    public void useHero(String name) {
+        for (int i = 0; i < baseGameHeroes.size(); i++) {
+            if (baseGameHeroes.get(i).getName().equals(name)) {
+                heroIsUsed.set(i, true);
+                return;
+            }
+        }
+    }
+
+    public void useHero(int index) {
+        if (index > baseGameHeroes.size() || index < 0) return;
+        heroIsUsed.set(index, true);
+    }
+
 }
