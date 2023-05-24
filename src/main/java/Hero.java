@@ -46,6 +46,7 @@ class Hero implements ICharacter{
         this.isDefeated = false;
     }
 
+    // CLONE
     public Hero(Hero hero) {
         this.name = hero.getName();
         this.hp = hero.getHP();
