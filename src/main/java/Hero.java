@@ -99,6 +99,25 @@ class Hero implements ICharacter{
         this.isDefeated = false;
     }
 
+    public Hero(Hero hero) {
+        this.name = hero.getName();
+        this.hp = hero.getHP();
+        this.maxHp = hero.getMaxHp();
+        this.mana = 100;
+        this.atk = hero.getAttack();
+        this.def = hero.getDefense();
+        this.heroElement = hero.getHeroElement();
+        this.heroRole = hero.getHeroRole();
+        this.effect = new Effect();
+        this.isDefeated = false;
+
+        this.heroDescription = hero.getHeroDescription();
+        this.heroLore = hero.getHeroLore();
+
+        this.skill1 = hero.getSkill1();
+        this.skill2 = hero.getSkill2();
+    }
+
     @Override
     public void normalAttack(ICharacter opponent) {
         int totalAtk = this.atk - opponent.getDefense();
@@ -212,6 +231,10 @@ class Hero implements ICharacter{
 
     public String getHeroLore() {
         return heroLore;
+    }
+
+    public HeroRole getHeroRole() {
+        return heroRole;
     }
 
     public boolean hasSkill1() {
