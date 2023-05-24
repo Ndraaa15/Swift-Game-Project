@@ -6,6 +6,14 @@ enum HeroElement {
     GRASS;
 }
 
+enum HeroRole {
+    TANK,
+    SUPPORT,
+    ARCHER,
+    FIGHTER,
+    MAGE,
+}
+
 class Effect {
     private int stunDuration;
     private int tauntDuration;
@@ -67,21 +75,26 @@ class Hero implements ICharacter{
     private int atk;
     private int def;
     private HeroElement heroElement;
+    private HeroRole heroRole;
     private Effect effect;
     private Skill skill1;
     private Skill skill2;
 
+    private String heroDescription;
+    private String heroLore;
+
     private boolean isDefeated;
 
 
-    public Hero(String name, int hp, int mana, int atk, int def, HeroElement heroElement) {
+    public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
         this.name = name;
         this.hp = hp;
         this.maxHp = hp;
-        this.mana = mana;
+        this.mana = 100;
         this.atk = atk;
         this.def = def;
         this.heroElement = heroElement;
+        this.heroRole = heroRole;
         this.effect = new Effect();
         this.isDefeated = false;
     }
@@ -109,7 +122,7 @@ class Hero implements ICharacter{
         } else if (attackerElement == heroElement.WATER && opponentElement == heroElement.FIRE) {
             damageMultiplier = 2;
         }
-        int totalAtk = (int) (this.getAttack() * damageMultiplier);
+        int totalAtk = this.getAttack() * damageMultiplier;
 
         if (totalAtk <= 0) {
             totalAtk = 1;
@@ -120,7 +133,7 @@ class Hero implements ICharacter{
         updateIsDefeated();
     }
 
-    private void updateIsDefeated() {
+    public void updateIsDefeated() {
         if (hp <= 0) {
             setDefeated(true);
             setHP(0);
@@ -161,6 +174,14 @@ class Hero implements ICharacter{
         isDefeated = defeated;
     }
 
+    public void setHeroDescription(String heroDescription) {
+        this.heroDescription = heroDescription;
+    }
+
+    public void setHeroLore(String heroLore) {
+        this.heroLore = heroLore;
+    }
+
     @Override
     public String getName() {
         return name;
@@ -183,6 +204,14 @@ class Hero implements ICharacter{
     @Override
     public int getDefense() {
         return def;
+    }
+
+    public String getHeroDescription() {
+        return heroDescription;
+    }
+
+    public String getHeroLore() {
+        return heroLore;
     }
 
     public boolean hasSkill1() {

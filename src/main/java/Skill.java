@@ -71,6 +71,11 @@ class ShadowArrow extends Skill {
     }
 
     public void useSkill(Hero hero, ArrayList<Hero> targets) {
-
+        for (Hero target : targets) {
+            int totalAtk = hero.getAttack() - target.getDefense();
+            if (totalAtk <= 0) totalAtk = 1;
+            target.setHP(target.getHP() - totalAtk);
+            target.updateIsDefeated();
+        }
     }
 }
