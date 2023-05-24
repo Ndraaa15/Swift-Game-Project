@@ -1,5 +1,3 @@
-
-
 public interface IParty {
     public ICharacter nextPlayer();
 
