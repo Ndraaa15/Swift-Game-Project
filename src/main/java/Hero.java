@@ -68,7 +68,8 @@ class Hero implements ICharacter{
     private int def;
     private HeroElement heroElement;
     private Effect effect;
-    ArrayList<Skill> skills = new ArrayList<>();
+    private Skill skill1;
+    private Skill skill2;
 
     private boolean isDefeated;
 
@@ -184,31 +185,28 @@ class Hero implements ICharacter{
         return def;
     }
 
-    public void addSkill(Skill skill) {
-        skills.add(skill);
+    public boolean hasSkill1() {
+        return skill1 != null;
     }
 
-    public ArrayList<Skill> getSkills() {
-        return skills;
+    public boolean hasSkill2() {
+        return skill2 != null;
     }
 
-    public Skill getSkill(int index) {
-        if (index > skills.size() || index < 0) {
-            System.out.println("INDEX OT OF BOND");
-            return null;
-        }
-        return skills.get(index);
-
+    public void setSkill1(Skill skill1) {
+        this.skill1 = skill1;
     }
 
-    public int getSkillCount() {
-        return skills.size();
+    public void setSkill2(Skill skill2) {
+        this.skill2 = skill2;
     }
 
-    public void printSkills() {
-        for (int i = 0; i < skills.size(); i++) {
-            System.out.printf("%d) %s", i, skills.get(i));
-        }
+    public Skill getSkill1() {
+        return skill1;
+    }
+
+    public Skill getSkill2() {
+        return skill2;
     }
 
     public void printHero() {

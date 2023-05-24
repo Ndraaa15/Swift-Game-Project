@@ -103,7 +103,7 @@ public class GameEngine implements IGameEngine{
         display.listHero();
         ICharacter [] characters = new ICharacter[3];
         for (int i = 0; i < 3; i++) {
-            characters[i] = new Character();
+//            characters[i] = new Character();
         }
 
         this.playerParty = createPlayerParty(partyName, characters[0], characters[1], characters[2]);
@@ -139,7 +139,7 @@ public class GameEngine implements IGameEngine{
         String partyName = "COM";
         ICharacter [] characters = new ICharacter[3];
         for (int i = 0; i < 3; i++) {
-            characters[i] = new Character();
+//            characters[i] = new Character();
         }
 
         this.cpuParty = createCPUParty(partyName, characters[0], characters[1], characters[2]);
