@@ -14,59 +14,6 @@ enum HeroRole {
     MAGE,
 }
 
-class Effect {
-    private int stunDuration;
-    private int tauntDuration;
-    private Hero tauntingHero;
-
-    public boolean isStunned() {
-        return stunDuration != 0;
-    }
-
-    public boolean isTaunted() {
-        return tauntDuration != 0;
-    }
-
-    public int getStunDuration() {
-        return stunDuration;
-    }
-
-    public int getTauntDuration() {
-        return tauntDuration;
-    }
-
-    public void setStunDuration(int stunDuration) {
-        this.stunDuration = stunDuration;
-    }
-
-    public void setTauntDuration(int tauntDuration) {
-        this.tauntDuration = tauntDuration;
-        if (tauntDuration == 0) setTauntingHero(null);
-    }
-
-    public void setTauntingHero(Hero tauntingHero) {
-        this.tauntingHero = tauntingHero;
-    }
-
-    public void decrementStunDuration() {
-        stunDuration--;
-    }
-
-    public void decrementTauntDuration() {
-        tauntDuration--;
-        if (tauntDuration == 0) setTauntingHero(null);
-    }
-
-    public void nullifyStun() {
-        stunDuration = 0;
-    }
-
-    public void nullifyTaunt() {
-        tauntDuration = 0;
-        tauntingHero = null;
-    }
-}
-
 class Hero implements ICharacter{
     private String name;
     private int hp;

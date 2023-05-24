@@ -7,6 +7,7 @@ enum SkillTarget {
     ALL_ALLY,
     AUTO_ENEMY,
     AUTO_ALLY,
+    DEAD_ALLY,
 }
 
 class Skill {

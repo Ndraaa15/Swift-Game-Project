@@ -20,6 +20,14 @@ class BaseGameHeroes {
         Hero hero10 = new Hero("Pomitar", 375, 40,  18, HeroElement.WATER, HeroRole.SUPPORT);
         Hero hero11 = new Hero("Terryza", 425, 60,  16, HeroElement.WATER, HeroRole.FIGHTER);
 
+        // SET HERO LORE, SKILL, DAN DESKRIPSI DIBAWAH INI
+
+
+
+
+
+        //
+
         add(hero0);
         add(hero1);
         add(hero2);
