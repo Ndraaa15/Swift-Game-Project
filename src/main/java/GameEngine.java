@@ -88,7 +88,7 @@ public class GameEngine implements IGameEngine{
     }
 
     private void _loadGame (){
-        display.readyGameDisplay();
+        display.readyGameDisplay(this.playerParty);
     }
 
     private void _exitGame (){
@@ -96,26 +96,53 @@ public class GameEngine implements IGameEngine{
     }
 
     private void _createPartyForPlayer (){
+        display.createTeam();
+        String partyName = sc.nextLine();
 
-
+        System.out.println("Choose your 3 heroes !!!");
         display.listHero();
+        ICharacter [] characters = new ICharacter[3];
+        for (int i = 0; i < 3; i++) {
+            characters[i] = new Character();
+        }
+
+        this.playerParty = createPlayerParty(partyName, characters[0], characters[1], characters[2]);
 
 
+        display.readyGameDisplay(this.playerParty);
 
-        display.readyGameDisplay();
-
-
-
-        gameON();
-
+        String select = sc.nextLine();
+        boolean isTrue = true;
+        do {
+            switch (select) {
+                case "Y" -> {
+                    isTrue = false;
+                    _createPartyForCPU();
+                    gameON();
+                }
+                case "n" -> {
+                    isTrue = false;
+                    _createPartyForPlayer();
+                }
+                default -> System.out.println("Please choose between (Y | n) !!!");
+            }
+        }while (isTrue);
     }
 
 
     private void gameON (){
-        display.gameField(playerParty, cpuParty);
+        display.gameField(this.playerParty, this.cpuParty);
+
     }
 
     private void _createPartyForCPU (){
+        String partyName = "COM";
+        ICharacter [] characters = new ICharacter[3];
+        for (int i = 0; i < 3; i++) {
+            characters[i] = new Character();
+        }
+
+        this.cpuParty = createCPUParty(partyName, characters[0], characters[1], characters[2]);
 
     }
 

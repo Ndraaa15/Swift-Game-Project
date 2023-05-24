@@ -77,7 +77,7 @@ public class Display {
         System.out.print("Your Choice : ");
     }
 
-    void readyGameDisplay () {
+    void readyGameDisplay (IParty playerParty) {
         System.out.println("----------------------------------------------------------------------");
         System.out.println("|                            TEAM NAME                               |");
         System.out.println("|====================================================================|");
