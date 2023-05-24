@@ -12,59 +12,6 @@ enum HeroRole {
     MAGE,
 }
 
-class Effect {
-    private int stunDuration;
-    private int tauntDuration;
-    private Hero tauntingHero;
-
-    public boolean isStunned() {
-        return stunDuration != 0;
-    }
-
-    public boolean isTaunted() {
-        return tauntDuration != 0;
-    }
-
-    public int getStunDuration() {
-        return stunDuration;
-    }
-
-    public int getTauntDuration() {
-        return tauntDuration;
-    }
-
-    public void setStunDuration(int stunDuration) {
-        this.stunDuration = stunDuration;
-    }
-
-    public void setTauntDuration(int tauntDuration) {
-        this.tauntDuration = tauntDuration;
-        if (tauntDuration == 0) setTauntingHero(null);
-    }
-
-    public void setTauntingHero(Hero tauntingHero) {
-        this.tauntingHero = tauntingHero;
-    }
-
-    public void decrementStunDuration() {
-        stunDuration--;
-    }
-
-    public void decrementTauntDuration() {
-        tauntDuration--;
-        if (tauntDuration == 0) setTauntingHero(null);
-    }
-
-    public void nullifyStun() {
-        stunDuration = 0;
-    }
-
-    public void nullifyTaunt() {
-        tauntDuration = 0;
-        tauntingHero = null;
-    }
-}
-
 class Hero implements ICharacter{
     private String name;
     private int hp;
@@ -95,6 +42,27 @@ class Hero implements ICharacter{
         this.heroRole = heroRole;
         this.effect = new Effect();
         this.isDefeated = false;
+    }
+
+    // CLONE
+    public Hero(Hero hero) {
+        this.name = hero.getName();
+        this.hp = hero.getHP();
+        this.maxHp = hero.getMaxHp();
+        this.mana = 100;
+        this.atk = hero.getAttack();
+        this.def = hero.getDefense();
+        this.heroElement = hero.getHeroElement();
+        this.heroRole = hero.getHeroRole();
+        this.effect = new Effect();
+
+        this.isDefeated = false;
+
+        this.heroDescription = hero.getHeroDescription();
+        this.heroLore = hero.getHeroLore();
+
+        this.skill1 = hero.getSkill1();
+        this.skill2 = hero.getSkill2();
     }
 
     @Override
@@ -139,18 +107,20 @@ class Hero implements ICharacter{
         }
     }
 
-    public HeroElement getHeroElement() {
-        return heroElement;
-    }
-
-    @Override
-    public boolean isDefeated() {
-        return hp <= 0;
-    }
-
+    // HERO ATRIBUTES (SETTER)
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void setAttack(int attack) {
+        this.atk = attack;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+        if (this.mana < 0) this.mana = 0;
     }
 
     @Override
@@ -159,17 +129,12 @@ class Hero implements ICharacter{
     }
 
     @Override
-    public void setAttack(int attack) {
-        this.atk = attack;
-    }
-
-    @Override
     public void setDefense(int defense) {
         this.def = defense;
     }
 
-    public void setDefeated(boolean defeated) {
-        isDefeated = defeated;
+    public void setDefeated(boolean isDefeated) {
+        this.isDefeated = isDefeated;
     }
 
     public void setHeroDescription(String heroDescription) {
@@ -180,6 +145,7 @@ class Hero implements ICharacter{
         this.heroLore = heroLore;
     }
 
+    // HERO ATRIBUTES (GETTER)
     @Override
     public String getName() {
         return name;
@@ -199,9 +165,21 @@ class Hero implements ICharacter{
         return atk;
     }
 
+    public int getMana() {
+        return mana;
+    }
+
     @Override
     public int getDefense() {
         return def;
+    }
+
+    public HeroElement getHeroElement() {
+        return heroElement;
+    }
+
+    public HeroRole getHeroRole() {
+        return heroRole;
     }
 
     public String getHeroDescription() {
@@ -210,6 +188,11 @@ class Hero implements ICharacter{
 
     public String getHeroLore() {
         return heroLore;
+    }
+
+    // SKILLS
+    public Effect getEffect() {
+        return effect;
     }
 
     public boolean hasSkill1() {
@@ -236,6 +219,58 @@ class Hero implements ICharacter{
         return skill2;
     }
 
+    public SkillTarget getSkill1Target() {
+        if (!hasSkill1()) return null;
+        return skill1.getTarget();
+    }
+
+    public SkillTarget getSkill2Target() {
+        if (!hasSkill2()) return null;
+        return skill2.getTarget();
+    }
+
+    public boolean hasEnoughManaSkill1() {
+        if (!hasSkill1()) return false;
+        return skill1.hasEnoughMana(this);
+    }
+
+    public boolean hasEnoughManaSkill2() {
+        if (!hasSkill2()) return false;
+        return skill2.hasEnoughMana(this);
+    }
+
+    // SKILL USAGE
+    public void useSkill1(ArrayList<Hero> targets) {
+        if (!hasSkill1() || !hasEnoughManaSkill1()) return;
+        skill1.useSkill(this, targets);
+    }
+
+    public void useSkill1(Hero target) {
+        if (!hasSkill1() || !hasEnoughManaSkill1()) return;
+        skill1.useSkill(this, target);
+    }
+
+    public void useSkill2(ArrayList<Hero> targets) {
+        if (!hasSkill2() || !hasEnoughManaSkill2()) return;
+        skill2.useSkill(this, targets);
+    }
+
+    public void useSkill2(Hero target) {
+        if (!hasSkill2() || !hasEnoughManaSkill2()) return;
+        skill2.useSkill(this, target);
+    }
+
+    // CONDITION
+    @Override
+    public boolean isDefeated() {
+        return isDefeated;
+    }
+
+    public void makeAlive() {
+        isDefeated = false;
+    }
+
+    // DISPLAY
     public void printHero() {
         System.out.println(getName());
         System.out.println(getHP());
