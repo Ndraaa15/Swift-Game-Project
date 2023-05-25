@@ -14,7 +14,7 @@ public class SkillFunctionality {
         return defense;
     }
 
-    public static void enhancedBasicAttack(Hero hero, Hero target, double damageMultiplier) {
+    public static void modifiedBasicAtack(Hero hero, Hero target, double damageMultiplier) {
         int totalAtk = (int) (getAttackAfterEffect(hero) * damageMultiplier);
         totalAtk -= getDefenceAfterEffect(target);
         if (totalAtk <= 0) totalAtk = 1;
@@ -29,19 +29,36 @@ public class SkillFunctionality {
         target.updateIsDefeated();
     }
 
+    public static void healthDrainMaxHealth(Hero target, double multiplier) {
+        int totalDamage = (int) (target.getMaxHp() * multiplier);
+        target.setHP(target.getHP() - totalDamage);
+        target.updateIsDefeated();
+    }
+
     public static void stun(Hero target, int duration) {
         if (target.getEffect().isStunned() && target.getEffect().getStunDuration() > duration) return;
         target.getEffect().setStunDuration(duration);
     }
 
-    public static void heal(Hero hero, Hero target, double multiplier) {
+    public static void healAtkBase(Hero hero, Hero target, double multiplier) {
         int healAmount = (int) (getAttackAfterEffect(hero) * multiplier);
         target.setHP(target.getHP() + healAmount);
         if (target.getHP() > target.getMaxHp()) target.setHP(target.getMaxHp());
     }
 
-    public static void manaDrain(Hero hero, Hero target, double multiplier) {
+    public static void healMaxHpBase(Hero target, double multiplier) {
+        int healAmount = (int) (target.getMaxHp() * multiplier);
+        target.setHP(target.getHP() + healAmount);
+        if (target.getHP() > target.getMaxHp()) target.setHP(target.getMaxHp());
+    }
+
+    public static void manaDrainAtkBase(Hero hero, Hero target, double multiplier) {
         int drainAmount = (int) (getAttackAfterEffect(hero) * multiplier);
+        target.setMana(target.getMana() - drainAmount);
+    }
+
+    public static void manaDrainMaxManaBase(Hero target, double multiplier) {
+        int drainAmount = (int) (target.getMaxMana() * multiplier);
         target.setMana(target.getMana() - drainAmount);
     }
 

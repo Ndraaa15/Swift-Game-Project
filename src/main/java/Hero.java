@@ -19,6 +19,7 @@ class Hero implements IHero {
     private int hp;
     private int maxHp;
     private int mana;
+    private int maxMana;
     private int atk;
     private int def;
     private HeroElement heroElement;
@@ -43,6 +44,7 @@ class Hero implements IHero {
         this.hp = hp;
         this.maxHp = hp;
         this.mana = 100;
+        this.maxMana = 100;
         this.atk = atk;
         this.def = def;
         this.heroElement = heroElement;
@@ -57,6 +59,7 @@ class Hero implements IHero {
         this.hp = hero.getHP();
         this.maxHp = hero.getMaxHp();
         this.mana = 100;
+        this.maxMana = 100;
         this.atk = hero.getAttack();
         this.def = hero.getDefense();
         this.heroElement = hero.getHeroElement();
@@ -130,11 +133,14 @@ class Hero implements IHero {
     public void setMana(int mana) {
         this.mana = mana;
         if (this.mana < 0) this.mana = 0;
+        if (this.mana > maxMana) this.mana = maxMana;
     }
 
     @Override
     public void setHP(int hp) {
         this.hp = hp;
+        if (this.hp < 0) this.hp = 0;
+        if (this.hp > maxHp) this.hp = maxHp;
     }
 
     @Override
@@ -181,6 +187,10 @@ class Hero implements IHero {
     @Override
     public int getMana() {
         return mana;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
     }
 
     @Override
