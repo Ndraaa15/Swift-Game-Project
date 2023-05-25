@@ -7,16 +7,16 @@ class Effect {
     private Hero tauntingHero;
 
     private int atkBuffDuration;
-    private int atkBuffModifier;
+    private double atkBuffModifier;
 
     private int defBuffDuration;
-    private int defBuffModifier;
+    private double defBuffModifier;
 
     private int atkDebuffDuration;
-    private int atkDebuffModifier;
+    private double atkDebuffModifier;
 
     private int defDebuffDuration;
-    private int defDebuffModifier;
+    private double defDebuffModifier;
 
 
     //STUN
@@ -82,7 +82,7 @@ class Effect {
         return atkBuffDuration;
     }
 
-    public int getAtkBuffModifier() {
+    public double getAtkBuffModifier() {
         return atkBuffModifier;
     }
 
@@ -92,7 +92,7 @@ class Effect {
         if (atkBuffDuration == 0) atkBuffModifier = 0;
     }
 
-    public void setAtkBuffModifier(int atkBuffModifier) {
+    public void setAtkBuffModifier(double atkBuffModifier) {
         this.atkBuffModifier = atkBuffModifier;
     }
 
@@ -116,7 +116,7 @@ class Effect {
         return defBuffDuration;
     }
 
-    public int getDefBuffModifier() {
+    public double getDefBuffModifier() {
         return defBuffModifier;
     }
 
@@ -126,7 +126,7 @@ class Effect {
         if (defBuffDuration == 0) defBuffModifier = 0;
     }
 
-    public void setDefBuffModifier(int defBuffModifier) {
+    public void setDefBuffModifier(double defBuffModifier) {
         this.defBuffModifier = defBuffModifier;
     }
 
@@ -150,7 +150,7 @@ class Effect {
         return atkDebuffDuration;
     }
 
-    public int getAtkDebuffModifier() {
+    public double getAtkDebuffModifier() {
         return atkDebuffModifier;
     }
 
@@ -160,7 +160,7 @@ class Effect {
         if (atkDebuffDuration == 0) atkDebuffModifier = 0;
     }
 
-    public void setAtkDebuffModifier(int atkDebuffModifier) {
+    public void setAtkDebuffModifier(double atkDebuffModifier) {
         this.atkDebuffModifier = atkDebuffModifier;
     }
 
@@ -184,7 +184,7 @@ class Effect {
         return defDebuffDuration;
     }
 
-    public int getDefDebuffModifier() {
+    public double getDefDebuffModifier() {
         return defDebuffModifier;
     }
 
@@ -194,7 +194,7 @@ class Effect {
         if (defDebuffDuration == 0) defDebuffModifier = 0;
     }
 
-    public void setDefDebuffModifier(int defDebuffModifier) {
+    public void setDefDebuffModifier(double defDebuffModifier) {
         this.defDebuffModifier = defDebuffModifier;
     }
 

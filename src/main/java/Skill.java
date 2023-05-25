@@ -6,6 +6,7 @@ enum SkillTarget {
     SINGLE_ALLY,
     ALL_ALLY,
     DEAD_ALLY,
+    SELF,
 }
 
 class Skill {
@@ -55,6 +56,10 @@ class Skill {
 
     public void useSkill(Hero hero, ArrayList<Hero> targets) {
         System.out.println("ERR 2");
+    }
+
+    public void useSkill(Hero hero) {
+        System.out.println("ERR 3");
     }
 }
 
@@ -168,4 +173,20 @@ class SingleManaDrain extends Skill {
 
         deductMana(hero);
     }
+}
+
+class FireballBarage extends Skill {
+    private int damageModifier = 3;
+
+    public FireballBarage() {
+        super("Fireball Barage", 50, SkillTarget.SINGLE_ENEMY, "Deal 3x basic attack to an enemy");
+    }
+
+    public void useSkill(Hero hero, Hero target) {
+        int totalAtk = (hero.getAttack() * damageModifier) - target.getDefense();
+        if (totalAtk <= 0) totalAtk = 1;
+        target.setHP(target.getHP() - totalAtk);
+        target.updateIsDefeated();
+    }
+
 }

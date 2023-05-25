@@ -23,7 +23,7 @@ class Hero implements IHero {
     private int def;
     private HeroElement heroElement;
     private HeroRole heroRole;
-    Effect effect;
+    private Effect effect;
 
 
     private Skill skill1;
@@ -78,7 +78,7 @@ class Hero implements IHero {
         if (totalAtk <= 0) totalAtk = 1;
         opponent.setHP(opponent.getHP() - totalAtk);
         System.out.println(this.name + " atk " + opponent.getName() + " dmg: " + totalAtk);
-        updateIsDefeated();
+        opponent.updateIsDefeated();
     }
 
     @Override
@@ -103,9 +103,10 @@ class Hero implements IHero {
 
         opponent.setHP(opponent.getHP() - totalAtk);
         System.out.println(this.getName() + " atk " + opponent.getName() + " dmg: " + totalAtk);
-        updateIsDefeated();
+        opponent.updateIsDefeated();
     }
 
+    @Override
     public void updateIsDefeated() {
         if (hp <= 0) {
             setDefeated(true);
@@ -125,6 +126,7 @@ class Hero implements IHero {
         this.atk = attack;
     }
 
+    @Override
     public void setMana(int mana) {
         this.mana = mana;
         if (this.mana < 0) this.mana = 0;
@@ -140,14 +142,17 @@ class Hero implements IHero {
         this.def = defense;
     }
 
+    @Override
     public void setDefeated(boolean isDefeated) {
         this.isDefeated = isDefeated;
     }
 
+    @Override
     public void setHeroDescription(String heroDescription) {
         this.heroDescription = heroDescription;
     }
 
+    @Override
     public void setHeroLore(String heroLore) {
         this.heroLore = heroLore;
     }
@@ -163,6 +168,7 @@ class Hero implements IHero {
         return hp;
     }
 
+    @Override
     public int getMaxHp() {
         return maxHp;
     }
@@ -172,6 +178,7 @@ class Hero implements IHero {
         return atk;
     }
 
+    @Override
     public int getMana() {
         return mana;
     }
@@ -181,87 +188,107 @@ class Hero implements IHero {
         return def;
     }
 
+    @Override
     public HeroElement getHeroElement() {
         return heroElement;
     }
 
+    @Override
     public HeroRole getHeroRole() {
         return heroRole;
     }
 
+    @Override
     public String getHeroDescription() {
         return heroDescription;
     }
 
+    @Override
     public String getHeroLore() {
         return heroLore;
     }
 
+
     // SKILLS
+    @Override
     public Effect getEffect() {
         return effect;
     }
 
+    @Override
     public boolean hasSkill1() {
         return skill1 != null;
     }
 
+    @Override
     public boolean hasSkill2() {
         return skill2 != null;
     }
 
+    @Override
     public void setSkill1(Skill skill1) {
         this.skill1 = skill1;
     }
 
+    @Override
     public void setSkill2(Skill skill2) {
         this.skill2 = skill2;
     }
 
+    @Override
     public Skill getSkill1() {
         return skill1;
     }
 
+    @Override
     public Skill getSkill2() {
         return skill2;
     }
 
+    @Override
     public SkillTarget getSkill1Target() {
         if (!hasSkill1()) return null;
         return skill1.getTarget();
     }
 
+    @Override
     public SkillTarget getSkill2Target() {
         if (!hasSkill2()) return null;
         return skill2.getTarget();
     }
 
+    @Override
     public boolean hasEnoughManaSkill1() {
         if (!hasSkill1()) return false;
         return skill1.hasEnoughMana(this);
     }
 
+    @Override
     public boolean hasEnoughManaSkill2() {
         if (!hasSkill2()) return false;
         return skill2.hasEnoughMana(this);
     }
 
     // SKILL USAGE
+    @Override
     public void useSkill1(ArrayList<Hero> targets) {
         if (!hasSkill1() || !hasEnoughManaSkill1()) return;
         skill1.useSkill(this, targets);
     }
 
+    @Override
     public void useSkill1(Hero target) {
         if (!hasSkill1() || !hasEnoughManaSkill1()) return;
         skill1.useSkill(this, target);
     }
 
+    @Override
     public void useSkill2(ArrayList<Hero> targets) {
         if (!hasSkill2() || !hasEnoughManaSkill2()) return;
         skill2.useSkill(this, targets);
     }
 
+    @Override
     public void useSkill2(Hero target) {
         if (!hasSkill2() || !hasEnoughManaSkill2()) return;
         skill2.useSkill(this, target);
@@ -273,11 +300,13 @@ class Hero implements IHero {
         return isDefeated;
     }
 
+    @Override
     public void makeAlive() {
         isDefeated = false;
     }
 
     // DISPLAY
+    @Override
     public void printHero() {
         System.out.println(getName());
         System.out.println(getHP());
@@ -285,10 +314,12 @@ class Hero implements IHero {
         System.out.println(getDefense());
     }
 
+    @Override
     public void setHeroElement(HeroElement heroElement) {
         this.heroElement = heroElement;
     }
 
+    @Override
     public void setHeroRole(HeroRole heroRole) {
         this.heroRole = heroRole;
     }
