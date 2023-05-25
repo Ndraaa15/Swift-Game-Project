@@ -114,19 +114,30 @@ public class GameEngine implements IGameEngine{
 
         display.listHero();
 
-        ArrayList <String> numbers = new ArrayList<>(3);
-        ArrayList <Hero> heroes = new ArrayList<>(3);
+        ArrayList <Hero> listHeroes = new ArrayList<>();
 
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Heroes " + (i + 1) + " : ");
+        boolean checkHeroes = true;
+        int i = 1;
+        while (listHeroes.size() < 3){
+            System.out.print("Heroes " + (i) + " : ");
             String select = sc.nextLine();
-            numbers.add(select);
 
+            Hero result = selectHero(select);
+
+            if (listHeroes.contains(result)){
+                System.out.println("            Hero already selected, choose other heroes !!!               ");
+            }else {
+                if (result != null){
+                    listHeroes.add(result);
+                    System.out.println("                          " + result.getName() + " selected !              ");
+                    i++;
+                }else {
+                    System.out.println("Please choose heroes between 1 - 12 !!!");
+                }
+            }
         }
 
-        this.playerParty = createPlayerParty(partyName, heroes.get(0), heroes.get(1), heroes.get(2));
-
+        this.playerParty = createPlayerParty(partyName, listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));
 
         display.readyGameDisplay(this.playerParty);
 
@@ -134,7 +145,7 @@ public class GameEngine implements IGameEngine{
         boolean isTrue = true;
         do {
             switch (select) {
-                case "Y" -> {
+                case "y" -> {
                     isTrue = false;
                     _createPartyForCPU();
                     gameON();
@@ -162,17 +173,46 @@ public class GameEngine implements IGameEngine{
         }
 
         this.cpuParty = createCPUParty(partyName, characters[0], characters[1], characters[2]);
-
     }
 
-    private void _createHero (){
+    private Hero _createHero (){
+        Hero hero = new Hero();
 
+        display.createHero();
+        display.element();
+
+
+        String select = sc.nextLine();
+        hero.setHeroElement(selectHeroElement(select));
+
+        display.role();
+
+        select = sc.nextLine();
+        hero.setHeroRole(selectHeroRole(select));
+
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                           Hero Details                            |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.print("Name      : ");
+        String name = sc.nextLine(); hero.setName(name);
+        System.out.print("HP        : ");
+        String HP = sc.nextLine(); hero.setHP(Integer.parseInt(HP));
+        System.out.print("ATK       : ");
+        String ATK = sc.nextLine(); hero.setAttack(Integer.parseInt(ATK));
+        System.out.print("DEF       : ");
+        String DEF = sc.nextLine(); hero.setAttack(Integer.parseInt(DEF));
+        /*
+        to-do how to implement skill (?)
+        */
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                           Let's Fight                             |");
+        System.out.println("---------------------------------------------------------------------");
+
+        return hero;
     }
 
     private Hero selectHero (String select) {
         Hero temp = null;
-
-        ArrayList<Hero> listHeroes = heroes.getBaseGameHeroes();
 
         if (select.equals("1")){
             temp = heroes.getHero("Murby");
@@ -198,8 +238,40 @@ public class GameEngine implements IGameEngine{
             temp = heroes.getHero("Pomi");
         } else if (select.equals("12")){
             temp = heroes.getHero("Marie");
+        } else if (select.equalsIgnoreCase("c")){
+            temp = _createHero();
+        }else {
+            return null;
         }
-
         return temp;
     }
+
+    private HeroElement selectHeroElement (String select){
+        if (select.equals("a")){
+            return HeroElement.FIRE;
+        } else if (select.equals("b")) {
+            return HeroElement.WATER;
+        } else if (select.equals("c")) {
+            return HeroElement.GRASS;
+        }
+        return null;
+    }
+
+    private HeroRole selectHeroRole (String select){
+        if (select.equals("a")){
+            return HeroRole.FIGHTER;
+        } else if (select.equals("b")) {
+            return HeroRole.TANK;
+        } else if (select.equals("c")) {
+            return HeroRole.ARCHER;
+        } else if (select.equals("d")) {
+            return HeroRole.SUPPORT;
+        } else if (select.equals("e")) {
+            return HeroRole.MAGE;
+        }
+        return null;
+    }
+
+
+
 }

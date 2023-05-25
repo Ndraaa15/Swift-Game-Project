@@ -1,3 +1,5 @@
+import java.util.*;
+
 enum HeroElement {
     FIRE,
     WATER,
@@ -21,7 +23,9 @@ class Hero implements ICharacter{
     private int def;
     private HeroElement heroElement;
     private HeroRole heroRole;
-    private Effect effect;
+    Effect effect;
+
+
     private Skill skill1;
     private Skill skill2;
 
@@ -29,6 +33,9 @@ class Hero implements ICharacter{
     private String heroLore;
 
     private boolean isDefeated;
+
+
+    public Hero() {}
 
 
     public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
@@ -276,5 +283,13 @@ class Hero implements ICharacter{
         System.out.println(getHP());
         System.out.println(getAttack());
         System.out.println(getDefense());
+    }
+
+    public void setHeroElement(HeroElement heroElement) {
+        this.heroElement = heroElement;
+    }
+
+    public void setHeroRole(HeroRole heroRole) {
+        this.heroRole = heroRole;
     }
 }

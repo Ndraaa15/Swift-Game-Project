@@ -4,6 +4,15 @@ public class Party implements IParty{
     String partyName;
     ArrayList<ICharacter> characters = new ArrayList<>();
 
+    @Override
+    public String getPartyName() {
+        return partyName;
+    }
+
+    @Override
+    public ArrayList<ICharacter> getCharacters() {
+        return characters;
+    }
 
     public Party(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3){
         this.partyName = partyName;
