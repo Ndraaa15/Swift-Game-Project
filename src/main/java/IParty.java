@@ -10,4 +10,6 @@ public interface IParty {
 
     String getPartyName();
     ArrayList<ICharacter> getCharacters();
+    boolean isTurn();
+    void setTurn(boolean turn);
 }

@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GameEngine implements IGameEngine{
+    Random random = new Random();
     private BaseGameHeroes heroes;
     private Scanner sc = new Scanner(System.in);
     private IParty playerParty;
@@ -116,7 +118,6 @@ public class GameEngine implements IGameEngine{
 
         ArrayList <Hero> listHeroes = new ArrayList<>();
 
-        boolean checkHeroes = true;
         int i = 1;
         while (listHeroes.size() < 3){
             System.out.print("Heroes " + (i) + " : ");
@@ -125,7 +126,7 @@ public class GameEngine implements IGameEngine{
             Hero result = selectHero(select);
 
             if (listHeroes.contains(result)){
-                System.out.println("            Hero already selected, choose other heroes !!!               ");
+                System.out.println("            Hero already selected, choose other heroes !!!                     ");
             }else {
                 if (result != null){
                     listHeroes.add(result);
@@ -161,18 +162,82 @@ public class GameEngine implements IGameEngine{
 
 
     private void gameON (){
-        display.gameField(this.playerParty, this.cpuParty);
+        int rNUm = random.nextInt(2);
+        if (rNUm == 0){
+            playerParty.setTurn(true);
+            cpuParty.setTurn(false);
+        }else {
+            playerParty.setTurn(false);
+            cpuParty.setTurn(true);
+        }
+
+        while (!playerParty.isDefeated() && !cpuParty.isDefeated()){
+            display.gameField(this.playerParty, this.cpuParty);
+
+            if (playerParty.isTurn()){
+                System.out.println("---------------------------------------------------------------------");
+                System.out.println("|                            Your Turn                              |");
+                System.out.println("---------------------------------------------------------------------");
+                playerTurn();
+
+                playerParty.setTurn(false);
+
+            }else if (cpuParty.isTurn()){
+                System.out.println("---------------------------------------------------------------------");
+                System.out.println("|                             COM Turn                              |");
+                System.out.println("---------------------------------------------------------------------");
+                cpuTurn();
+
+                cpuParty.setTurn(false);
+            }
+        }
+    }
+
+    private void cpuTurn(){
+        ArrayList<ICharacter> listChars = playerParty.getCharacters();
+        System.out.println("Choose your hero : ");
+        String select = sc.nextLine();
+
+        ICharacter hero = listChars.get(Integer.parseInt(select) - 1);
+
+
+
+
+
+
+
 
     }
 
+
+    private void playerTurn (){
+
+    }
+
+
+
+
+
     private void _createPartyForCPU (){
-        String partyName = "COM";
-        ICharacter [] characters = new ICharacter[3];
-        for (int i = 0; i < 3; i++) {
+        ArrayList <Hero> listHeroes = new ArrayList<>();
 
+        int i = 1;
+        while (listHeroes.size() < 3){
+            int rNum = random.nextInt(12);
+            Hero result = selectHero(String.valueOf(rNum + 1));
+
+            if (listHeroes.contains(result)){
+                continue;
+            }else {
+                if (result != null){
+                    listHeroes.add(result);
+                    i++;
+                }else {
+                    continue;
+                }
+            }
         }
-
-        this.cpuParty = createCPUParty(partyName, characters[0], characters[1], characters[2]);
+        this.cpuParty = createCPUParty("COM", listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));
     }
 
     private Hero _createHero (){

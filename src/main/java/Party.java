@@ -3,6 +3,15 @@ import java.util.ArrayList;
 public class Party implements IParty{
     String partyName;
     ArrayList<ICharacter> characters = new ArrayList<>();
+    boolean isTurn;
+
+    public boolean isTurn() {
+        return isTurn;
+    }
+
+    public void setTurn(boolean turn) {
+        isTurn = turn;
+    }
 
     @Override
     public String getPartyName() {
@@ -32,6 +41,6 @@ public class Party implements IParty{
 
     @Override
     public boolean isDefeated() {
-        return !characters.get(0).isDefeated() && !characters.get(1).isDefeated() && !characters.get(2).isDefeated();
+        return characters.get(0).isDefeated() && characters.get(1).isDefeated() && characters.get(2).isDefeated();
     }
 }
