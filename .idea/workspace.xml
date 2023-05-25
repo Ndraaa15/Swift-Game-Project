@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Update : adding new display">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added maxMana and mana regen method per turn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IParty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IParty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Party.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +33,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QDbcXNvuQVCONEmyxL5pg0wbM6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,6 +44,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/indra/Documents/Developments/Java/Object Oriented Progamming&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -53,11 +52,6 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value=";" />
-    </option>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,28 +89,105 @@
       <option name="project" value="LOCAL" />
       <updated>1684904725862</updated>
     </task>
-    <task id="LOCAL-00005" summary="Update : game engine">
-      <created>1684923866580</created>
+    <task id="LOCAL-00005" summary="Create : character class &amp; skill">
+      <created>1684906654981</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1684923866580</updated>
+      <updated>1684906654981</updated>
     </task>
-    <task id="LOCAL-00006" summary="Update : game engine">
-      <created>1684938072103</created>
+    <task id="LOCAL-00006" summary="Create : Update Hero Class">
+      <created>1684918607802</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1684938072103</updated>
+      <updated>1684918607802</updated>
     </task>
-    <task id="LOCAL-00007" summary="Update : adding new display">
-      <created>1684942665988</created>
+    <task id="LOCAL-00007" summary="Added further interface: BaseGameHeroes.java">
+      <created>1684925561728</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1684942665988</updated>
+      <updated>1684925561729</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added hero cloning">
+      <created>1684926322780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684926322780</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Seperate Effect Class and add more effect">
+      <created>1684930738055</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684930738055</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added more effect, skill, and edited Hero Class">
+      <created>1684933130921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684933130921</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added more skill (Purify, AoE, Resurrect)">
+      <created>1684935289775</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684935289775</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Change Skill Target Type">
+      <created>1684936634345</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684936634345</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added Taunt skill">
+      <created>1684937037989</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684937037989</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added mana deduction and Mana Drain Skill">
+      <created>1684938390692</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684938390692</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added further Hero skill interface">
+      <created>1684939823558</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684939823558</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Bug Fix: fix hero use skill">
+      <created>1684940544597</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684940544597</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Bug Fix: fix hero use skill">
+      <created>1684942192842</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684942192842</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added maxMana and mana regen method per turn">
+      <created>1684944568800</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684944568800</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,8 +206,18 @@
     <MESSAGE value="Create : display game" />
     <MESSAGE value="Create : plot game" />
     <MESSAGE value="Create : character class &amp; skill" />
-    <MESSAGE value="Update : game engine" />
-    <MESSAGE value="Update : adding new display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update : adding new display" />
+    <MESSAGE value="Create : Update Hero Class" />
+    <MESSAGE value="Added further interface: BaseGameHeroes.java" />
+    <MESSAGE value="Added hero cloning" />
+    <MESSAGE value="Seperate Effect Class and add more effect" />
+    <MESSAGE value="Added more effect, skill, and edited Hero Class" />
+    <MESSAGE value="Added more skill (Purify, AoE, Resurrect)" />
+    <MESSAGE value="Change Skill Target Type" />
+    <MESSAGE value="Added Taunt skill" />
+    <MESSAGE value="Added mana deduction and Mana Drain Skill" />
+    <MESSAGE value="Added further Hero skill interface" />
+    <MESSAGE value="Bug Fix: fix hero use skill" />
+    <MESSAGE value="Added maxMana and mana regen method per turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added maxMana and mana regen method per turn" />
   </component>
 </project>
