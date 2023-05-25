@@ -18,7 +18,7 @@ class BaseGameSkills {
         //DEUS
         Skill skill5 = new InfernalShot();
 
-        // GREYSAN
+        // Grove
         Skill skill6 = new GrassrootGuardian();
 
         // ELLISA

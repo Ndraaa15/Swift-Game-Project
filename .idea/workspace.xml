@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added Hero Skills">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added More Hero Skills and applying Skill to all Heroes">
       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685022089605</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added More Hero Skills and applying Skill to all Heroes">
+      <created>1685029998565</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685029998565</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +248,7 @@
     <MESSAGE value="Fix Interface" />
     <MESSAGE value="Added SkillFunctionality" />
     <MESSAGE value="Added Hero Skills" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Hero Skills" />
+    <MESSAGE value="Added More Hero Skills and applying Skill to all Heroes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added More Hero Skills and applying Skill to all Heroes" />
   </component>
 </project>
