@@ -188,7 +188,7 @@ class GrassrootGuardian extends Skill {
 class DrainingVine extends Skill {
     private double multiplier = 0.5;
     public DrainingVine() {
-        super("Draining Vine", 85, SkillTarget.SINGLE_ENEMY, "Drain 50% max mana and HP");
+        super("Draining Vine", 85, SkillTarget.SINGLE_ENEMY, "Drain 50% max mana and HP to an enemy");
     }
 
     @Override
@@ -196,6 +196,141 @@ class DrainingVine extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.healthDrainMaxHealth(target, multiplier);
         SkillFunctionality.manaDrainMaxManaBase(target, multiplier);
+        deductMana(hero);
+    }
+}
+
+// Lily
+class ThornArrow extends Skill {
+    private double damageMultiplier = 1.5;
+    public ThornArrow() {
+        super("Thorn Arrow", 20, SkillTarget.SINGLE_ENEMY, "1.5x true damage to an enemy");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        SkillFunctionality.trueDamage(hero, target, damageMultiplier);
+    }
+}
+
+// FARANIST
+class LifeReblossom extends Skill {
+    public LifeReblossom() {
+        super("Life Reblossom", 85, SkillTarget.DEAD_ALLY, "Resurrect an ally");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.resurrect(target);
+        deductMana(hero);
+    }
+}
+
+class NatureCleansing extends Skill {
+    public NatureCleansing() {
+        super("Nature Cleansing", 20, SkillTarget.SINGLE_ALLY, "Purify all debuff of an ally");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.purify(target);
+        deductMana(hero);
+    }
+}
+
+// Theseus
+class NeedleRain extends Skill {
+    private double damageMultiplier = 1;
+    public NeedleRain() {
+        super("Needle Rain", 25, SkillTarget.ALL_ENEMY, "Deals 1x true damage to all enemy");
+    }
+
+    @Override
+    public void useSkill(Hero hero, ArrayList<Hero> targets) {
+        if (!hasEnoughMana(hero)) return;
+        for (Hero target : targets) {
+            SkillFunctionality.trueDamage(hero, target, damageMultiplier);
+        }
+        deductMana(hero);
+    }
+}
+
+class FrostArmor extends Skill {
+    private double defMultiplier = 0.2;
+    private int duration = 5;
+    public FrostArmor() {
+        super("Frost Armor", 20, SkillTarget.SINGLE_ALLY, "Increase an ally def by 0.2 for 5 turns");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.defBuff(target, duration, defMultiplier);
+        deductMana(hero);
+    }
+}
+
+// ATLANNA
+
+class WaterCannon extends Skill {
+    private double multiplier = 0.25;
+    public WaterCannon() {
+        super("Water Cannon", 30, SkillTarget.SINGLE_ENEMY, "Deal 25% max Hp damage to an enemy");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.healthDrainMaxHealth(target, multiplier);
+        deductMana(hero);
+    }
+}
+
+// MARIELLE
+
+class HealingWater extends Skill {
+    private double multiplier = 0.2;
+    public HealingWater() {
+        super("Healing Water", 30, SkillTarget.SINGLE_ALLY, "Heal 20% max Hp of an ally");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.healMaxHpBase(target, multiplier);
+        deductMana(hero);
+    }
+}
+
+class Blizzard extends Skill {
+    private int duration = 10;
+    private double multiplier = 0.1;
+    public Blizzard() {
+        super("Blizzard", 65, SkillTarget.ALL_ENEMY, "Decrease all enemy attack by 10% for 10 turns");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.atkDebuff(target, duration, multiplier);
+        deductMana(hero);
+    }
+}
+
+// DILLON
+
+class WaterSlash extends Skill {
+    private double damageMultiplier = 3.0;
+    public WaterSlash() {
+        super("Water Slash", 35, SkillTarget.SINGLE_ENEMY, "Deal 3x true damage to an enemy");
+    }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.trueDamage(hero, target, damageMultiplier);
         deductMana(hero);
     }
 }

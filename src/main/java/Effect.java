@@ -226,6 +226,11 @@ class Effect {
         nullifyDefDebuff();
     }
 
+    public void nullifyAllBuff() {
+        nullifyAtkBuff();
+        nullifyDefBuff();
+    }
+
     public void decrementAll() {
         decrementStunDuration();
         decrementTauntDuration();

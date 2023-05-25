@@ -20,7 +20,36 @@ class BaseGameHeroes {
         Hero hero10 = new Hero("Pomi", 375, 40,  18, HeroElement.WATER, HeroRole.SUPPORT);
         Hero hero11 = new Hero("Marie", 425, 60,  16, HeroElement.WATER, HeroRole.FIGHTER);
 
-        // SET HERO LORE, SKILL, DAN DESKRIPSI DIBAWAH INI
+        hero0.setSkill1(BaseGameSkills.getSkill(0));
+
+        hero1.setSkill1(BaseGameSkills.getSkill(1));
+        hero1.setSkill2(BaseGameSkills.getSkill(2));
+
+        hero2.setSkill1(BaseGameSkills.getSkill(3));
+        hero2.setSkill2(BaseGameSkills.getSkill(4));
+
+        hero3.setSkill1(BaseGameSkills.getSkill(5));
+
+        hero4.setSkill1(BaseGameSkills.getSkill(6));
+
+        hero5.setSkill1(BaseGameSkills.getSkill(7));
+
+        hero6.setSkill1(BaseGameSkills.getSkill(8));
+
+        hero7.setSkill1(BaseGameSkills.getSkill(9));
+        hero7.setSkill2(BaseGameSkills.getSkill(10));
+
+        hero8.setSkill1(BaseGameSkills.getSkill(11));
+        hero8.setSkill2(BaseGameSkills.getSkill(12));
+
+        hero9.setSkill1(BaseGameSkills.getSkill(13));
+
+        hero10.setSkill1(BaseGameSkills.getSkill(14));
+        hero10.setSkill2(BaseGameSkills.getSkill(15));
+
+        hero11.setSkill1(BaseGameSkills.getSkill(16));
+
+        // SET HERO LORE DAN DESKRIPSI DIBAWAH INI
 
 
 
@@ -54,9 +83,7 @@ class BaseGameHeroes {
 
     public Hero getHero(String name) {
         for (Hero hero : baseGameHeroes) {
-            if (hero.getName().equals(name)) {
-                return hero;
-            }
+            if (hero.getName().equals(name)) return hero;
         }
         return null;
     }

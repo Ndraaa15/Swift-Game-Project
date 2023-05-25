@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added SkillFunctionality">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added Hero Skills">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" afterDir="false" />
     </list>
@@ -202,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685010435898</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added Hero Skills">
+      <created>1685022089605</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1685022089605</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +244,7 @@
     <MESSAGE value="Added maxMana and mana regen method per turn" />
     <MESSAGE value="Fix Interface" />
     <MESSAGE value="Added SkillFunctionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SkillFunctionality" />
+    <MESSAGE value="Added Hero Skills" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Hero Skills" />
   </component>
 </project>

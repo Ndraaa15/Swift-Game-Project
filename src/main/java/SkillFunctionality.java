@@ -77,7 +77,8 @@ public class SkillFunctionality {
         target.getEffect().nullifyAllDebuff();
     }
 
-    public static void resurrect(Hero hero, Hero target) {
+    public static void resurrect(Hero target) {
+        if (!target.isDefeated()) return;
         target.makeAlive();
         target.setHP((int) (0.5 * target.getMaxHp()));
     }
