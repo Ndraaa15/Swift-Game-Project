@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added maxMana and mana regen method per turn">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Fix Interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684944568800</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix Interface">
+      <created>1685008645852</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685008645852</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +225,7 @@
     <MESSAGE value="Added further Hero skill interface" />
     <MESSAGE value="Bug Fix: fix hero use skill" />
     <MESSAGE value="Added maxMana and mana regen method per turn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added maxMana and mana regen method per turn" />
+    <MESSAGE value="Fix Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Interface" />
   </component>
 </project>

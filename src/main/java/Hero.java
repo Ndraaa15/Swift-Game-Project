@@ -23,7 +23,7 @@ class Hero implements IHero {
     private int def;
     private HeroElement heroElement;
     private HeroRole heroRole;
-    private Effect effect;
+    Effect effect;
 
 
     private Skill skill1;

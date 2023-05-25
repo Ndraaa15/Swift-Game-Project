@@ -35,19 +35,19 @@ public class SkillFunctionality {
     }
 
     public static void heal(Hero hero, Hero target, double multiplier) {
-        int healAmmount = (int) (getAttackAfterEffect(hero) * multiplier);
-        target.setHP(target.getHP() + healAmmount);
+        int healAmount = (int) (getAttackAfterEffect(hero) * multiplier);
+        target.setHP(target.getHP() + healAmount);
         if (target.getHP() > target.getMaxHp()) target.setHP(target.getMaxHp());
     }
 
     public static void manaDrain(Hero hero, Hero target, double multiplier) {
-        int drainAmmount = (int) (getAttackAfterEffect(hero) * multiplier);
-        target.setMana(target.getMana() - drainAmmount);
+        int drainAmount = (int) (getAttackAfterEffect(hero) * multiplier);
+        target.setMana(target.getMana() - drainAmount);
     }
 
     public static void manaRegen(Hero hero, Hero target, double multiplier) {
-        int regenAmmount = (int) (getAttackAfterEffect(hero) * multiplier);
-        target.setMana(target.getMana() + regenAmmount);
+        int regenAmount = (int) (getAttackAfterEffect(hero) * multiplier);
+        target.setMana(target.getMana() + regenAmount);
     }
 
     public static void taunt(Hero hero, Hero target, int duration) {
@@ -78,12 +78,14 @@ public class SkillFunctionality {
     }
 
     public static void atkDebuff(Hero target, int duration, double debuffMultiplier) {
-        if (target.getEffect().hasAtkBuff() && target.getEffect().getAtkBuffModifier() > debuffMultiplier) return;
-        target.getEffect().setAtkBuffDuration(duration);
-        target.getEffect().setAtkBuffModifier(debuffMultiplier);
+        if (target.getEffect().hasAtkDebuff() && target.getEffect().getAtkDebuffModifier() > debuffMultiplier) return;
+        target.getEffect().setAtkDebuffDuration(duration);
+        target.getEffect().setAtkDebuffModifier(debuffMultiplier);
     }
 
     public static void defDebuff(Hero target, int duration, double debuffMultiplier) {
-
+        if (target.getEffect().hasDefDebuff() && target.getEffect().getDefDebuffModifier() > debuffMultiplier) return;
+        target.getEffect().setDefDebuffDuration(duration);
+        target.getEffect().setDefDebuffModifier(debuffMultiplier);
     }
 }
