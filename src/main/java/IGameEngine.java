@@ -3,8 +3,8 @@
 public interface IGameEngine {
 
     // note: pastikan pada implementasi dapat dibedakan antara player party dan CPU party
-    public IParty createPlayerParty(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3);
-    public IParty createCPUParty(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3);
+    public IParty createPlayerParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3);
+    public IParty createCPUParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3);
 
     // menyimpan game dengan cara melakukan serialisasi state semua objek ke JSON yang disimpan dalam sebuah file
     public void saveGame();

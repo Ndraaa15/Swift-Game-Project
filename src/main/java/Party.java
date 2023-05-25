@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Party implements IParty{
     String partyName;
-    ArrayList<ICharacter> characters = new ArrayList<>();
+    ArrayList<Hero> characters = new ArrayList<>();
     boolean isTurn;
 
     public boolean isTurn() {
@@ -19,18 +19,18 @@ public class Party implements IParty{
     }
 
     @Override
-    public ArrayList<ICharacter> getCharacters() {
+    public ArrayList<Hero> getCharacters() {
         return characters;
     }
 
-    public Party(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3){
+    public Party(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3){
         this.partyName = partyName;
         this.characters.add(ICharacter1);
         this.characters.add(ICharacter2);
         this.characters.add(ICharacter3);
     }
     @Override
-    public ICharacter nextPlayer() {
+    public Hero nextPlayer() {
         return null;
     }
 

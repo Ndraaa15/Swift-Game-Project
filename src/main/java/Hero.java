@@ -14,7 +14,7 @@ enum HeroRole {
     MAGE,
 }
 
-class Hero implements ICharacter{
+class Hero implements IHero {
     private String name;
     private int hp;
     private int maxHp;
@@ -73,7 +73,7 @@ class Hero implements ICharacter{
     }
 
     @Override
-    public void normalAttack(ICharacter opponent) {
+    public void normalAttack(IHero opponent) {
         int totalAtk = this.atk - opponent.getDefense();
         if (totalAtk <= 0) totalAtk = 1;
         opponent.setHP(opponent.getHP() - totalAtk);
@@ -82,7 +82,7 @@ class Hero implements ICharacter{
     }
 
     @Override
-    public void specialAttack(ICharacter opponent) {
+    public void specialAttack(IHero opponent) {
         HeroElement attackerElement = this.getHeroElement();
         HeroElement opponentElement = opponent.getHeroElement();
 

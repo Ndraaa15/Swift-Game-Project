@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public interface IParty {
-    public ICharacter nextPlayer();
+    public Hero nextPlayer();
 
     public boolean hasNextPlayer();
 
@@ -9,7 +9,7 @@ public interface IParty {
     public boolean isDefeated();
 
     String getPartyName();
-    ArrayList<ICharacter> getCharacters();
+    ArrayList<Hero> getCharacters();
     boolean isTurn();
     void setTurn(boolean turn);
 }

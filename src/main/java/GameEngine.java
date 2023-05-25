@@ -19,13 +19,13 @@ public class GameEngine implements IGameEngine{
     }
 
     @Override
-    public IParty createPlayerParty(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3) {
+    public IParty createPlayerParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3) {
 
         return new Party(partyName, ICharacter1, ICharacter2, ICharacter3);
     }
 
     @Override
-    public IParty createCPUParty(String partyName, ICharacter ICharacter1, ICharacter ICharacter2, ICharacter ICharacter3) {
+    public IParty createCPUParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3) {
         return new Party(partyName, ICharacter1, ICharacter2, ICharacter3);
     }
 
@@ -194,11 +194,13 @@ public class GameEngine implements IGameEngine{
     }
 
     private void cpuTurn(){
-        ArrayList<ICharacter> listChars = playerParty.getCharacters();
+        ArrayList<Hero> listChars = playerParty.getCharacters();
         System.out.println("Choose your hero : ");
         String select = sc.nextLine();
 
-        ICharacter hero = listChars.get(Integer.parseInt(select) - 1);
+        IHero hero = listChars.get(Integer.parseInt(select) - 1);
+
+
 
 
 

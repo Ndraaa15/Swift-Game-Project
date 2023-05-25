@@ -1,11 +1,11 @@
-public interface ICharacter {
+public interface IHero {
     // dapat berakibat berkurangnya HP lawan
     // damage yang dihasilkan normalAttack tidak bergantung pada tipe karakter
-    public void normalAttack(ICharacter opponent);
+    public void normalAttack(IHero opponent);
 
     // dapat berakibat berkurangnya HP lawan
     // damage yang dihasilkan specialAttack bergantung pada tipe karakter
-    public void specialAttack(ICharacter opponent);
+    public void specialAttack(IHero opponent);
 
     // untuk mengetahui apakah player sudah dikalahkan (HP <= 0) atau masih bisa digunakan
     public boolean isDefeated();
