@@ -1,0 +1,110 @@
+{
+  "partyName": "COM",
+  "characters": [
+    {
+      "name": "Fara",
+      "hp": 380,
+      "maxHp": 380,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 35,
+      "def": 20,
+      "heroElement": "GRASS",
+      "heroRole": "SUPPORT",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "name": "Life Reblossom",
+        "manaCost": 85,
+        "target": "DEAD_ALLY",
+        "description": "Resurrect an ally"
+      },
+      "skill2": {
+        "name": "Nature Cleansing",
+        "manaCost": 20,
+        "target": "SINGLE_ALLY",
+        "description": "Purify all debuff of an ally"
+      },
+      "heroLore": "Tabib kerajaan Gulsior dari aliran dewa ismich yang menerima rahmat untuk memberkati seluruh umatnya.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Atla",
+      "hp": 375,
+      "maxHp": 375,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 70,
+      "def": 11,
+      "heroElement": "WATER",
+      "heroRole": "ARCHER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "multiplier": 0.25,
+        "name": "Water Cannon",
+        "manaCost": 30,
+        "target": "SINGLE_ENEMY",
+        "description": "Deal 25% max Hp damage to an enemy"
+      },
+      "heroLore": "Gadis setengah duyung pewaris panah legendaris Serpent, sang penakluk lautan asam yang mendiami pesisir Aquata dalam kegelapan yang fana.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Elisa",
+      "hp": 360,
+      "maxHp": 360,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 60,
+      "def": 10,
+      "heroElement": "GRASS",
+      "heroRole": "MAGE",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "multiplier": 0.5,
+        "name": "Draining Vine",
+        "manaCost": 85,
+        "target": "SINGLE_ENEMY",
+        "description": "Drain 50% max mana and HP to an enemy"
+      },
+      "heroLore": "Salah satu buku legendaris yang selamat dari tragedi perpustakaan alexandria ditemukan oleh elisa si gadis kecil. Eksistensi Bio-Fisika menyerap seluruh orang yang memiliki niat buruk.",
+      "isDefeated": false,
+      "isTurn": false
+    }
+  ],
+  "isTurn": false
+}

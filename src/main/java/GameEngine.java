@@ -1,6 +1,11 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 
 public class GameEngine implements IGameEngine{
     Random random = new Random();
@@ -31,6 +36,27 @@ public class GameEngine implements IGameEngine{
 
     @Override
     public void saveGame() {
+        String path1 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\playerDB.json";
+        String path2 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\comDB.json";
+       Gson gson = new GsonBuilder()
+               .setPrettyPrinting()
+               .create();
+       try (FileWriter writer1 = new FileWriter(path1)){
+           gson.toJson(this.playerParty, writer1);
+
+       }catch (IOException e){
+           throw new RuntimeException(e);
+       }
+
+       try ( FileWriter writer2 = new FileWriter(path2)){
+           gson.toJson(this.cpuParty, writer2);
+
+       }catch (IOException e){
+           throw new RuntimeException(e);
+       }
+
+       display.thankYou();
+       _exitGame();
 
     }
 
@@ -365,19 +391,17 @@ public class GameEngine implements IGameEngine{
             if (select.equals("x")){
                 display.menuGameWhenPlay();
                 select = sc.nextLine();
-                if (select.equals("a")){
+                if (select.equals("b")){
                     int result = _exitGameWhenPlay();
                     if (result == 1){
                         saveGame();
                     } else if (result == 2) {
                         _exitGame();
                     } else {
-                        System.out.print("Choose your hero  : ");
-                        select = sc.nextLine();
+                        continue;
                     }
                 }else {
-                    System.out.print("Choose your hero  : ");
-                    select = sc.nextLine();
+                    continue;
                 }
             }
 
