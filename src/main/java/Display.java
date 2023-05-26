@@ -9,8 +9,8 @@ public class Display {
         //Player
         Hero h1 = playerParty.getCharacters().get(0);Hero h2 = playerParty.getCharacters().get(1);Hero h3 = playerParty.getCharacters().get(2);
         //Hero 1
-        String hPla1 = h1.getName();
-        int hPla1l = hPla1.length() + 8; int hPla1r = 23 - hPla1l;
+        String hPla1 = h1.getName() + " | " + h1.getMana();
+        int hPla1l = hPla1.length() + 4; int hPla1r = 23 - hPla1l;
 
         String atrH1 = h1.getHeroElement().toString() + " | " +h1.getHeroRole().toString();
         int atrH1l = atrH1.length() + 4; int atrH1r = 23 - atrH1l;
@@ -26,8 +26,8 @@ public class Display {
 
 
         //Hero 2
-        String hPla2 = h2.getName();
-        int hPla2l = hPla1.length() + 8; int hPla2r = 23 - hPla1l;
+        String hPla2 = h2.getName() + " | " + h2.getMana();
+        int hPla2l = hPla1.length() + 4 ; int hPla2r = 23 - hPla1l;
 
         String atrH2 = h2.getHeroElement().toString() + " | " +h2.getHeroRole().toString();
         int atrH2l = atrH2.length() + 4; int atrH2r = 23 - atrH2l;
@@ -43,8 +43,8 @@ public class Display {
 
 
         //Hero 3
-        String hPla3 = h3.getName();
-        int hPla3l = hPla3.length() + 8; int hPla3r = 23 - hPla3l;
+        String hPla3 = h3.getName() + " | " + h3.getMana();
+        int hPla3l = hPla3.length() + 4; int hPla3r = 23 - hPla3l;
 
         String atrH3 = h3.getHeroElement().toString() + " | " +h3.getHeroRole().toString();
         int atrH3l = atrH3.length() + 4; int atrH3r = 23 - atrH3l;
@@ -62,8 +62,8 @@ public class Display {
         //Enemy
         Hero e1 = cpuParty.getCharacters().get(0);Hero e2 = cpuParty.getCharacters().get(1);Hero e3 = cpuParty.getCharacters().get(2);
         //Enemy 1
-        String hE1 = e1.getName();
-        int hE1l = hE1.length() + 8; int hE1r = 23 - hE1l;
+        String hE1 = e1.getName() + " | " + e1.getMana();
+        int hE1l = hE1.length() + 4; int hE1r = 23 - hE1l;
 
         String atrE1 = e1.getHeroElement().toString() + " | " +e1.getHeroRole().toString();
         int atrE1l = atrE1.length() + 4; int atrE1r = 23 - atrE1l;
@@ -79,8 +79,8 @@ public class Display {
 
 
         //Enemy 2
-        String hE2 = e2.getName();
-        int hE2l = hE2.length() + 8; int hE2r = 23 - hE2l;
+        String hE2 = e2.getName() +  " | " + e2.getMana();
+        int hE2l = hE2.length() + 4; int hE2r = 23 - hE2l;
 
         String atrE2 = e2.getHeroElement().toString() + " | " +e2.getHeroRole().toString();
         int atrE2l = atrE2.length() + 4; int atrE2r = 23 - atrE2l;
@@ -97,8 +97,8 @@ public class Display {
 
 
         //Enemy 3
-        String hE3 = e3.getName();
-        int hE3l = hE3.length() + 8; int hE3r = 23 - hE3l;
+        String hE3 = e3.getName() + " | " + e3.getMana();
+        int hE3l = hE3.length() + 4; int hE3r = 23 - hE3l;
 
         String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
         int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
