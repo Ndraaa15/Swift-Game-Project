@@ -1,0 +1,805 @@
+Index: src/main/java/BaseGameHeroes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\n\r\nclass BaseGameHeroes {\r\n    private ArrayList<Hero> baseGameHeroes = new ArrayList<>();\r\n    private ArrayList<Boolean> heroIsUsed = new ArrayList<>();\r\n\r\n    public BaseGameHeroes() {\r\n        Hero hero0 = new Hero(\"Murby\", 400, 55,  16, HeroElement.FIRE, HeroRole.FIGHTER);\r\n        Hero hero1 = new Hero(\"Helda\", 490, 35,  24, HeroElement.FIRE, HeroRole.TANK);\r\n        Hero hero2 = new Hero(\"Veld\", 300, 50,  10, HeroElement.FIRE, HeroRole.MAGE);\r\n        Hero hero3 = new Hero(\"Deus\", 340, 70,  10, HeroElement.FIRE, HeroRole.ARCHER);\r\n\r\n        Hero hero4 = new Hero(\"Grove\", 480, 30,  27, HeroElement.GRASS, HeroRole.TANK);\r\n        Hero hero5 = new Hero(\"Elisa\", 360, 60,  10, HeroElement.GRASS, HeroRole.MAGE);\r\n        Hero hero6 = new Hero(\"Lily\", 380, 70,  12, HeroElement.GRASS, HeroRole.ARCHER);\r\n        Hero hero7 = new Hero(\"Fara\", 380, 35,  20, HeroElement.GRASS, HeroRole.SUPPORT);\r\n\r\n        Hero hero8 = new Hero(\"Theseus\", 350, 60,  11, HeroElement.WATER, HeroRole.MAGE);\r\n        Hero hero9 = new Hero(\"Atla\", 375, 70,  11, HeroElement.WATER, HeroRole.ARCHER);\r\n        Hero hero10 = new Hero(\"Marie\", 375, 40,  18, HeroElement.WATER, HeroRole.SUPPORT);\r\n        Hero hero11 = new Hero(\"Dillo\", 425, 60,  16, HeroElement.WATER, HeroRole.FIGHTER);\r\n\r\n        hero0.setSkill1(BaseGameSkills.getSkill(0));\r\n\r\n        hero1.setSkill1(BaseGameSkills.getSkill(1));\r\n        hero1.setSkill2(BaseGameSkills.getSkill(2));\r\n\r\n        hero2.setSkill1(BaseGameSkills.getSkill(3));\r\n        hero2.setSkill2(BaseGameSkills.getSkill(4));\r\n\r\n        hero3.setSkill1(BaseGameSkills.getSkill(5));\r\n\r\n        hero4.setSkill1(BaseGameSkills.getSkill(6));\r\n\r\n        hero5.setSkill1(BaseGameSkills.getSkill(7));\r\n\r\n        hero6.setSkill1(BaseGameSkills.getSkill(8));\r\n\r\n        hero7.setSkill1(BaseGameSkills.getSkill(9));\r\n        hero7.setSkill2(BaseGameSkills.getSkill(10));\r\n\r\n        hero8.setSkill1(BaseGameSkills.getSkill(11));\r\n        hero8.setSkill2(BaseGameSkills.getSkill(12));\r\n\r\n        hero9.setSkill1(BaseGameSkills.getSkill(13));\r\n\r\n        hero10.setSkill1(BaseGameSkills.getSkill(14));\r\n        hero10.setSkill2(BaseGameSkills.getSkill(15));\r\n\r\n        hero11.setSkill1(BaseGameSkills.getSkill(16));\r\n\r\n        // SET HERO LORE DAN DESKRIPSI DIBAWAH INI\r\n\r\n\r\n\r\n\r\n\r\n        //\r\n\r\n        add(hero0);\r\n        add(hero1);\r\n        add(hero2);\r\n        add(hero3);\r\n\r\n        add(hero4);\r\n        add(hero5);\r\n        add(hero6);\r\n        add(hero7);\r\n\r\n        add(hero8);\r\n        add(hero9);\r\n        add(hero10);\r\n        add(hero11);\r\n    }\r\n\r\n    private void add(Hero hero) {\r\n        baseGameHeroes.add(hero);\r\n        heroIsUsed.add(false);\r\n    }\r\n    public ArrayList<Hero> getBaseGameHeroes() {\r\n        return baseGameHeroes;\r\n    }\r\n\r\n    public Hero getHero(String name) {\r\n        for (Hero hero : baseGameHeroes) {\r\n            if (hero.getName().equals(name)) return hero;\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public Hero getHero(int index) {\r\n        if (index > baseGameHeroes.size() || index < 0) return null;\r\n        return baseGameHeroes.get(index);\r\n    }\r\n\r\n    public boolean isUsed(String name) {\r\n        for (int i = 0; i < baseGameHeroes.size(); i++) {\r\n            if (baseGameHeroes.get(i).getName().equals(name)) {\r\n                return heroIsUsed.get(i);\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean isUsed(int index) {\r\n        if (index > baseGameHeroes.size() || index < 0) return false;\r\n        return heroIsUsed.get(index);\r\n    }\r\n\r\n    public void useHero(String name) {\r\n        for (int i = 0; i < baseGameHeroes.size(); i++) {\r\n            if (baseGameHeroes.get(i).getName().equals(name)) {\r\n                heroIsUsed.set(i, true);\r\n                return;\r\n            }\r\n        }\r\n    }\r\n\r\n    public void useHero(int index) {\r\n        if (index > baseGameHeroes.size() || index < 0) return;\r\n        heroIsUsed.set(index, true);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/BaseGameHeroes.java b/src/main/java/BaseGameHeroes.java
+--- a/src/main/java/BaseGameHeroes.java	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/src/main/java/BaseGameHeroes.java	(date 1685073257066)
+@@ -121,4 +121,4 @@
+         heroIsUsed.set(index, true);
+     }
+ 
+-}
++}
+\ No newline at end of file
+Index: src/main/java/BaseGameSkills.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\n\r\nclass BaseGameSkills {\r\n\r\n    private static ArrayList<Skill> baseGameSkills = new ArrayList<>();\r\n    public BaseGameSkills() {\r\n        // MURBY\r\n        Skill skill0 = new FireballBarage();\r\n\r\n        // HELLDA\r\n        Skill skill1 = new AshenGrowl();\r\n        Skill skill2 = new FlameArmor();\r\n\r\n        // VELDORA\r\n        Skill skill3 = new ArmorBurn();\r\n        Skill skill4 = new FireStaff();\r\n\r\n        //DEUS\r\n        Skill skill5 = new InfernalShot();\r\n\r\n        // Grove\r\n        Skill skill6 = new GrassrootGuardian();\r\n\r\n        // ELLISA\r\n        Skill skill7 = new DrainingVine();\r\n\r\n        // LILY\r\n        Skill skill8 = new ThornArrow();\r\n\r\n        // FARANIST\r\n        Skill skill9 = new LifeReblossom();\r\n        Skill skill10 = new NatureCleansing();\r\n\r\n\r\n        // THESEUS\r\n        Skill skill11 = new NeedleRain();\r\n        Skill skill12 = new FrostArmor();\r\n\r\n        // ATLANNA\r\n        Skill skill13 = new WaterCannon();\r\n\r\n        // MARIELLE\r\n        Skill skill14 = new HealingWater();\r\n        Skill skill15 = new Blizzard();\r\n\r\n        //DILLON\r\n        Skill skill16 = new WaterSlash();\r\n\r\n\r\n        // ADD SKILL TO ARRAYLIST\r\n        baseGameSkills.add(skill0);\r\n        baseGameSkills.add(skill1);\r\n        baseGameSkills.add(skill2);\r\n        baseGameSkills.add(skill3);\r\n        baseGameSkills.add(skill4);\r\n        baseGameSkills.add(skill5);\r\n        baseGameSkills.add(skill6);\r\n        baseGameSkills.add(skill7);\r\n        baseGameSkills.add(skill8);\r\n        baseGameSkills.add(skill9);\r\n        baseGameSkills.add(skill10);\r\n        baseGameSkills.add(skill11);\r\n        baseGameSkills.add(skill12);\r\n        baseGameSkills.add(skill13);\r\n        baseGameSkills.add(skill14);\r\n        baseGameSkills.add(skill15);\r\n        baseGameSkills.add(skill16);\r\n    }\r\n\r\n    public static ArrayList<Skill> getBaseGameSkills() {\r\n        return baseGameSkills;\r\n    }\r\n\r\n    public static Skill getSkill(String name) {\r\n        for (Skill skill : baseGameSkills) {\r\n            if (skill.getName().equals(name)) return skill;\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public static Skill getSkill(int index) {\r\n        if (index > baseGameSkills.size() || index < 0) return null;\r\n        return baseGameSkills.get(index);\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/BaseGameSkills.java b/src/main/java/BaseGameSkills.java
+--- a/src/main/java/BaseGameSkills.java	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/src/main/java/BaseGameSkills.java	(date 1685073045590)
+@@ -3,7 +3,7 @@
+ class BaseGameSkills {
+ 
+     private static ArrayList<Skill> baseGameSkills = new ArrayList<>();
+-    public BaseGameSkills() {
++    static {
+         // MURBY
+         Skill skill0 = new FireballBarage();
+ 
+@@ -83,5 +83,3 @@
+         return baseGameSkills.get(index);
+     }
+ }
+-
+-
+Index: src/main/java/Display.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n\r\npublic class Display {\r\n    void gameField (IParty playerParty, IParty cpuParty){\r\n        String team = playerParty.getPartyName() + \"'s Team\";\r\n        int x = team.length() + 28;\r\n        int y = 68 - x + 1;\r\n\r\n        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();\r\n        int hl1 = 7 + h1.length()+1;\r\n        int hr1 = 22 - hl1 + 1;\r\n\r\n        int hl2 = 7 + h2.length();\r\n        int hr2 = 22 - hl2 + 1;\r\n\r\n        int hl3 = 7 + h3.length();\r\n        int hr3 = 22 - hl3 + 1;\r\n\r\n\r\n        int hp1 = playerParty.getCharacters().get(0).getHP();int hp2 = playerParty.getCharacters().get(1).getHP();int hp3 = playerParty.getCharacters().get(2).getHP();\r\n        int hpl1 = 2 + String.valueOf(hp1).length();\r\n        int hpr1 = 6 - hpl1 + 1;\r\n\r\n        int hpl2 = 2 + String.valueOf(hp2).length();\r\n        int hpr2 = 6 - hpl2 + 1;\r\n\r\n        int hpl3 = 2 + String.valueOf(hp3).length();\r\n        int hpr3 = 6 - hpl2 + 1;\r\n\r\n\r\n        int def1 = playerParty.getCharacters().get(0).getHP();int def2 = playerParty.getCharacters().get(1).getHP();int def3 = playerParty.getCharacters().get(2).getHP();\r\n\r\n        int defl1 = 2 + String.valueOf(def1).length();\r\n        int defr1 = 6 - defl1 + 1;\r\n\r\n        int defl2 = 2 + String.valueOf(def2).length();\r\n        int defr2 = 6 - defl2 + 1;\r\n\r\n        int defl3 = 2 + String.valueOf(def3).length();\r\n        int defr3 = 6 - defl3 + 1;\r\n\r\n\r\n        int atk1 = playerParty.getCharacters().get(0).getHP();int atk2 = playerParty.getCharacters().get(1).getHP();int atk3 = playerParty.getCharacters().get(2).getHP();\r\n\r\n        int atkl1 = 2 + String.valueOf(atk1).length();\r\n        int atkr1 = 6 - atkl1 + 1;\r\n\r\n        int atkl2 = 2 + String.valueOf(atk2).length();\r\n        int atkr2 = 6 - atkl2 + 1;\r\n\r\n        int atkl3 = 2 + String.valueOf(atk3).length();\r\n        int atkr3 = 6 - atkl3 + 1;\r\n\r\n\r\n\r\n        System.out.println();\r\n        System.out.println(\"--------------------------------------------------------------------\");\r\n        System.out.println(\"|                      |    BRAWL HEROES     |                 [ X ]|\");\r\n        System.out.println(\"|===================================================================|\");\r\n        System.out.println(\"|                      |                     |                      |\");\r\n        System.out.println(\"|                      |                     |                      |\");\r\n        System.out.println(\"|----------------------|                     |----------------------|\");\r\n        System.out.println(\"|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |\");\r\n        System.out.println(\"|----------------------|                     |----------------------| \");\r\n        System.out.println(\"|      |       |       |                     |      |       |       |\");\r\n        System.out.println(\"|=======================                     =======================|\");\r\n        System.out.println(\"|                      |  ██    ██  ██████   |                      |\");\r\n        System.out.println(\"|                      |  ██    ██ ██        |                      |\");\r\n        System.out.println(\"|----------------------|   ██  ██   █████    |----------------------|\");\r\n        System.out.println(\"|  HP  |  DEF  |  ATK  |    ████        ██   |  HP  |  DEF  |  ATK  |\");\r\n        System.out.println(\"|----------------------|     ██    ██████    |----------------------|\");\r\n        System.out.println(\"|      |       |       |                     |      |       |       | \");\r\n        System.out.println(\"|=======================                     =======================|\");\r\n        System.out.println(\"|                      |                     |                      |\");\r\n        System.out.println(\"|                      |                     |                      |\");\r\n        System.out.println(\"|----------------------|                     |----------------------|\");\r\n        System.out.println(\"|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |\");\r\n        System.out.println(\"|----------------------|                     |----------------------| \");\r\n        System.out.println(\"|      |       |       |                     |      |       |       |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n    }\r\n\r\n    void winnerBanner (IParty winnerTeam){\r\n        String team = winnerTeam.getPartyName() + \"'s Team\";\r\n        int x = team.length() + 28;\r\n        int y = 68 - x + 1;\r\n\r\n        String h1 = winnerTeam.getCharacters().get(0).getName();String h2 = winnerTeam.getCharacters().get(1).getName();String h3 = winnerTeam.getCharacters().get(2).getName();\r\n        int hl1 = 7 + h1.length()+1;\r\n        int hr1 = 22 - hl1 + 1;\r\n\r\n        int hl2 = 7 + h2.length();\r\n        int hr2 = 22 - hl2 + 1;\r\n\r\n        int hl3 = 7 + h3.length();\r\n        int hr3 = 22 - hl3 + 1;\r\n\r\n\r\n        int hp1 = winnerTeam.getCharacters().get(0).getHP();int hp2 = winnerTeam.getCharacters().get(1).getHP();int hp3 = winnerTeam.getCharacters().get(2).getHP();\r\n        int hpl1 = 2 + String.valueOf(hp1).length();\r\n        int hpr1 = 6 - hpl1 + 1;\r\n\r\n        int hpl2 = 2 + String.valueOf(hp2).length();\r\n        int hpr2 = 6 - hpl2 + 1;\r\n\r\n        int hpl3 = 2 + String.valueOf(hp3).length();\r\n        int hpr3 = 6 - hpl2 + 1;\r\n\r\n\r\n        int def1 = winnerTeam.getCharacters().get(0).getHP();int def2 = winnerTeam.getCharacters().get(1).getHP();int def3 = winnerTeam.getCharacters().get(2).getHP();\r\n\r\n        int defl1 = 2 + String.valueOf(def1).length();\r\n        int defr1 = 6 - defl1 + 1;\r\n\r\n        int defl2 = 2 + String.valueOf(def2).length();\r\n        int defr2 = 6 - defl2 + 1;\r\n\r\n        int defl3 = 2 + String.valueOf(def3).length();\r\n        int defr3 = 6 - defl3 + 1;\r\n\r\n\r\n        int atk1 = winnerTeam.getCharacters().get(0).getHP();int atk2 = winnerTeam.getCharacters().get(1).getHP();int atk3 = winnerTeam.getCharacters().get(2).getHP();\r\n\r\n        int atkl1 = 2 + String.valueOf(atk1).length();\r\n        int atkr1 = 6 - atkl1 + 1;\r\n\r\n        int atkl2 = 2 + String.valueOf(atk2).length();\r\n        int atkr2 = 6 - atkl2 + 1;\r\n\r\n        int atkl3 = 2 + String.valueOf(atk3).length();\r\n        int atkr3 = 6 - atkl3 + 1;\r\n\r\n        System.out.println();\r\n        System.out.println(\"          ██        ██ ██ ███   ██ ███   ██ ███████ ██████           \");\r\n        System.out.println(\"          ██   ██   ██ ██ ████  ██ ████  ██ ██      ██   ██          \");\r\n        System.out.println(\"           ██ ████ ██  ██ ██ ██ ██ ██ ██ ██ █████   ██████           \");\r\n        System.out.println(\"           ████  ████  ██ ██  ████ ██  ████ ██      ██   ██          \");\r\n        System.out.println(\"            ██    ██   ██ ██   ███ ██   ███ ███████ ██   ██          \");\r\n        System.out.println(\"                                                                     \");\r\n        System.out.println(\"----------------------------------------------------------------------\");\r\n        System.out.printf(\"|%\"+ x +\"s\" +\"%\" + y +\"s\\n\"  , team, \"|\");\r\n        System.out.println(\"|====================================================================|\");\r\n        System.out.printf(\"|%\" + hl1 + \"s%\" + hr1 + \"s%\" + hl2 + \"s%\" + hr2 + \"s%\" + hl3 + \"s%\" + hr3 + \"s\\n\", h1, \"|\", h2, \"|\", h3, \"|\");\r\n        System.out.println(\"|                      |                      |                      |\");\r\n        System.out.println(\"|----------------------|----------------------|----------------------|\");\r\n        System.out.println(\"|  HP  |  DEF  |  ATK  |  HP  |  DEF  |  ATK  |  HP  |  DEF  |  ATK  |\");\r\n        System.out.println(\"|----------------------|----------------------|----------------------|\");\r\n        System.out.printf(\"|%\" + hpl1 + \"s%\" + hpr1 + \"s%\" + defl1 + \"s %\" + defr1 + \"s%\" + atkl1 + \"s %\" + atkr1 + \"s%\" + hpl2 + \"s%\" + hpr2 + \"s%\" + defl2 + \"s %\" + defr2 + \"s%\" + atkl2 + \"s %\" + atkr2 + \"s%\" + hpl3 + \"s%\" + hpr3 + \"s%\" + defl3 + \"s %\" + defr3 + \"s%\" + atkl3 + \"s %\" + atkr3 + \"s\\n\", hp1, \"|\", def1, \"|\", atk1, \"|\", hp2, \"|\", def2, \"|\", atk2, \"|\", hp3, \"|\", def3, \"|\", atk3, \"|\");\r\n        System.out.println(\"|====================================================================|\");\r\n    }\r\n\r\n\r\n\r\n    void menuGame (){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                                Menu                               |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           [a] New Game                            |\");\r\n        System.out.println(\"|                           [b] Load Game                           |\");\r\n        System.out.println(\"|                           [c] Exit Game                           |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                         Select (a | b | c)                        |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void newGameMenu (){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                              Options                              |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           [a] Create Party                        |\");\r\n        System.out.println(\"|                           [b] Back                                |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                         Select (a | b | c)                        |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void readyGameDisplay (IParty playerParty) {\r\n        String team = playerParty.getPartyName() + \"'s Team\";\r\n        int x = team.length() + 28;\r\n        int y = 68 - x + 1;\r\n\r\n        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();\r\n        int hl1 = 7 + h1.length()+1;\r\n        int hr1 = 22 - hl1 + 1;\r\n\r\n        int hl2 = 7 + h2.length();\r\n        int hr2 = 22 - hl2 + 1;\r\n\r\n        int hl3 = 7 + h3.length();\r\n        int hr3 = 22 - hl3 + 1;\r\n\r\n\r\n        int hp1 = playerParty.getCharacters().get(0).getHP();int hp2 = playerParty.getCharacters().get(1).getHP();int hp3 = playerParty.getCharacters().get(2).getHP();\r\n        int hpl1 = 2 + String.valueOf(hp1).length();\r\n        int hpr1 = 6 - hpl1 + 1;\r\n\r\n        int hpl2 = 2 + String.valueOf(hp2).length();\r\n        int hpr2 = 6 - hpl2 + 1;\r\n\r\n        int hpl3 = 2 + String.valueOf(hp3).length();\r\n        int hpr3 = 6 - hpl2 + 1;\r\n\r\n\r\n        int def1 = playerParty.getCharacters().get(0).getHP();int def2 = playerParty.getCharacters().get(1).getHP();int def3 = playerParty.getCharacters().get(2).getHP();\r\n\r\n        int defl1 = 2 + String.valueOf(def1).length();\r\n        int defr1 = 6 - defl1 + 1;\r\n\r\n        int defl2 = 2 + String.valueOf(def2).length();\r\n        int defr2 = 6 - defl2 + 1;\r\n\r\n        int defl3 = 2 + String.valueOf(def3).length();\r\n        int defr3 = 6 - defl3 + 1;\r\n\r\n\r\n        int atk1 = playerParty.getCharacters().get(0).getHP();int atk2 = playerParty.getCharacters().get(1).getHP();int atk3 = playerParty.getCharacters().get(2).getHP();\r\n\r\n        int atkl1 = 2 + String.valueOf(atk1).length();\r\n        int atkr1 = 6 - atkl1 + 1;\r\n\r\n        int atkl2 = 2 + String.valueOf(atk2).length();\r\n        int atkr2 = 6 - atkl2 + 1;\r\n\r\n        int atkl3 = 2 + String.valueOf(atk3).length();\r\n        int atkr3 = 6 - atkl3 + 1;\r\n\r\n\r\n        System.out.println();\r\n        System.out.println();\r\n        System.out.println(\"----------------------------------------------------------------------\");\r\n        System.out.printf(\"|%\"+ x +\"s\" +\"%\" + y +\"s\\n\"  , team, \"|\");\r\n        System.out.println(\"|====================================================================|\");\r\n        System.out.printf(\"|%\" + hl1 + \"s%\" + hr1 + \"s%\" + hl2 + \"s%\" + hr2 + \"s%\" + hl3 + \"s%\" + hr3 + \"s\\n\", h1, \"|\", h2, \"|\", h3, \"|\");\r\n        System.out.println(\"|                      |                      |                      |\");\r\n        System.out.println(\"|----------------------|----------------------|----------------------|\");\r\n        System.out.println(\"|  HP  |  DEF  |  ATK  |  HP  |  DEF  |  ATK  |  HP  |  DEF  |  ATK  |\");\r\n        System.out.println(\"|----------------------|----------------------|----------------------|\");\r\n        System.out.printf(\"|%\" + hpl1 + \"s%\" + hpr1 + \"s%\" + defl1 + \"s %\" + defr1 + \"s%\" + atkl1 + \"s %\" + atkr1 + \"s%\" + hpl2 + \"s%\" + hpr2 + \"s%\" + defl2 + \"s %\" + defr2 + \"s%\" + atkl2 + \"s %\" + atkr2 + \"s%\" + hpl3 + \"s%\" + hpr3 + \"s%\" + defl3 + \"s %\" + defr3 + \"s%\" + atkl3 + \"s %\" + atkr3 + \"s\\n\", hp1, \"|\", def1, \"|\", atk1, \"|\", hp2, \"|\", def2, \"|\", atk2, \"|\", hp3, \"|\", def3, \"|\", atk3, \"|\");\r\n        System.out.println(\"|====================================================================|\");\r\n        System.out.println(\"|                         Start play (y/n) ?                         |\");\r\n        System.out.println(\"----------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void menuGameWhenPlay (){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                              Options                              | \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           [a] Continue                            |\");\r\n        System.out.println(\"|                           [b] Quit Game                           |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           Select (a | b)                          |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void validateQuitGame (){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                     Are you sure to quit game ?                   |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        [a] Yes (save game)                        |\");\r\n        System.out.println(\"|                        [b] Yes (not save)                         |\");\r\n        System.out.println(\"|                        [c] No                                     |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                           Swift Games                             |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        Select (a | b | c)                         |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void listHero (){\r\n        System.out.println();\r\n        System.out.println(\"                       !Select Your 3 Heroes!                       \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                            LIST HERO                              |\");\r\n        System.out.println(\"|===================================================================|\");\r\n        System.out.println(\"|         Fire         |        Grass        |        Water         |\");\r\n        System.out.println(\"|===================================================================|\");\r\n        System.out.println(\"| [1] Murby  | Fighter | [5] Greysn| Tank    | [9]  Theseus| Tank   |\");\r\n        System.out.println(\"| [2] Helda  | Tank    | [6] Elisa | Mage    | [10] Atla   | Archer |\");\r\n        System.out.println(\"| [3] Veldora| Mage    | [7] Lily  | Archer  | [11] Pomi   | Support|\");\r\n        System.out.println(\"| [4] Deus   | Archer  | [8] Fara  | Support | [12] Marie  | Fighter|\");\r\n        System.out.println(\"|                      |                     |                      |\");\r\n        System.out.println(\"|===================================================================|\");\r\n        System.out.println(\"| [c] Create Hero                                                   |\");\r\n        System.out.println(\"|===================================================================|\");\r\n    }\r\n\r\n    void createTeam(){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                   Are you ready for the challenge ?               |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Enter your name party : \");\r\n    }\r\n\r\n    void brawlHeroes (){\r\n        System.out.println(\"░█▀▀█ ░█▀▀█ ─█▀▀█ ░█──░█ ░█─── 　 ░█─░█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀█ ░█▀▀▀ ░█▀▀▀█ \");\r\n        System.out.println(\"░█▀▀▄ ░█▄▄▀ ░█▄▄█ ░█░█░█ ░█─── 　 ░█▀▀█ ░█▀▀▀ ░█▄▄▀ ░█──░█ ░█▀▀▀ ─▀▀▀▄▄ \");\r\n        System.out.println(\"░█▄▄█ ░█─░█ ░█─░█ ░█▄▀▄█ ░█▄▄█ 　 ░█─░█ ░█▄▄▄ ░█─░█ ░█▄▄▄█ ░█▄▄▄ ░█▄▄▄█ \");\r\n        System.out.println();\r\n        System.out.println(\"               Unleash Your Team's Might in Brawl Heroes               \");\r\n        System.out.println(\"                    Triumph in Turn-based Battles!                     \");\r\n        System.out.println();\r\n    }\r\n\r\n    void createHero(){\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           Create a Hero                           |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"          Unleash your imagination and forge an extraordinary        \");\r\n        System.out.println(\"                          hero from scratch!                         \");\r\n        System.out.println();\r\n    }\r\n\r\n    void element (){\r\n        System.out.println(\"                       Choose your hero element                      \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                              Element                              |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                             [a] Fire                              |\");\r\n        System.out.println(\"|                             [b] Water                             |\");\r\n        System.out.println(\"|                             [c] Grass                             |\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        Select (a | b | c)                         |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void role (){\r\n        System.out.println(\"                       Choose your role hero                        \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                               Role                                |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           [a] Fighter                             |\");\r\n        System.out.println(\"|                           [b] Tank                                |\");\r\n        System.out.println(\"|                           [c] Archer                              |\");\r\n        System.out.println(\"|                           [d] Support                             |\");\r\n        System.out.println(\"|                           [e] Mage                                |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                    Select (a | b | c | d | e)                     |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Your Choice : \");\r\n    }\r\n\r\n    void listAlly (IParty playerParty){\r\n        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();\r\n        int hl1 = 7 + h1.length()+1;\r\n        int hr1 = 22 - hl1 + 1;\r\n\r\n        int hl2 = 7 + h2.length();\r\n        int hr2 = 22 - hl2 + 1;\r\n\r\n        int hl3 = 7 + h3.length();\r\n        int hr3 = 22 - hl3 + 1;\r\n\r\n        System.out.println(\"                       Choose your target hero                      \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                             List Ally                             |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.printf(\"|                          [1] %\"+ hl1 + \"s%\" + hr1 + \"s\\n\", h1, \"|\");\r\n        System.out.printf(\"|                          [2] %\"+ hl2 + \"s%\" + hr2 + \"s\\n\", h2, \"|\");\r\n        System.out.printf(\"|                          [3] %\"+ hl3 + \"s%\" + hr3 + \"s\\n\", h3, \"|\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        Select (a | b | c)                         |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n    }\r\n\r\n    void listEnemy (IParty cpuParty){\r\n        String h1 = cpuParty.getCharacters().get(0).getName();String h2 = cpuParty.getCharacters().get(1).getName();String h3 = cpuParty.getCharacters().get(2).getName();\r\n        int hl1 = 7 + h1.length()+1;\r\n        int hr1 = 22 - hl1 + 1;\r\n\r\n        int hl2 = 7 + h2.length();\r\n        int hr2 = 22 - hl2 + 1;\r\n\r\n        int hl3 = 7 + h3.length();\r\n        int hr3 = 22 - hl3 + 1;\r\n\r\n        System.out.println(\"                       Choose your target hero                      \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                             List Enemy                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.printf(\"|                          [1] %\"+ hl1 + \"s%\" + hr1 + \"s\\n\", h1, \"|\");\r\n        System.out.printf(\"|                          [2] %\"+ hl2 + \"s%\" + hr2 + \"s\\n\", h2, \"|\");\r\n        System.out.printf(\"|                          [3] %\"+ hl3 + \"s%\" + hr3 + \"s\\n\", h3, \"|\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        Select (a | b | c)                         |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n\r\n    }\r\n\r\n    void listAllyAndAnemy (IParty playerParty, IParty cpuParty){\r\n        String ha1 = cpuParty.getCharacters().get(0).getName();String ha2 = cpuParty.getCharacters().get(1).getName();String ha3 = cpuParty.getCharacters().get(2).getName();\r\n        int hal1 = 7 + ha1.length()+1;\r\n        int har1 = 22 - hal1 + 1;\r\n\r\n        int hal2 = 7 + ha2.length();\r\n        int har2 = 22 - hal2 + 1;\r\n\r\n        int hal3 = 7 + ha3.length();\r\n        int har3 = 22 - hal3 + 1;\r\n\r\n        String he1 = playerParty.getCharacters().get(0).getName();String he2 = playerParty.getCharacters().get(1).getName();String he3 = playerParty.getCharacters().get(2).getName();\r\n        int hel1 = 7 + he1.length()+1;\r\n        int her1 = 22 - hel1 + 1;\r\n\r\n        int hel2 = 7 + he2.length();\r\n        int her2 = 22 - hel2 + 1;\r\n\r\n        int hel3 = 7 + he3.length();\r\n        int her3 = 22 - hel3 + 1;\r\n\r\n        System.out.println(\"                       Choose your target hero                      \");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           List Target                             |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|            Ally                |              Enemy               |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                                |                                  |\");\r\n        System.out.println(\"|                                |                                  |\");\r\n        System.out.println(\"|                                |                                  |\");\r\n        System.out.println(\"|                                |                                  |\");\r\n        System.out.println(\"|                                |                                  |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           Swift Games                             |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        Select (a | b | c)                         |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n    }\r\n\r\n    void hasSkill1 (Hero hero){\r\n        String s1 = hero.getSkill1().getName();\r\n        int sr1 = 40 - s1.length();\r\n\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                               Skill                               |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        [a] Basic Attack                           |\");\r\n        System.out.println(\"|                        [b] Special Attack                          |\");\r\n        System.out.printf(\"|                        [c] %s%\" + sr1 + \"s\\n\", s1, \"|\");\r\n        System.out.println(\"|                                                                   |\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                         Select (a | b | c)                        |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n    }\r\n\r\n    void hasSkill2 (Hero hero){\r\n\r\n        String s1 = hero.getSkill1().getName();\r\n        int sr1 = 40 - s1.length();\r\n\r\n        String s2 = hero.getSkill2().getName();\r\n        int sr2 = 40 - s2.length();\r\n\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                               Skill                               |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                        [a] Basic Attack                           |\");\r\n        System.out.println(\"|                        [b] Special Attack                          |\");\r\n        System.out.printf(\"|                        [c] %s%\" + sr1 + \"s\\n\",s1, \"|\");\r\n        System.out.printf(\"|                        [c] %s%\" + sr2 + \"s\\n\", s2, \"|\");\r\n        System.out.println(\"|                            Swift Games                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                         Select (a | b | c)                        |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Display.java b/src/main/java/Display.java
+--- a/src/main/java/Display.java	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/src/main/java/Display.java	(date 1685079065561)
+@@ -3,29 +3,43 @@
+ public class Display {
+     void gameField (IParty playerParty, IParty cpuParty){
+         String team = playerParty.getPartyName() + "'s Team";
+-        int x = team.length() + 28;
+-        int y = 68 - x + 1;
++        int x = 5 + team.length();
++        int y = 23 - x;
++
++        //Player
++        Hero h1 = playerParty.getCharacters().get(0);Hero h2 = playerParty.getCharacters().get(1);Hero h3 = playerParty.getCharacters().get(2);
++        //Hero 1
++        String hPla1 = h1.getName();
++        int hPla1l = hPla1.length() + 8; int hPla1r = 23 - hPla1l;
+ 
+-        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();
+-        int hl1 = 7 + h1.length()+1;
+-        int hr1 = 22 - hl1 + 1;
++        String atrH1 = h1.getHeroElement().toString() + " | " +h1.getHeroRole().toString();
++        int atrH1l = atrH1.length() + 4; int atrH1r = 23 - atrH1l;
+ 
+-        int hl2 = 7 + h2.length();
+-        int hr2 = 22 - hl2 + 1;
++        //Hero 2
++        String hPla2 = h2.getName();
++        int hPla2l = hPla1.length() + 8; int hPla2r = 23 - hPla1l;
+ 
+-        int hl3 = 7 + h3.length();
+-        int hr3 = 22 - hl3 + 1;
++        String atrH2 = h2.getHeroElement().toString() + " | " +h2.getHeroRole().toString();
++        int atrH2l = atrH2.length() + 4; int atrH2r = 23 - atrH2l;
+ 
+ 
+-        int hp1 = playerParty.getCharacters().get(0).getHP();int hp2 = playerParty.getCharacters().get(1).getHP();int hp3 = playerParty.getCharacters().get(2).getHP();
+-        int hpl1 = 2 + String.valueOf(hp1).length();
+-        int hpr1 = 6 - hpl1 + 1;
++        //Hero 3
++        String hPla3 = h3.getName();
++        int hPla3l = hPla3.length() + 8; int hPla3r = 23 - hPla3l;
+ 
+-        int hpl2 = 2 + String.valueOf(hp2).length();
+-        int hpr2 = 6 - hpl2 + 1;
++        String atrH3 = h3.getHeroElement().toString() + " | " +h3.getHeroRole().toString();
++        int atrH3l = atrH3.length() + 4; int atrH3r = 23 - atrH3l;
+ 
+-        int hpl3 = 2 + String.valueOf(hp3).length();
+-        int hpr3 = 6 - hpl2 + 1;
++
++//        int hp1 = playerParty.getCharacters().get(0).getHP();int hp2 = playerParty.getCharacters().get(1).getHP();int hp3 = playerParty.getCharacters().get(2).getHP();
++//        int hpsl1 = 2 + String.valueOf(hp1).length();
++//        int hpsr1 = 6 - hpl1 + 1;
++//
++//        int hp13123l2 = 2 + String.valueOf(hp2).length();
++//        int hpr1231232 = 6 - hpl2 + 1;
++//
++//        int hpl21313 = 2 + String.valueOf(hp3).length();
++//        int f123 = 6 - hpl2 + 1;
+ 
+ 
+         int def1 = playerParty.getCharacters().get(0).getHP();int def2 = playerParty.getCharacters().get(1).getHP();int def3 = playerParty.getCharacters().get(2).getHP();
+@@ -53,25 +67,61 @@
+ 
+ 
+ 
++
++
++        //Enemy
++        Hero e1 = cpuParty.getCharacters().get(0);Hero e2 = cpuParty.getCharacters().get(1);Hero e3 = cpuParty.getCharacters().get(2);
++        //Enemy 1
++        String hE1 = e1.getName();
++        int hE1l = hE1.length() + 8; int hE1r = 23 - hE1l;
++
++        String atrE1 = e1.getHeroElement().toString() + " | " +e1.getHeroRole().toString();
++        int atrE1l = atrE1.length() + 4; int atrE1r = 23 - atrE1l;
++
++        //Enemy 2
++        String hE2 = e2.getName();
++        int hE2l = hE2.length() + 8; int hE2r = 23 - hE2l;
++
++        String atrE2 = e2.getHeroElement().toString() + " | " +e2.getHeroRole().toString();
++        int atrE2l = atrE2.length() + 4; int atrE2r = 23 - atrE2l;
++
++        //Enemy 3
++        String hE3 = e3.getName();
++        int hE3l = hE2.length() + 8; int hE3r = 23 - hE3l;
++
++        String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
++        int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
++
++
++
+         System.out.println();
+         System.out.println("--------------------------------------------------------------------");
+-        System.out.println("|                      |    BRAWL HEROES     |                 [ X ]|");
++        System.out.printf("|%" + x + "s%" + y + "s    BRAWL HEROES     |         COM     [ X ]|\n", team, "|");
+         System.out.println("|===================================================================|");
+-        System.out.println("|                      |                     |                      |");
+-        System.out.println("|                      |                     |                      |");
++        System.out.println("|          1           |                     |          1           |");
++        System.out.println("|----------------------|                     |----------------------|");
++        System.out.printf("|%" + hPla1l + "s%" + hPla1r + "s                     |%" + hE1l + "s%" + hE1r + "s\n", hPla1, "|", hE1, "|"); // Name
++        System.out.printf("|%" + atrH1l + "s%" + atrH1r + "s                     |%" + atrE1l + "s%" + atrE1r + "s\n", atrH1, "|", atrE1, "|"); //element | role
++        System.out.println("|                      |                     |                      |"); // Effect
+         System.out.println("|----------------------|                     |----------------------|");
+         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
+         System.out.println("|----------------------|                     |----------------------| ");
+         System.out.println("|      |       |       |                     |      |       |       |");
+         System.out.println("|=======================                     =======================|");
+-        System.out.println("|                      |  ██    ██  ██████   |                      |");
+-        System.out.println("|                      |  ██    ██ ██        |                      |");
+-        System.out.println("|----------------------|   ██  ██   █████    |----------------------|");
+-        System.out.println("|  HP  |  DEF  |  ATK  |    ████        ██   |  HP  |  DEF  |  ATK  |");
+-        System.out.println("|----------------------|     ██    ██████    |----------------------|");
++        System.out.println("|          2           |                     |          2           |");
++        System.out.println("|----------------------|                     |----------------------|");
++        System.out.printf("|%" + hPla2l + "s%" + hPla2r + "s  ██      ██ ██████  |%" + hE2l + "s%" + hE2r +  "s\n", hPla2, "|", hE2, "|");
++        System.out.printf("|%" + atrH2l + "s%" + atrH2r + "s   ██    ██ ██       |%" + atrE2l + "s%" + atrE2r + "s\n", atrH2, "|", atrE2, "|");
++        System.out.println("|                      |    ██  ██   █████   |                      |");
++        System.out.println("|----------------------|     ████        ██  |----------------------|");
++        System.out.println("|  HP  |  DEF  |  ATK  |      ██    ██████   |  HP  |  DEF  |  ATK  |");
++        System.out.println("|----------------------|                     |----------------------|");
+         System.out.println("|      |       |       |                     |      |       |       | ");
+         System.out.println("|=======================                     =======================|");
+-        System.out.println("|                      |                     |                      |");
++        System.out.println("|          3           |                     |          3           |");
++        System.out.println("|----------------------|                     |----------------------|");
++        System.out.printf("|%" + hPla3l + "s%" + hPla3r + "s                     |%" + hE3l + "s%" + hE3r + "s\n", hPla3, "|", hE3, "|"); // Name
++        System.out.printf("|%" + atrH3l + "s%" + atrH3r + "s                     |%" + atrE3l + "s%" + atrE3r + "s\n", atrH3, "|", atrE3, "|"); //element | role
+         System.out.println("|                      |                     |                      |");
+         System.out.println("|----------------------|                     |----------------------|");
+         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
+@@ -290,7 +340,7 @@
+         System.out.println("| [1] Murby  | Fighter | [5] Greysn| Tank    | [9]  Theseus| Tank   |");
+         System.out.println("| [2] Helda  | Tank    | [6] Elisa | Mage    | [10] Atla   | Archer |");
+         System.out.println("| [3] Veldora| Mage    | [7] Lily  | Archer  | [11] Pomi   | Support|");
+-        System.out.println("| [4] Deus   | Archer  | [8] Fara  | Support | [12] Marie  | Fighter|");
++        System.out.println("| [4] Deus   | Archer  | [8] Fara  | Support | [12] Dillo  | Fighter|");
+         System.out.println("|                      |                     |                      |");
+         System.out.println("|===================================================================|");
+         System.out.println("| [c] Create Hero                                                   |");
+@@ -380,8 +430,8 @@
+         System.out.println("---------------------------------------------------------------------");
+     }
+ 
+-    void listEnemy (IParty cpuParty){
+-        String h1 = cpuParty.getCharacters().get(0).getName();String h2 = cpuParty.getCharacters().get(1).getName();String h3 = cpuParty.getCharacters().get(2).getName();
++    void listDeadAlly (IParty playerParty){
++        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();
+         int hl1 = 7 + h1.length()+1;
+         int hr1 = 22 - hl1 + 1;
+ 
+@@ -393,7 +443,7 @@
+ 
+         System.out.println("                       Choose your target hero                      ");
+         System.out.println("---------------------------------------------------------------------");
+-        System.out.println("|                             List Enemy                            |");
++        System.out.println("|                             List Ally                             |");
+         System.out.println("---------------------------------------------------------------------");
+         System.out.printf("|                          [1] %"+ hl1 + "s%" + hr1 + "s\n", h1, "|");
+         System.out.printf("|                          [2] %"+ hl2 + "s%" + hr2 + "s\n", h2, "|");
+@@ -403,47 +453,35 @@
+         System.out.println("---------------------------------------------------------------------");
+         System.out.println("|                        Select (a | b | c)                         |");
+         System.out.println("---------------------------------------------------------------------");
+-
+     }
+ 
+-    void listAllyAndAnemy (IParty playerParty, IParty cpuParty){
+-        String ha1 = cpuParty.getCharacters().get(0).getName();String ha2 = cpuParty.getCharacters().get(1).getName();String ha3 = cpuParty.getCharacters().get(2).getName();
+-        int hal1 = 7 + ha1.length()+1;
+-        int har1 = 22 - hal1 + 1;
+-
+-        int hal2 = 7 + ha2.length();
+-        int har2 = 22 - hal2 + 1;
+-
+-        int hal3 = 7 + ha3.length();
+-        int har3 = 22 - hal3 + 1;
++    void listEnemy (IParty cpuParty){
++        String h1 = cpuParty.getCharacters().get(0).getName();String h2 = cpuParty.getCharacters().get(1).getName();String h3 = cpuParty.getCharacters().get(2).getName();
++        int hl1 = 7 + h1.length()+1;
++        int hr1 = 22 - hl1 + 1;
+ 
+-        String he1 = playerParty.getCharacters().get(0).getName();String he2 = playerParty.getCharacters().get(1).getName();String he3 = playerParty.getCharacters().get(2).getName();
+-        int hel1 = 7 + he1.length()+1;
+-        int her1 = 22 - hel1 + 1;
++        int hl2 = 7 + h2.length();
++        int hr2 = 22 - hl2 + 1;
+ 
+-        int hel2 = 7 + he2.length();
+-        int her2 = 22 - hel2 + 1;
+-
+-        int hel3 = 7 + he3.length();
+-        int her3 = 22 - hel3 + 1;
++        int hl3 = 7 + h3.length();
++        int hr3 = 22 - hl3 + 1;
+ 
+         System.out.println("                       Choose your target hero                      ");
+         System.out.println("---------------------------------------------------------------------");
+-        System.out.println("|                           List Target                             |");
+-        System.out.println("---------------------------------------------------------------------");
+-        System.out.println("|            Ally                |              Enemy               |");
+-        System.out.println("---------------------------------------------------------------------");
+-        System.out.println("|                                |                                  |");
+-        System.out.println("|                                |                                  |");
+-        System.out.println("|                                |                                  |");
+-        System.out.println("|                                |                                  |");
+-        System.out.println("|                                |                                  |");
++        System.out.println("|                             List Enemy                            |");
+         System.out.println("---------------------------------------------------------------------");
+-        System.out.println("|                           Swift Games                             |");
++        System.out.printf("|                          [1] %"+ hl1 + "s%" + hr1 + "s\n", h1, "|");
++        System.out.printf("|                          [2] %"+ hl2 + "s%" + hr2 + "s\n", h2, "|");
++        System.out.printf("|                          [3] %"+ hl3 + "s%" + hr3 + "s\n", h3, "|");
++        System.out.println("|                                                                   |");
++        System.out.println("|                            Swift Games                            |");
+         System.out.println("---------------------------------------------------------------------");
+         System.out.println("|                        Select (a | b | c)                         |");
+         System.out.println("---------------------------------------------------------------------");
++
+     }
++
++
+ 
+     void hasSkill1 (Hero hero){
+         String s1 = hero.getSkill1().getName();
+@@ -483,4 +521,19 @@
+         System.out.println("---------------------------------------------------------------------");
+     }
+ 
++
++    void playAgainOrNo (){
++
++    }
++
++
++    void thankYou (){
++
++    }
++
++    void listSkill (){
++
++    }
++
++
+ }
+Index: src/main/java/GameEngine.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\nimport java.util.Random;\r\nimport java.util.Scanner;\r\n\r\npublic class GameEngine implements IGameEngine{\r\n    Random random = new Random();\r\n    private BaseGameHeroes heroes;\r\n    private Scanner sc = new Scanner(System.in);\r\n    private IParty playerParty;\r\n    private IParty cpuParty;\r\n    private Display display;\r\n\r\n    public void setDisplay(Display display) {\r\n        this.display = display;\r\n    }\r\n\r\n    public void setHeroes (BaseGameHeroes heroes){\r\n        this.heroes = heroes;\r\n    }\r\n\r\n    @Override\r\n    public IParty createPlayerParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3) {\r\n\r\n        return new Party(partyName, ICharacter1, ICharacter2, ICharacter3);\r\n    }\r\n\r\n    @Override\r\n    public IParty createCPUParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3) {\r\n        return new Party(partyName, ICharacter1, ICharacter2, ICharacter3);\r\n    }\r\n\r\n    @Override\r\n    public void saveGame() {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void loadGame() {\r\n\r\n    }\r\n\r\n    @Override\r\n    public IParty nextTurn() {\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    public IParty winner() {\r\n        return null;\r\n    }\r\n\r\n    public void start (){\r\n        display.brawlHeroes();\r\n        display.menuGame();\r\n\r\n        boolean isTrue = true;\r\n        while (isTrue){\r\n            String select = sc.nextLine();\r\n            switch (select) {\r\n                case \"a\" -> {\r\n                    isTrue = false;\r\n                    _newGame();\r\n                }\r\n                case \"b\" -> {\r\n                    isTrue = false;\r\n                    _loadGame();\r\n                }\r\n                case \"c\" -> {\r\n                    isTrue = false;\r\n                    _exitGame();\r\n                }\r\n                default -> {\r\n                    System.out.println(\"Please choose between (a | b | c) !!!\");\r\n                    System.out.print(\"Your Choice : \");\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    private void _newGame (){\r\n        display.newGameMenu();\r\n        String select = sc.nextLine();\r\n        boolean isTrue = true;\r\n        do {\r\n            switch (select) {\r\n                case \"a\" -> {\r\n                    isTrue = false;\r\n                    _createPartyForPlayer();\r\n                }\r\n                case \"b\" -> {\r\n                    isTrue = false;\r\n                    _createHero();\r\n                }\r\n                case \"c\" -> {\r\n                    isTrue = false;\r\n                    start();\r\n                }\r\n                default -> System.out.println(\"Please choose between (a | b | c) !!!\");\r\n            }\r\n        }while (isTrue);\r\n    }\r\n\r\n    private void _loadGame (){\r\n        display.readyGameDisplay(this.playerParty);\r\n    }\r\n\r\n    private void _exitGame (){\r\n        System.exit(0);\r\n    }\r\n\r\n    private void _createPartyForPlayer (){\r\n        display.createTeam();\r\n\r\n        String partyName = sc.nextLine();\r\n\r\n        display.listHero();\r\n\r\n        ArrayList <Hero> listHeroes = new ArrayList<>();\r\n\r\n        int i = 1;\r\n        while (listHeroes.size() < 3){\r\n            System.out.print(\"Heroes \" + (i) + \" : \");\r\n            String select = sc.nextLine();\r\n\r\n            Hero result = selectHero(select);\r\n\r\n            if (listHeroes.contains(result)){\r\n                System.out.println(\"            Hero already selected, choose other heroes !!!                     \");\r\n            }else {\r\n                if (result != null){\r\n                    listHeroes.add(result);\r\n                    System.out.println(\"                          \" + result.getName() + \" selected !              \");\r\n                    i++;\r\n                }else {\r\n                    System.out.println(\"Please choose heroes between 1 - 12 !!!\");\r\n                }\r\n            }\r\n        }\r\n\r\n        this.playerParty = createPlayerParty(partyName, listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));\r\n\r\n        display.readyGameDisplay(this.playerParty);\r\n\r\n        String select = sc.nextLine();\r\n        boolean isTrue = true;\r\n        do {\r\n            switch (select) {\r\n                case \"y\" -> {\r\n                    isTrue = false;\r\n                    _createPartyForCPU();\r\n                    gameON();\r\n                }\r\n                case \"n\" -> {\r\n                    isTrue = false;\r\n                    _createPartyForPlayer();\r\n                }\r\n                default -> System.out.println(\"Please choose between (Y | n) !!!\");\r\n            }\r\n        }while (isTrue);\r\n    }\r\n\r\n\r\n    private void gameON (){\r\n        int rNUm = random.nextInt(2);\r\n        if (rNUm == 0){\r\n            playerParty.setTurn(true);\r\n            cpuParty.setTurn(false);\r\n        }else {\r\n            playerParty.setTurn(false);\r\n            cpuParty.setTurn(true);\r\n        }\r\n\r\n        while (!playerParty.isDefeated() && !cpuParty.isDefeated()){\r\n            display.gameField(this.playerParty, this.cpuParty);\r\n\r\n            if (playerParty.isTurn()){\r\n                System.out.println(\"---------------------------------------------------------------------\");\r\n                System.out.println(\"|                            Your Turn                              |\");\r\n                System.out.println(\"---------------------------------------------------------------------\");\r\n                playerTurn();\r\n\r\n                playerParty.setTurn(false);\r\n\r\n            }else if (cpuParty.isTurn()){\r\n                System.out.println(\"---------------------------------------------------------------------\");\r\n                System.out.println(\"|                             COM Turn                              |\");\r\n                System.out.println(\"---------------------------------------------------------------------\");\r\n                cpuTurn();\r\n\r\n                cpuParty.setTurn(false);\r\n            }\r\n        }\r\n    }\r\n\r\n    private void cpuTurn(){\r\n        ArrayList<Hero> listChars = playerParty.getCharacters();\r\n        System.out.println(\"Choose your hero : \");\r\n        String select = sc.nextLine();\r\n\r\n        IHero hero = listChars.get(Integer.parseInt(select) - 1);\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n    private void playerTurn (){\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    private void _createPartyForCPU (){\r\n        ArrayList <Hero> listHeroes = new ArrayList<>();\r\n\r\n        int i = 1;\r\n        while (listHeroes.size() < 3){\r\n            int rNum = random.nextInt(12);\r\n            Hero result = selectHero(String.valueOf(rNum + 1));\r\n\r\n            if (listHeroes.contains(result)){\r\n                continue;\r\n            }else {\r\n                if (result != null){\r\n                    listHeroes.add(result);\r\n                    i++;\r\n                }else {\r\n                    continue;\r\n                }\r\n            }\r\n        }\r\n        this.cpuParty = createCPUParty(\"COM\", listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));\r\n    }\r\n\r\n    private Hero _createHero (){\r\n        Hero hero = new Hero();\r\n\r\n        display.createHero();\r\n        display.element();\r\n\r\n\r\n        String select = sc.nextLine();\r\n        hero.setHeroElement(selectHeroElement(select));\r\n\r\n        display.role();\r\n\r\n        select = sc.nextLine();\r\n        hero.setHeroRole(selectHeroRole(select));\r\n\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           Hero Details                            |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.print(\"Name      : \");\r\n        String name = sc.nextLine(); hero.setName(name);\r\n        System.out.print(\"HP        : \");\r\n        String HP = sc.nextLine(); hero.setHP(Integer.parseInt(HP));\r\n        System.out.print(\"ATK       : \");\r\n        String ATK = sc.nextLine(); hero.setAttack(Integer.parseInt(ATK));\r\n        System.out.print(\"DEF       : \");\r\n        String DEF = sc.nextLine(); hero.setAttack(Integer.parseInt(DEF));\r\n        /*\r\n        to-do how to implement skill (?)\r\n        */\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n        System.out.println(\"|                           Let's Fight                             |\");\r\n        System.out.println(\"---------------------------------------------------------------------\");\r\n\r\n        return hero;\r\n    }\r\n\r\n    private Hero selectHero (String select) {\r\n        Hero temp = null;\r\n\r\n        if (select.equals(\"1\")){\r\n            temp = heroes.getHero(\"Murby\");\r\n        } else if (select.equals(\"2\")) {\r\n            temp = heroes.getHero(\"Helda\");\r\n        } else if (select.equals(\"3\")) {\r\n            temp = heroes.getHero(\"Veldora\");\r\n        } else if (select.equals(\"4\")){\r\n            temp = heroes.getHero(\"Deus\");\r\n        } else if (select.equals(\"5\")){\r\n            temp = heroes.getHero(\"Greysn\");\r\n        } else if (select.equals(\"6\")){\r\n            temp = heroes.getHero(\"Elisa\");\r\n        } else if (select.equals(\"7\")){\r\n            temp = heroes.getHero(\"Lily\");\r\n        } else if (select.equals(\"8\")){\r\n            temp = heroes.getHero(\"Fara\");\r\n        } else if (select.equals(\"9\")){\r\n            temp = heroes.getHero(\"Theseus\");\r\n        } else if (select.equals(\"10\")){\r\n            temp = heroes.getHero(\"Atla\");\r\n        } else if (select.equals(\"11\")){\r\n            temp = heroes.getHero(\"Pomi\");\r\n        } else if (select.equals(\"12\")){\r\n            temp = heroes.getHero(\"Marie\");\r\n        } else if (select.equalsIgnoreCase(\"c\")){\r\n            temp = _createHero();\r\n        }else {\r\n            return null;\r\n        }\r\n        return temp;\r\n    }\r\n\r\n    private HeroElement selectHeroElement (String select){\r\n        if (select.equals(\"a\")){\r\n            return HeroElement.FIRE;\r\n        } else if (select.equals(\"b\")) {\r\n            return HeroElement.WATER;\r\n        } else if (select.equals(\"c\")) {\r\n            return HeroElement.GRASS;\r\n        }\r\n        return null;\r\n    }\r\n\r\n    private HeroRole selectHeroRole (String select){\r\n        if (select.equals(\"a\")){\r\n            return HeroRole.FIGHTER;\r\n        } else if (select.equals(\"b\")) {\r\n            return HeroRole.TANK;\r\n        } else if (select.equals(\"c\")) {\r\n            return HeroRole.ARCHER;\r\n        } else if (select.equals(\"d\")) {\r\n            return HeroRole.SUPPORT;\r\n        } else if (select.equals(\"e\")) {\r\n            return HeroRole.MAGE;\r\n        }\r\n        return null;\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/GameEngine.java b/src/main/java/GameEngine.java
+--- a/src/main/java/GameEngine.java	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/src/main/java/GameEngine.java	(date 1685074813299)
+@@ -50,6 +50,11 @@
+     }
+ 
+     public void start (){
++        IParty a = createPlayerParty("Indra", heroes.getHero(0), heroes.getHero(1), heroes.getHero(2));
++        IParty b = createPlayerParty("COM", heroes.getHero(3), heroes.getHero(4), heroes.getHero(5));
++        display.gameField(a, b);
++
++
+         display.brawlHeroes();
+         display.menuGame();
+ 
+@@ -155,7 +160,7 @@
+                     isTrue = false;
+                     _createPartyForPlayer();
+                 }
+-                default -> System.out.println("Please choose between (Y | n) !!!");
++                default -> System.out.println("Please choose between (y | n) !!!");
+             }
+         }while (isTrue);
+     }
+@@ -181,6 +186,7 @@
+                 playerTurn();
+ 
+                 playerParty.setTurn(false);
++                cpuParty.setTurn(true);
+ 
+             }else if (cpuParty.isTurn()){
+                 System.out.println("---------------------------------------------------------------------");
+@@ -189,22 +195,167 @@
+                 cpuTurn();
+ 
+                 cpuParty.setTurn(false);
++                playerParty.setTurn(true);
+             }
+         }
++
++        if (playerParty.isDefeated()){
++            display.winnerBanner(this.cpuParty);
++        }else {
++            display.winnerBanner(this.playerParty);
++        }
++
++        display.playAgainOrNo();
++        String select = sc.nextLine();
++
++        if (select.equals("y")){
++
++        } else if (select.equals("s")) {
++
++        } else if (select.equals("x")) {
++            display.thankYou();
++            _exitGame();
++        }
+     }
+ 
+     private void cpuTurn(){
+-        ArrayList<Hero> listChars = playerParty.getCharacters();
+-        System.out.println("Choose your hero : ");
+-        String select = sc.nextLine();
++        ArrayList<Hero> listHero = playerParty.getCharacters();
++        ArrayList<Hero> listEnemy = cpuParty.getCharacters();
++
++        while ((!listHero.get(0).isTurn() && !listHero.get(0).isDefeated()) || (!listHero.get(1).isTurn() && !listHero.get(1).isDefeated()) || (!listHero.get(2).isTurn() && !listHero.get(2).isDefeated())){
++            System.out.println("Choose your hero  : ");
++            String select = sc.nextLine();
+ 
+-        IHero hero = listChars.get(Integer.parseInt(select) - 1);
++            Hero hero = listHero.get(Integer.parseInt(select) - 1);
++
++            if (hero.isTurn()){
++                System.out.println("Please choose another hero, hero already used!");
++                continue;
++            }
++
++            if (hero.hasSkill1()){
++                display.hasSkill1(hero);
++            } else if (hero.hasSkill2()) {
++                display.hasSkill2(hero);
++            }
++
++            boolean isTrue = true;
++            while (isTrue){
++                System.out.println("Choose your skill : ");
++                select = sc.nextLine();
++                if (select.equals("1")){
++                    display.listEnemy(this.cpuParty);
+ 
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
+ 
++                    if (select.equals("b")){
++                        continue;
++                    }
+ 
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.normalAttack(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++                } else if (select.equals("2")) {
++                    display.listEnemy(this.cpuParty);
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
+ 
++                    if (select.equals("b")){
++                        continue;
++                    }
+ 
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.specialAttack(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++                } else if (select.equals("3")) {
++                    if (hero.getMana() < hero.getSkill1().getManaCost()){
++                        System.out.println("Sorry your mana is not enough, please use another skill!");
++                        continue;
++                    }
+ 
++                    if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
++                        display.listEnemy(this.cpuParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
++                        display.listAlly(this.playerParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
++                        display.listDeadAlly(this.playerParty);
++                    } else {
++                        if (!cpuParty.isDefeated()){
++                            hero.useSkill1(cpuParty.getCharacters());
++                            isTrue = false;
++                        }else {
++                            System.out.println("Sorry your target team is already defeated, please choose another target!");
++                        }
++                    }
++
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.useSkill1(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++
++                } else if (select.equals("4")) {
++                    if (hero.getMana() < hero.getSkill1().getManaCost()){
++                        System.out.println("Sorry your mana is not enough, please use another skill!");
++                        continue;
++                    }
++
++
++                    if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
++                        display.listEnemy(this.cpuParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
++                        display.listAlly(this.playerParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
++                        display.listDeadAlly(this.playerParty);
++                    } else {
++                        if (!cpuParty.isDefeated()){
++                            hero.useSkill1(cpuParty.getCharacters());
++                            isTrue = false;
++                        }else {
++                            System.out.println("Sorry your target team is already defeated, please choose another target!");
++                        }
++                    }
++
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.useSkill1(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++
++                } else if (select.equals("b")){
++                    continue;
++                }
++            }
++            hero.setTurn(true);
++        }
++        resetHeroTurn(listHero);
+ 
+ 
+ 
+@@ -213,7 +364,143 @@
+ 
+ 
+     private void playerTurn (){
++        ArrayList<Hero> listHero = playerParty.getCharacters();
++        ArrayList<Hero> listEnemy = cpuParty.getCharacters();
++
++        while ((!listHero.get(0).isTurn() && !listHero.get(0).isDefeated()) || (!listHero.get(1).isTurn() && !listHero.get(1).isDefeated()) || (!listHero.get(2).isTurn() && !listHero.get(2).isDefeated())){
++            System.out.println("Choose your hero  : ");
++            String select = sc.nextLine();
++
++            Hero hero = listHero.get(Integer.parseInt(select) - 1);
++
++            if (hero.isTurn()){
++                System.out.println("Please choose another hero, hero already used!");
++                continue;
++            }
++
++            if (hero.hasSkill1()){
++                display.hasSkill1(hero);
++            } else if (hero.hasSkill2()) {
++                display.hasSkill2(hero);
++            }
++
++            boolean isTrue = true;
++            while (isTrue){
++                System.out.println("Choose your skill : ");
++                select = sc.nextLine();
++                if (select.equals("1")){
++                    display.listEnemy(this.cpuParty);
++
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.normalAttack(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++                } else if (select.equals("2")) {
++                    display.listEnemy(this.cpuParty);
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.specialAttack(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++                } else if (select.equals("3")) {
++                    if (hero.getMana() < hero.getSkill1().getManaCost()){
++                        System.out.println("Sorry your mana is not enough, please use another skill!");
++                        continue;
++                    }
++
++                    if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
++                        display.listEnemy(this.cpuParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
++                        display.listAlly(this.playerParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
++                        display.listDeadAlly(this.playerParty);
++                    } else {
++                        if (!cpuParty.isDefeated()){
++                            hero.useSkill1(cpuParty.getCharacters());
++                            isTrue = false;
++                        }else {
++                            System.out.println("Sorry your target team is already defeated, please choose another target!");
++                        }
++                    }
++
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.useSkill1(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++
++                } else if (select.equals("4")) {
++                    if (hero.getMana() < hero.getSkill1().getManaCost()){
++                        System.out.println("Sorry your mana is not enough, please use another skill!");
++                        continue;
++                    }
++
+ 
++                    if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
++                        display.listEnemy(this.cpuParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
++                        display.listAlly(this.playerParty);
++                    } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
++                        display.listDeadAlly(this.playerParty);
++                    } else {
++                        if (!cpuParty.isDefeated()){
++                            hero.useSkill1(cpuParty.getCharacters());
++                            isTrue = false;
++                        }else {
++                            System.out.println("Sorry your target team is already defeated, please choose another target!");
++                        }
++                    }
++
++                    System.out.println("Choose your target : ");
++                    select = sc.nextLine();
++
++                    if (select.equals("b")){
++                        continue;
++                    }
++
++                    Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
++                    if (!enemy.isDefeated()){
++                        hero.useSkill1(enemy);
++                        isTrue = false;
++                    }else {
++                        System.out.println("Sorry your target is already defeated, please choose another target!");
++                    }
++
++                } else if (select.equals("b")){
++                    continue;
++                }
++            }
++            hero.setTurn(true);
++        }
++        resetHeroTurn(listHero);
+     }
+ 
+ 
+@@ -268,9 +555,14 @@
+         String ATK = sc.nextLine(); hero.setAttack(Integer.parseInt(ATK));
+         System.out.print("DEF       : ");
+         String DEF = sc.nextLine(); hero.setAttack(Integer.parseInt(DEF));
+-        /*
+-        to-do how to implement skill (?)
+-        */
++
++        System.out.println("---------------------------------------------------------------------");
++        System.out.println("|                            Hero SKills                            |");
++        System.out.println("---------------------------------------------------------------------");
++        display.listSkill();
++        select = sc.nextLine();
++
++
+         System.out.println("---------------------------------------------------------------------");
+         System.out.println("|                           Let's Fight                             |");
+         System.out.println("---------------------------------------------------------------------");
+@@ -339,6 +631,10 @@
+         return null;
+     }
+ 
++    private void resetHeroTurn (ArrayList<Hero> listHero){
++        listHero.get(0).setTurn(false);
++        listHero.get(1).setTurn(false);
++        listHero.get(2).setTurn(false);
+ 
+-
++    }
+ }
+Index: src/main/java/Hero.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.*;\r\n\r\nenum HeroElement {\r\n    FIRE,\r\n    WATER,\r\n    GRASS;\r\n}\r\n\r\nenum HeroRole {\r\n    TANK,\r\n    SUPPORT,\r\n    ARCHER,\r\n    FIGHTER,\r\n    MAGE,\r\n}\r\n\r\nclass Hero implements IHero {\r\n    private String name;\r\n    private int hp;\r\n    private int maxHp;\r\n    private int mana;\r\n    private int maxMana;\r\n    private int atk;\r\n    private int def;\r\n    private HeroElement heroElement;\r\n    private HeroRole heroRole;\r\n    Effect effect;\r\n\r\n\r\n    private Skill skill1;\r\n    private Skill skill2;\r\n\r\n    private String heroDescription;\r\n    private String heroLore;\r\n\r\n    private boolean isDefeated;\r\n\r\n\r\n    public Hero() {}\r\n\r\n\r\n    public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {\r\n        this.name = name;\r\n        this.hp = hp;\r\n        this.maxHp = hp;\r\n        this.mana = 100;\r\n        this.maxMana = 100;\r\n        this.atk = atk;\r\n        this.def = def;\r\n        this.heroElement = heroElement;\r\n        this.heroRole = heroRole;\r\n        this.effect = new Effect();\r\n        this.isDefeated = false;\r\n    }\r\n\r\n    // CLONE\r\n    public Hero(Hero hero) {\r\n        this.name = hero.getName();\r\n        this.hp = hero.getHP();\r\n        this.maxHp = hero.getMaxHp();\r\n        this.mana = 100;\r\n        this.maxMana = 100;\r\n        this.atk = hero.getAttack();\r\n        this.def = hero.getDefense();\r\n        this.heroElement = hero.getHeroElement();\r\n        this.heroRole = hero.getHeroRole();\r\n        this.effect = new Effect();\r\n\r\n        this.isDefeated = false;\r\n\r\n        this.heroDescription = hero.getHeroDescription();\r\n        this.heroLore = hero.getHeroLore();\r\n\r\n        this.skill1 = hero.getSkill1();\r\n        this.skill2 = hero.getSkill2();\r\n    }\r\n\r\n    @Override\r\n    public void normalAttack(IHero opponent) {\r\n        int totalAtk = this.atk - opponent.getDefense();\r\n        if (totalAtk <= 0) totalAtk = 1;\r\n        opponent.setHP(opponent.getHP() - totalAtk);\r\n        System.out.println(this.name + \" atk \" + opponent.getName() + \" dmg: \" + totalAtk);\r\n        opponent.updateIsDefeated();\r\n    }\r\n\r\n    @Override\r\n    public void specialAttack(IHero opponent) {\r\n        HeroElement attackerElement = this.getHeroElement();\r\n        HeroElement opponentElement = opponent.getHeroElement();\r\n\r\n        int damageMultiplier = 1;\r\n\r\n        if (attackerElement == heroElement.FIRE && opponentElement == heroElement.GRASS) {\r\n            damageMultiplier = 2;\r\n        } else if (attackerElement == heroElement.GRASS && opponentElement == heroElement.WATER) {\r\n            damageMultiplier = 2;\r\n        } else if (attackerElement == heroElement.WATER && opponentElement == heroElement.FIRE) {\r\n            damageMultiplier = 2;\r\n        }\r\n        int totalAtk = this.getAttack() * damageMultiplier;\r\n\r\n        if (totalAtk <= 0) {\r\n            totalAtk = 1;\r\n        }\r\n\r\n        opponent.setHP(opponent.getHP() - totalAtk);\r\n        System.out.println(this.getName() + \" atk \" + opponent.getName() + \" dmg: \" + totalAtk);\r\n        opponent.updateIsDefeated();\r\n    }\r\n\r\n    @Override\r\n    public void updateIsDefeated() {\r\n        if (hp <= 0) {\r\n            setDefeated(true);\r\n            setHP(0);\r\n            System.out.println(getName() + \" is defeated\");\r\n        }\r\n    }\r\n\r\n    // HERO ATRIBUTES (SETTER)\r\n    @Override\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    @Override\r\n    public void setAttack(int attack) {\r\n        this.atk = attack;\r\n    }\r\n\r\n    @Override\r\n    public void setMana(int mana) {\r\n        this.mana = mana;\r\n        if (this.mana < 0) this.mana = 0;\r\n        if (this.mana > maxMana) this.mana = maxMana;\r\n    }\r\n\r\n    @Override\r\n    public void setHP(int hp) {\r\n        this.hp = hp;\r\n        if (this.hp < 0) this.hp = 0;\r\n        if (this.hp > maxHp) this.hp = maxHp;\r\n    }\r\n\r\n    @Override\r\n    public void setDefense(int defense) {\r\n        this.def = defense;\r\n    }\r\n\r\n    @Override\r\n    public void setDefeated(boolean isDefeated) {\r\n        this.isDefeated = isDefeated;\r\n    }\r\n\r\n    @Override\r\n    public void setHeroDescription(String heroDescription) {\r\n        this.heroDescription = heroDescription;\r\n    }\r\n\r\n    @Override\r\n    public void setHeroLore(String heroLore) {\r\n        this.heroLore = heroLore;\r\n    }\r\n\r\n    // HERO ATRIBUTES (GETTER)\r\n    @Override\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    @Override\r\n    public int getHP() {\r\n        return hp;\r\n    }\r\n\r\n    @Override\r\n    public int getMaxHp() {\r\n        return maxHp;\r\n    }\r\n\r\n    @Override\r\n    public int getAttack() {\r\n        return atk;\r\n    }\r\n\r\n    @Override\r\n    public int getMana() {\r\n        return mana;\r\n    }\r\n\r\n    public int getMaxMana() {\r\n        return maxMana;\r\n    }\r\n\r\n    @Override\r\n    public int getDefense() {\r\n        return def;\r\n    }\r\n\r\n    @Override\r\n    public HeroElement getHeroElement() {\r\n        return heroElement;\r\n    }\r\n\r\n    @Override\r\n    public HeroRole getHeroRole() {\r\n        return heroRole;\r\n    }\r\n\r\n    @Override\r\n    public String getHeroDescription() {\r\n        return heroDescription;\r\n    }\r\n\r\n    @Override\r\n    public String getHeroLore() {\r\n        return heroLore;\r\n    }\r\n\r\n\r\n    // SKILLS\r\n    @Override\r\n    public Effect getEffect() {\r\n        return effect;\r\n    }\r\n\r\n    @Override\r\n    public boolean hasSkill1() {\r\n        return skill1 != null;\r\n    }\r\n\r\n    @Override\r\n    public boolean hasSkill2() {\r\n        return skill2 != null;\r\n    }\r\n\r\n    @Override\r\n    public void setSkill1(Skill skill1) {\r\n        this.skill1 = skill1;\r\n    }\r\n\r\n    @Override\r\n    public void setSkill2(Skill skill2) {\r\n        this.skill2 = skill2;\r\n    }\r\n\r\n    @Override\r\n    public Skill getSkill1() {\r\n        return skill1;\r\n    }\r\n\r\n    @Override\r\n    public Skill getSkill2() {\r\n        return skill2;\r\n    }\r\n\r\n    @Override\r\n    public SkillTarget getSkill1Target() {\r\n        if (!hasSkill1()) return null;\r\n        return skill1.getTarget();\r\n    }\r\n\r\n    @Override\r\n    public SkillTarget getSkill2Target() {\r\n        if (!hasSkill2()) return null;\r\n        return skill2.getTarget();\r\n    }\r\n\r\n    @Override\r\n    public boolean hasEnoughManaSkill1() {\r\n        if (!hasSkill1()) return false;\r\n        return skill1.hasEnoughMana(this);\r\n    }\r\n\r\n    @Override\r\n    public boolean hasEnoughManaSkill2() {\r\n        if (!hasSkill2()) return false;\r\n        return skill2.hasEnoughMana(this);\r\n    }\r\n\r\n    // SKILL USAGE\r\n    @Override\r\n    public void useSkill1(ArrayList<Hero> targets) {\r\n        if (!hasSkill1() || !hasEnoughManaSkill1()) return;\r\n        skill1.useSkill(this, targets);\r\n    }\r\n\r\n    @Override\r\n    public void useSkill1(Hero target) {\r\n        if (!hasSkill1() || !hasEnoughManaSkill1()) return;\r\n        skill1.useSkill(this, target);\r\n    }\r\n\r\n    @Override\r\n    public void useSkill2(ArrayList<Hero> targets) {\r\n        if (!hasSkill2() || !hasEnoughManaSkill2()) return;\r\n        skill2.useSkill(this, targets);\r\n    }\r\n\r\n    @Override\r\n    public void useSkill2(Hero target) {\r\n        if (!hasSkill2() || !hasEnoughManaSkill2()) return;\r\n        skill2.useSkill(this, target);\r\n    }\r\n\r\n    // CONDITION\r\n    @Override\r\n    public boolean isDefeated() {\r\n        return isDefeated;\r\n    }\r\n\r\n    @Override\r\n    public void makeAlive() {\r\n        isDefeated = false;\r\n    }\r\n\r\n    // DISPLAY\r\n    @Override\r\n    public void printHero() {\r\n        System.out.println(getName());\r\n        System.out.println(getHP());\r\n        System.out.println(getAttack());\r\n        System.out.println(getDefense());\r\n    }\r\n\r\n    @Override\r\n    public void setHeroElement(HeroElement heroElement) {\r\n        this.heroElement = heroElement;\r\n    }\r\n\r\n    @Override\r\n    public void setHeroRole(HeroRole heroRole) {\r\n        this.heroRole = heroRole;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Hero.java b/src/main/java/Hero.java
+--- a/src/main/java/Hero.java	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/src/main/java/Hero.java	(date 1685066449090)
+@@ -35,6 +35,8 @@
+ 
+     private boolean isDefeated;
+ 
++    private boolean isTurn;
++
+ 
+     public Hero() {}
+ 
+@@ -51,6 +53,7 @@
+         this.heroRole = heroRole;
+         this.effect = new Effect();
+         this.isDefeated = false;
++        this.isTurn= false;
+     }
+ 
+     // CLONE
+@@ -67,6 +70,7 @@
+         this.effect = new Effect();
+ 
+         this.isDefeated = false;
++        this.isTurn = false;
+ 
+         this.heroDescription = hero.getHeroDescription();
+         this.heroLore = hero.getHeroLore();
+@@ -333,4 +337,12 @@
+     public void setHeroRole(HeroRole heroRole) {
+         this.heroRole = heroRole;
+     }
++
++    public boolean isTurn() {
++        return isTurn;
++    }
++
++    public void setTurn(boolean turn) {
++        this.isTurn = turn;
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aa13a6e0-9ca5-4965-975b-793a343e6c14\" name=\"Changes\" comment=\"Added More Hero Skills and applying Skill to all Heroes\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/BaseGameHeroes.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/BaseGameHeroes.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/BaseGameSkills.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/BaseGameSkills.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Rebase.Settings\">\r\n    <option name=\"NEW_BASE\" value=\"origin/master\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QDbcXNvuQVCONEmyxL5pg0wbM6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/indra/Documents/Developments/Java/Object Oriented Progamming&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aa13a6e0-9ca5-4965-975b-793a343e6c14\" name=\"Changes\" comment=\"\" />\r\n      <created>1684891182227</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684891182227</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Create : first init\">\r\n      <created>1684892472796</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684892472796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Create : display game\">\r\n      <created>1684893599352</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684893599352</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Create : plot game\">\r\n      <created>1684900063309</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684900063309</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Create : character class &amp; skill\">\r\n      <created>1684904725862</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684904725862</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Create : character class &amp; skill\">\r\n      <created>1684906654981</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684906654981</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Create : Update Hero Class\">\r\n      <created>1684918607802</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684918607802</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Added further interface: BaseGameHeroes.java\">\r\n      <created>1684925561728</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684925561729</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Added hero cloning\">\r\n      <created>1684926322780</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684926322780</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Seperate Effect Class and add more effect\">\r\n      <created>1684930738055</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684930738055</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Added more effect, skill, and edited Hero Class\">\r\n      <created>1684933130921</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684933130921</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Added more skill (Purify, AoE, Resurrect)\">\r\n      <created>1684935289775</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684935289775</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Change Skill Target Type\">\r\n      <created>1684936634345</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684936634345</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Added Taunt skill\">\r\n      <created>1684937037989</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684937037989</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Added mana deduction and Mana Drain Skill\">\r\n      <created>1684938390692</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684938390692</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Added further Hero skill interface\">\r\n      <created>1684939823558</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684939823558</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Bug Fix: fix hero use skill\">\r\n      <created>1684940544597</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684940544597</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Bug Fix: fix hero use skill\">\r\n      <created>1684942192842</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684942192842</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Added maxMana and mana regen method per turn\">\r\n      <created>1684944568800</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684944568800</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Fix Interface\">\r\n      <created>1685008645852</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685008645852</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Added SkillFunctionality\">\r\n      <created>1685010435898</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685010435898</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Added Hero Skills\">\r\n      <created>1685022089605</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685022089605</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"Added More Hero Skills and applying Skill to all Heroes\">\r\n      <created>1685029998565</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685029998565</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"23\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Create : first init\" />\r\n    <MESSAGE value=\"Create : display game\" />\r\n    <MESSAGE value=\"Create : plot game\" />\r\n    <MESSAGE value=\"Create : character class &amp; skill\" />\r\n    <MESSAGE value=\"Create : Update Hero Class\" />\r\n    <MESSAGE value=\"Added further interface: BaseGameHeroes.java\" />\r\n    <MESSAGE value=\"Added hero cloning\" />\r\n    <MESSAGE value=\"Seperate Effect Class and add more effect\" />\r\n    <MESSAGE value=\"Added more effect, skill, and edited Hero Class\" />\r\n    <MESSAGE value=\"Added more skill (Purify, AoE, Resurrect)\" />\r\n    <MESSAGE value=\"Change Skill Target Type\" />\r\n    <MESSAGE value=\"Added Taunt skill\" />\r\n    <MESSAGE value=\"Added mana deduction and Mana Drain Skill\" />\r\n    <MESSAGE value=\"Added further Hero skill interface\" />\r\n    <MESSAGE value=\"Bug Fix: fix hero use skill\" />\r\n    <MESSAGE value=\"Added maxMana and mana regen method per turn\" />\r\n    <MESSAGE value=\"Fix Interface\" />\r\n    <MESSAGE value=\"Added SkillFunctionality\" />\r\n    <MESSAGE value=\"Added Hero Skills\" />\r\n    <MESSAGE value=\"Added More Hero Skills and applying Skill to all Heroes\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added More Hero Skills and applying Skill to all Heroes\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c3a163cee899da4366589c50e94798be5a4aac07)
++++ b/.idea/workspace.xml	(date 1685073370774)
+@@ -4,9 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added More Hero Skills and applying Skill to all Heroes">
++    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added maxMana and mana regen method per turn">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameEngine.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -186,35 +190,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1684944568800</updated>
+     </task>
+-    <task id="LOCAL-00019" summary="Fix Interface">
+-      <created>1685008645852</created>
+-      <option name="number" value="00019" />
+-      <option name="presentableId" value="LOCAL-00019" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685008645852</updated>
+-    </task>
+-    <task id="LOCAL-00020" summary="Added SkillFunctionality">
+-      <created>1685010435898</created>
+-      <option name="number" value="00020" />
+-      <option name="presentableId" value="LOCAL-00020" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685010435898</updated>
+-    </task>
+-    <task id="LOCAL-00021" summary="Added Hero Skills">
+-      <created>1685022089605</created>
+-      <option name="number" value="00021" />
+-      <option name="presentableId" value="LOCAL-00021" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685022089605</updated>
+-    </task>
+-    <task id="LOCAL-00022" summary="Added More Hero Skills and applying Skill to all Heroes">
+-      <created>1685029998565</created>
+-      <option name="number" value="00022" />
+-      <option name="presentableId" value="LOCAL-00022" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685029998565</updated>
+-    </task>
+-    <option name="localTasksCounter" value="23" />
++    <option name="localTasksCounter" value="19" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -245,10 +221,6 @@
+     <MESSAGE value="Added further Hero skill interface" />
+     <MESSAGE value="Bug Fix: fix hero use skill" />
+     <MESSAGE value="Added maxMana and mana regen method per turn" />
+-    <MESSAGE value="Fix Interface" />
+-    <MESSAGE value="Added SkillFunctionality" />
+-    <MESSAGE value="Added Hero Skills" />
+-    <MESSAGE value="Added More Hero Skills and applying Skill to all Heroes" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added More Hero Skills and applying Skill to all Heroes" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added maxMana and mana regen method per turn" />
+   </component>
+ </project>
+\ No newline at end of file
