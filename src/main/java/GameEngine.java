@@ -50,11 +50,6 @@ public class GameEngine implements IGameEngine{
     }
 
     public void start (){
-        IParty a = createPlayerParty("Indra", heroes.getHero(0), heroes.getHero(1), heroes.getHero(2));
-        IParty b = createPlayerParty("COM", heroes.getHero(3), heroes.getHero(4), heroes.getHero(5));
-        display.gameField(a, b);
-
-
         display.brawlHeroes();
         display.menuGame();
 
@@ -75,7 +70,7 @@ public class GameEngine implements IGameEngine{
                     _exitGame();
                 }
                 default -> {
-                    System.out.println("Please choose between (a | b | c) !!!");
+                    System.out.println("Please choose between ( a | b | c ) !!!");
                     System.out.print("Your Choice : ");
                 }
             }
@@ -85,9 +80,9 @@ public class GameEngine implements IGameEngine{
 
     private void _newGame (){
         display.newGameMenu();
-        String select = sc.nextLine();
         boolean isTrue = true;
-        do {
+        while (isTrue){
+            String select = sc.nextLine();
             switch (select) {
                 case "a" -> {
                     isTrue = false;
@@ -95,15 +90,14 @@ public class GameEngine implements IGameEngine{
                 }
                 case "b" -> {
                     isTrue = false;
-                    _createHero();
-                }
-                case "c" -> {
-                    isTrue = false;
                     start();
                 }
-                default -> System.out.println("Please choose between (a | b | c) !!!");
+                default -> {
+                    System.out.println("Please choose between ( a | b ) !!!");
+                    System.out.print("Your Choice : ");
+                }
             }
-        }while (isTrue);
+        }
     }
 
     private void _loadGame (){
@@ -131,14 +125,21 @@ public class GameEngine implements IGameEngine{
             Hero result = selectHero(select);
 
             if (listHeroes.contains(result)){
-                System.out.println("            Hero already selected, choose other heroes !!!                     ");
+                System.out.println("---------------------------------------------------------------------");
+                System.out.println("|        Hero already selected, please select another hero!         |");
+                System.out.println("---------------------------------------------------------------------");
             }else {
                 if (result != null){
                     listHeroes.add(result);
-                    System.out.println("                          " + result.getName() + " selected !              ");
+                    heroes.useHero(result.getName());
+                    int l = result.getName().length() + 20;
+                    int r = 47 - l;
+                    System.out.println("---------------------------------------------------------------------");
+                    System.out.printf("|%" + l  + "s Added to Team Party %" + r +  "s\n", result.getName(), "|");
+                    System.out.println("---------------------------------------------------------------------");
                     i++;
                 }else {
-                    System.out.println("Please choose heroes between 1 - 12 !!!");
+                    System.out.println("Please choose heroes between 1 - 12 or 'c' to create hero!");
                 }
             }
         }
@@ -163,6 +164,29 @@ public class GameEngine implements IGameEngine{
                 default -> System.out.println("Please choose between (y | n) !!!");
             }
         }while (isTrue);
+    }
+
+
+    private void _createPartyForCPU (){
+        ArrayList <Hero> listHeroes = new ArrayList<>();
+
+        int i = 1;
+        while (listHeroes.size() < 3){
+            int rNum = random.nextInt(12);
+            Hero result = selectHero(String.valueOf(rNum + 1));
+
+            if (listHeroes.contains(result)){
+                continue;
+            }else {
+                if (result != null && !heroes.isUsed(result.getName())){
+                    listHeroes.add(result);
+                    i++;
+                }else {
+                    continue;
+                }
+            }
+        }
+        this.cpuParty = createCPUParty("COM", listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));
     }
 
 
@@ -209,10 +233,8 @@ public class GameEngine implements IGameEngine{
         String select = sc.nextLine();
 
         if (select.equals("y")){
-
-        } else if (select.equals("s")) {
-
-        } else if (select.equals("x")) {
+            start();
+        } else if (select.equals("n")) {
             display.thankYou();
             _exitGame();
         }
@@ -356,10 +378,6 @@ public class GameEngine implements IGameEngine{
             hero.setTurn(true);
         }
         resetHeroTurn(listHero);
-
-
-
-
     }
 
 
@@ -507,28 +525,6 @@ public class GameEngine implements IGameEngine{
 
 
 
-    private void _createPartyForCPU (){
-        ArrayList <Hero> listHeroes = new ArrayList<>();
-
-        int i = 1;
-        while (listHeroes.size() < 3){
-            int rNum = random.nextInt(12);
-            Hero result = selectHero(String.valueOf(rNum + 1));
-
-            if (listHeroes.contains(result)){
-                continue;
-            }else {
-                if (result != null){
-                    listHeroes.add(result);
-                    i++;
-                }else {
-                    continue;
-                }
-            }
-        }
-        this.cpuParty = createCPUParty("COM", listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));
-    }
-
     private Hero _createHero (){
         Hero hero = new Hero();
 
@@ -578,11 +574,11 @@ public class GameEngine implements IGameEngine{
         } else if (select.equals("2")) {
             temp = heroes.getHero("Helda");
         } else if (select.equals("3")) {
-            temp = heroes.getHero("Veldora");
+            temp = heroes.getHero("Veld");
         } else if (select.equals("4")){
             temp = heroes.getHero("Deus");
         } else if (select.equals("5")){
-            temp = heroes.getHero("Greysn");
+            temp = heroes.getHero("Grove");
         } else if (select.equals("6")){
             temp = heroes.getHero("Elisa");
         } else if (select.equals("7")){
@@ -594,9 +590,9 @@ public class GameEngine implements IGameEngine{
         } else if (select.equals("10")){
             temp = heroes.getHero("Atla");
         } else if (select.equals("11")){
-            temp = heroes.getHero("Pomi");
-        } else if (select.equals("12")){
             temp = heroes.getHero("Marie");
+        } else if (select.equals("12")){
+            temp = heroes.getHero("Dillo");
         } else if (select.equalsIgnoreCase("c")){
             temp = _createHero();
         }else {
