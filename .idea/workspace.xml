@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Update : display game (game field)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added More Hero Skills and applying Skill to all Heroes">
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,28 +215,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685029998565</updated>
     </task>
-    <task id="LOCAL-00023" summary="Create : cpu turn &amp; player turn &amp; Update : display game">
-      <created>1685079230019</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1685079230019</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Create : cpu turn &amp; player turn &amp; Update : display game">
-      <created>1685079241787</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1685079241787</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Update : display game (game field)">
-      <created>1685083303168</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1685083303168</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,8 +250,6 @@
     <MESSAGE value="Added SkillFunctionality" />
     <MESSAGE value="Added Hero Skills" />
     <MESSAGE value="Added More Hero Skills and applying Skill to all Heroes" />
-    <MESSAGE value="Create : cpu turn &amp; player turn &amp; Update : display game" />
-    <MESSAGE value="Update : display game (game field)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update : display game (game field)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added More Hero Skills and applying Skill to all Heroes" />
   </component>
 </project>
