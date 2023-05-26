@@ -522,24 +522,29 @@ public class Display {
     }
 
     void heropedia() {
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|===================================================================|");
         System.out.println("|                           HERO ALMANAC                            |");
         System.out.println("|===================================================================|");
-        System.out.println("|              MURBY             |               HELLDA             |");
-        System.out.println("|-------------------------------------------------------------------|");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
-        System.out.println("|                                |                                  |");
+        System.out.println("|             MURBY               |               HELLDA            |");
+        System.out.println("|         FIRE | FIGHTER          |            FIRE | TANK          |");
+        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("| HP : 400 | ATK : 55 | DEF : 16  | HP : 490 | ATK : 35 | DEF : 24  |");
+        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("| FIREBALL BARAGE:                | ASHEN GROWL:                    |");
+        System.out.println("| Deal 3x atk to an enemy         | Deal 0.5 atk and taunts         |");
+        System.out.println("|                                 | an enemy for 3 turns            |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 | FLAME ARMOR:                    |");
+        System.out.println("|                                 | Increase all ally defense       |");
+        System.out.println("|                                 | by 15% for 5 turns              |");
+        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("| LORE:                           | LORE:                           |");
+        System.out.println("| Fell Orc yang bangkit dari      | Prajurit yang tumbuh besar di   |");
+        System.out.println("| neraka dan mewarisi Cullenors   | desa suku minotaurus, Helzores. |");
+        System.out.println("| axe dari api kegelapan.         | Api Ofyhz bernaung memberikan   |");
+        System.out.println("|                                 | keabadian pada dirinya          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|=================================|=================================|");
 
 
     }
