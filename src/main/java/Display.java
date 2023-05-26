@@ -164,7 +164,7 @@ public class Display {
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
         System.out.printf("|%"+hpH3l +"s%" + hpH3r + "s%" + defH3l + "s%" + defH3r + "s%" + atkH3l + "s%" + atkH3r + "s                     |%" + hpE3l + "s%" + hpE3r + "s%" + defE3l + "s%" + defE3r + "s%" + atkE3l + "s%" + atkE3r + "s\n" , hpH3, "|", defH3, "|", atkH3, "|", hpE3, "|", defE3, "|", atkE3, "|");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|===================================================================|");
     }
 
     void gameField (IParty playerParty, IParty cpuParty){
@@ -316,7 +316,7 @@ public class Display {
         System.out.printf("| %-20s |                     | %-20s |\n", String.format("ATK  : %d", h3.getAttack()), String.format("ATK  : %d", e3.getAttack()));
         System.out.printf("| %-20s |                     | %-20s |\n", String.format("DEF  : %d", h3.getDefense()), String.format("DEF  : %d", e3.getDefense()));
         System.out.printf("| %-20s |                     | %-20s |\n", h3.getCondition(), e3.getCondition());
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|===================================================================|");
     }
 
     void winnerBanner (IParty winnerTeam){
