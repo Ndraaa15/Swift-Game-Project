@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added getCondition for getting effect end defeated String">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added More Hero Skills and applying Skill to all Heroes">
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,23 +17,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Swift-Game" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,63 +214,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685029998565</updated>
     </task>
-    <task id="LOCAL-00023" summary="Edited a few name">
-      <created>1685030325259</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1685030325259</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Fix Consstructor -&gt; Initializer">
-      <created>1685069810377</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1685069810377</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Concising Skill initializing">
-      <created>1685073657109</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1685073657109</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Give setLore example">
-      <created>1685074120200</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1685074120200</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Add safety to SkillFunctionality and effect usage in Hero basic and Special atk">
-      <created>1685075154476</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1685075154476</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Fix IHero">
-      <created>1685075326075</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1685075326075</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Make Hero effect atribute private">
-      <created>1685075538911</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1685075538911</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added getCondition for getting effect end defeated String">
-      <created>1685078313795</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1685078313795</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +229,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create : first init" />
+    <MESSAGE value="Create : display game" />
+    <MESSAGE value="Create : plot game" />
     <MESSAGE value="Create : character class &amp; skill" />
     <MESSAGE value="Create : Update Hero Class" />
     <MESSAGE value="Added further interface: BaseGameHeroes.java" />
@@ -318,14 +249,6 @@
     <MESSAGE value="Added SkillFunctionality" />
     <MESSAGE value="Added Hero Skills" />
     <MESSAGE value="Added More Hero Skills and applying Skill to all Heroes" />
-    <MESSAGE value="Edited a few name" />
-    <MESSAGE value="Fix Consstructor -&gt; Initializer" />
-    <MESSAGE value="Concising Skill initializing" />
-    <MESSAGE value="Give setLore example" />
-    <MESSAGE value="Add safety to SkillFunctionality and effect usage in Hero basic and Special atk" />
-    <MESSAGE value="Fix IHero" />
-    <MESSAGE value="Make Hero effect atribute private" />
-    <MESSAGE value="Added getCondition for getting effect end defeated String" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added getCondition for getting effect end defeated String" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added More Hero Skills and applying Skill to all Heroes" />
   </component>
 </project>

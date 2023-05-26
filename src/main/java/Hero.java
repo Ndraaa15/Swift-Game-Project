@@ -35,6 +35,8 @@ class Hero implements IHero {
 
     private boolean isDefeated;
 
+    private boolean isTurn;
+
 
     public Hero() {}
 
@@ -51,6 +53,7 @@ class Hero implements IHero {
         this.heroRole = heroRole;
         this.effect = new Effect();
         this.isDefeated = false;
+        this.isTurn= false;
     }
 
     // CLONE
@@ -67,6 +70,7 @@ class Hero implements IHero {
         this.effect = new Effect();
 
         this.isDefeated = false;
+        this.isTurn = false;
 
         this.heroDescription = hero.getHeroDescription();
         this.heroLore = hero.getHeroLore();
@@ -342,5 +346,13 @@ class Hero implements IHero {
     @Override
     public void setHeroRole(HeroRole heroRole) {
         this.heroRole = heroRole;
+    }
+
+    public boolean isTurn() {
+        return isTurn;
+    }
+
+    public void setTurn(boolean turn) {
+        this.isTurn = turn;
     }
 }
