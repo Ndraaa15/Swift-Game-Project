@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Concising Skill initializing">
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Give setLore example">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SkillFunctionality.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685073657109</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Give setLore example">
+      <created>1685074120200</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1685074120200</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +297,7 @@
     <MESSAGE value="Edited a few name" />
     <MESSAGE value="Fix Consstructor -&gt; Initializer" />
     <MESSAGE value="Concising Skill initializing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Concising Skill initializing" />
+    <MESSAGE value="Give setLore example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Give setLore example" />
   </component>
 </project>

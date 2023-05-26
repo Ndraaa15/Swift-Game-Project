@@ -75,19 +75,18 @@ class Hero implements IHero {
         this.skill2 = hero.getSkill2();
     }
 
-    @Override
-    public void normalAttack(IHero opponent) {
-        int totalAtk = this.atk - opponent.getDefense();
+
+    public void normalAttack(Hero target) {
+        int totalAtk = SkillFunctionality.getAttackAfterEffect(this) - SkillFunctionality.getDefenceAfterEffect(target);
         if (totalAtk <= 0) totalAtk = 1;
-        opponent.setHP(opponent.getHP() - totalAtk);
-        System.out.println(this.name + " atk " + opponent.getName() + " dmg: " + totalAtk);
-        opponent.updateIsDefeated();
+        target.setHP(target.getHP() - totalAtk);
+        System.out.println(this.name + " atk " + target.getName() + " dmg: " + totalAtk);
+        target.updateIsDefeated();
     }
 
-    @Override
-    public void specialAttack(IHero opponent) {
+    public void specialAttack(Hero target) {
         HeroElement attackerElement = this.getHeroElement();
-        HeroElement opponentElement = opponent.getHeroElement();
+        HeroElement opponentElement = target.getHeroElement();
 
         int damageMultiplier = 1;
 
@@ -98,15 +97,15 @@ class Hero implements IHero {
         } else if (attackerElement == heroElement.WATER && opponentElement == heroElement.FIRE) {
             damageMultiplier = 2;
         }
-        int totalAtk = this.getAttack() * damageMultiplier;
+        int totalAtk = (SkillFunctionality.getAttackAfterEffect(this) * damageMultiplier) - SkillFunctionality.getDefenceAfterEffect(target) ;
 
         if (totalAtk <= 0) {
             totalAtk = 1;
         }
 
-        opponent.setHP(opponent.getHP() - totalAtk);
-        System.out.println(this.getName() + " atk " + opponent.getName() + " dmg: " + totalAtk);
-        opponent.updateIsDefeated();
+        target.setHP(target.getHP() - totalAtk);
+        System.out.println(this.getName() + " atk " + target.getName() + " dmg: " + totalAtk);
+        target.updateIsDefeated();
     }
 
     @Override
@@ -114,6 +113,8 @@ class Hero implements IHero {
         if (hp <= 0) {
             setDefeated(true);
             setHP(0);
+            setMana(0);
+            getEffect().nullifyAll();
             System.out.println(getName() + " is defeated");
         }
     }
