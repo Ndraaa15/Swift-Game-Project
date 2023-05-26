@@ -53,10 +53,24 @@ class BaseGameHeroes {
 
         // Contoh untuk Murby
         hero0.setHeroLore("Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.");
-
-
-
-
+        hero1.setHeroLore("Prajurit yang tumbuh besar di desa suku minotaurus, Helzores. Api Ofyhz bernaung di dirinya memberikan keabadian selama-lamanya.")
+        hero2.setHeroLore("Manusia setengah naga yang dikutuk oleh dewa azilatur. Sisik di tubuhnya menyerap segala bentuk energi di sekitarnya ketika matahari telah terbenam.")
+        hero3.setHeroLore("Lulusan terbaik sekolah sihir dengan passion memanahnya. Pengabdian, pengorbanan, dan kegigihan membuatnya dijuluki “Muff Blessed” oleh musuhnya.")
+            
+        hero4.setHeroLore("Berkah surgawi mengubah biji matahari menjadi seorang half-human yang memberikan kehangatan pada pijakan kakinya.")
+        hero5.setHeroLore("Salah satu buku legendaris yang selamat dari tragedi perpustakaan alexandria ditemukan oleh elisa si gadis kecil. Eksistensi Bio-Fisika menyerap seluruh orang yang memiliki niat buruk.")
+        hero6.setHeroLore("Prajurit Elf terbaik pada dinasti Jadaxie dengan panah kayu Fieltcress tidak terbatas.")
+        hero7.setHeroLore("Tabib kerajaan Gulsior dari aliran dewa ismich yang menerima rahmat untuk memberkati seluruh umatnya.")
+            
+        hero8.setHeroLore("Memiliki setengah darah Poseidon membuatnya berambisi untuk menguasai samudra dalam. Penguasaan air yang baik membuatnya dapat bertarung dalam medan apapun.")    
+        hero9.setHeroLore("Gadis setengah duyung pewaris panah legendaris Serpent, sang penakluk lautan asam yang mendiami pesisir Aquata dalam kegelapan yang fana.")
+        hero10.setHeroLore("Penghuni Themscira, tanah selir para dewa. Marielle dengan kekuatan air suci mengabdi dengan julukan “The Holy Maiden”.")
+        hero11.setHeroLore("Nelayan dengan kesehariannya bertarung melawan siluman ikan hidup dengan tombak kebanggaannya, Culbert.")    
+            
+            
+            
+            
+            
         //
 
         add(hero0);

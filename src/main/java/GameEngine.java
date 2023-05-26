@@ -566,7 +566,11 @@ public class GameEngine implements IGameEngine{
         System.out.println("|                            Hero SKills                            |");
         System.out.println("---------------------------------------------------------------------");
         display.skillList();
-        select = sc.nextLine();
+        for (int i = 0; i < 2; i++) {
+            System.out.print("Choose your favourite skill : ");
+            select = sc.nextLine();
+
+        }
 
 
         System.out.println("---------------------------------------------------------------------");
