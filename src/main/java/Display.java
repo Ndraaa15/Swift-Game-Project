@@ -1,7 +1,7 @@
 
 
 public class Display {
-    void gameField (IParty playerParty, IParty cpuParty){
+    void gameFieldf (IParty playerParty, IParty cpuParty){
         String team = playerParty.getPartyName() + "'s Team";
         int x = 5 + team.length();
         int y = 23 - x;
@@ -164,6 +164,158 @@ public class Display {
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
         System.out.printf("|%"+hpH3l +"s%" + hpH3r + "s%" + defH3l + "s%" + defH3r + "s%" + atkH3l + "s%" + atkH3r + "s                     |%" + hpE3l + "s%" + hpE3r + "s%" + defE3l + "s%" + defE3r + "s%" + atkE3l + "s%" + atkE3r + "s\n" , hpH3, "|", defH3, "|", atkH3, "|", hpE3, "|", defE3, "|", atkE3, "|");
+        System.out.println("---------------------------------------------------------------------");
+    }
+
+    void gameField (IParty playerParty, IParty cpuParty){
+        String team = playerParty.getPartyName() + "'s Team";
+        int x = 5 + team.length();
+        int y = 23 - x;
+
+        //Player
+        Hero h1 = playerParty.getCharacters().get(0);Hero h2 = playerParty.getCharacters().get(1);Hero h3 = playerParty.getCharacters().get(2);
+        //Hero 1
+        String hPla1 = h1.getName() + " | " + h1.getMana();
+        int hPla1l = hPla1.length() + 4; int hPla1r = 23 - hPla1l;
+
+        String atrH1 = h1.getHeroElement().toString() + " | " +h1.getHeroRole().toString();
+        int atrH1l = atrH1.length() + 4; int atrH1r = 23 - atrH1l;
+
+        String hpH1 = String.valueOf(h1.getHP());
+        int hpH1l = 2 + hpH1.length(); int hpH1r = 7 - hpH1l;
+
+        String atkH1 = String.valueOf(h1.getAttack());
+        int atkH1l = 2 + atkH1.length(); int atkH1r = 8 - atkH1l;
+
+        String defH1 = String.valueOf(h1.getDefense());
+        int defH1l = 2 + defH1.length(); int defH1r = 8 - defH1l;
+
+
+        //Hero 2
+        String hPla2 = h2.getName() + " | " + h2.getMana();
+        int hPla2l = hPla1.length() + 4 ; int hPla2r = 23 - hPla1l;
+
+        String atrH2 = h2.getHeroElement().toString() + " | " +h2.getHeroRole().toString();
+        int atrH2l = atrH2.length() + 4; int atrH2r = 23 - atrH2l;
+
+        String hpH2 = String.valueOf(h2.getHP());
+        int hpH2l = 2 + hpH2.length(); int hpH2r = 7 - hpH2l;
+
+        String atkH2 = String.valueOf(h2.getAttack());
+        int atkH2l = 2 + atkH1.length(); int atkH2r = 8 - atkH2l;
+
+        String defH2 = String.valueOf(h2.getDefense());
+        int defH2l = 2 + defH2.length(); int defH2r = 8 - defH2l;
+
+
+        //Hero 3
+        String hPla3 = h3.getName() + " | " + h3.getMana();
+        int hPla3l = hPla3.length() + 4; int hPla3r = 23 - hPla3l;
+
+        String atrH3 = h3.getHeroElement().toString() + " | " +h3.getHeroRole().toString();
+        int atrH3l = atrH3.length() + 4; int atrH3r = 23 - atrH3l;
+
+        String hpH3 = String.valueOf(h3.getHP());
+        int hpH3l = 2 + hpH3.length(); int hpH3r = 7 - hpH3l;
+
+        String atkH3 = String.valueOf(h3.getAttack());
+        int atkH3l = 2 + atkH3.length(); int atkH3r = 8 - atkH3l;
+
+        String defH3 = String.valueOf(h3.getDefense());
+        int defH3l = 2 + defH3.length(); int defH3r = 8 - defH3l;
+
+
+        //Enemy
+        Hero e1 = cpuParty.getCharacters().get(0);Hero e2 = cpuParty.getCharacters().get(1);Hero e3 = cpuParty.getCharacters().get(2);
+        //Enemy 1
+        String hE1 = e1.getName() + " | " + e1.getMana();
+        int hE1l = hE1.length() + 4; int hE1r = 23 - hE1l;
+
+        String atrE1 = e1.getHeroElement().toString() + " | " +e1.getHeroRole().toString();
+        int atrE1l = atrE1.length() + 4; int atrE1r = 23 - atrE1l;
+
+        String hpE1 = String.valueOf(e1.getHP());
+        int hpE1l = 2 + hpE1.length(); int hpE1r = 7 - hpH1l;
+
+        String atkE1 = String.valueOf(e1.getAttack());
+        int atkE1l = 2 + atkE1.length(); int atkE1r = 8 - atkH1l;
+
+        String defE1 = String.valueOf(e1.getDefense());
+        int defE1l = 2 + defE1.length(); int defE1r = 8 - defH1l;
+
+
+        //Enemy 2
+        String hE2 = e2.getName() +  " | " + e2.getMana();
+        int hE2l = hE2.length() + 4; int hE2r = 23 - hE2l;
+
+        String atrE2 = e2.getHeroElement().toString() + " | " +e2.getHeroRole().toString();
+        int atrE2l = atrE2.length() + 4; int atrE2r = 23 - atrE2l;
+
+        String hpE2 = String.valueOf(e2.getHP());
+        int hpE2l = 2 + hpE2.length(); int hpE2r = 7 - hpE2l;
+
+        String atkE2 = String.valueOf(e2.getAttack());
+        int atkE2l = 2 + atkE2.length(); int atkE2r = 8 - atkE2l;
+
+        String defE2 = String.valueOf(e2.getDefense());
+        int defE2l = 2 + defE2.length(); int defE2r = 8 - defE2l;
+
+
+
+        //Enemy 3
+        String hE3 = e3.getName() + " | " + e3.getMana();
+        int hE3l = hE3.length() + 4; int hE3r = 23 - hE3l;
+
+        String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
+        int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
+
+        String hpE3 = String.valueOf(e3.getHP());
+        int hpE3l = 2 + hpE3.length(); int hpE3r = 7 - hpE3l;
+
+        String atkE3 = String.valueOf(e3.getAttack());
+        int atkE3l = 2 + atkE2.length(); int atkE3r = 8 - atkE3l;
+
+        String defE3 = String.valueOf(e3.getDefense());
+        int defE3l = 2 + defE3.length(); int defE3r = 8 - defE3l;
+
+
+
+        System.out.println();
+        System.out.println("|===================================================================|");
+        System.out.printf("|%" + x + "s%" + y + "s    BRAWL HEROES     |         COM     [ X ]|\n", team, "|");
+        System.out.println("|===================================================================|");
+        System.out.println("|          1           |                     |          1           |");
+        System.out.println("|----------------------|                     |----------------------|");
+        System.out.printf("|%" + hPla1l + "s%" + hPla1r + "s                     |%" + hE1l + "s%" + hE1r + "s\n", hPla1, "|", hE1, "|"); // Name
+        System.out.printf("|%" + atrH1l + "s%" + atrH1r + "s                     |%" + atrE1l + "s%" + atrE1r + "s\n", atrH1, "|", atrE1, "|"); //element | role
+        System.out.println("|----------------------|                     |----------------------|");
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("HP   : %d/%d", h1.getHP(), h1.getMaxHp()), String.format("HP   : %d/%d", e1.getHP(), e1.getMaxHp()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("MANA : %d/%d", h1.getMana(), h1.getMaxMana()), String.format("MANA : %d/%d", e1.getMana(), e1.getMaxMana()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("ATK  : %d", h1.getAttack()), String.format("ATK  : %d", e1.getAttack()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("DEF  : %d", h1.getDefense()), String.format("DEF  : %d", e1.getDefense()));
+        System.out.printf("| %-20s |                     | %-20s |\n", h1.getCondition(), e1.getCondition());
+        System.out.println("|======================|                     |======================|");
+        System.out.println("|          2           |                     |          2           |");
+        System.out.println("|----------------------|                     |----------------------|");
+        System.out.printf("|%" + hPla2l + "s%" + hPla2r + "s  ██      ██ ██████  |%" + hE2l + "s%" + hE2r +  "s\n", hPla2, "|", hE2, "|");
+        System.out.printf("|%" + atrH2l + "s%" + atrH2r + "s   ██    ██ ██       |%" + atrE2l + "s%" + atrE2r + "s\n", atrH2, "|", atrE2, "|");
+        System.out.println("|----------------------|    ██  ██   █████   |----------------------|");
+        System.out.printf("| %-20s |     ████        ██  | %-20s |\n", String.format("HP   : %d/%d", h2.getHP(), h2.getMaxHp()), String.format("HP   : %d/%d", e2.getHP(), e2.getMaxHp()));
+        System.out.printf("| %-20s |      ██    ██████   | %-20s |\n", String.format("MANA : %d/%d", h2.getMana(), h2.getMaxMana()), String.format("MANA : %d/%d", e1.getMana(), e2.getMaxMana()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("ATK  : %d", h2.getAttack()), String.format("ATK  : %d", e2.getAttack()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("DEF  : %d", h2.getDefense()), String.format("DEF  : %d", e2.getDefense()));
+        System.out.printf("| %-20s |                     | %-20s |\n", h2.getCondition(), e2.getCondition());
+        System.out.println("|======================|                     |======================|");
+        System.out.println("|          3           |                     |          3           |");
+        System.out.println("|----------------------|                     |----------------------|");
+        System.out.printf("|%" + hPla3l + "s%" + hPla3r + "s                     |%" + hE3l + "s%" + hE3r + "s\n", hPla3, "|", hE3, "|"); // Name
+        System.out.printf("|%" + atrH3l + "s%" + atrH3r + "s                     |%" + atrE3l + "s%" + atrE3r + "s\n", atrH3, "|", atrE3, "|"); //element | role
+        System.out.println("|----------------------|                     |----------------------|");
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("HP   : %d/%d", h3.getHP(), h3.getMaxHp()), String.format("HP   : %d/%d", e3.getHP(), e3.getMaxHp()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("MANA : %d/%d", h3.getMana(), h3.getMaxMana()), String.format("MANA : %d/%d", e3.getMana(), e3.getMaxMana()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("ATK  : %d", h3.getAttack()), String.format("ATK  : %d", e3.getAttack()));
+        System.out.printf("| %-20s |                     | %-20s |\n", String.format("DEF  : %d", h3.getDefense()), String.format("DEF  : %d", e3.getDefense()));
+        System.out.printf("| %-20s |                     | %-20s |\n", h3.getCondition(), e3.getCondition());
         System.out.println("---------------------------------------------------------------------");
     }
 
