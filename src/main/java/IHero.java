@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public interface IHero {
     // dapat berakibat berkurangnya HP lawan
     // damage yang dihasilkan normalAttack tidak bergantung pada tipe karakter
-    public void normalAttack(IHero opponent);
+    public void normalAttack(Hero target);
 
     // dapat berakibat berkurangnya HP lawan
     // damage yang dihasilkan specialAttack bergantung pada tipe karakter
-    public void specialAttack(IHero opponent);
+    public void specialAttack(Hero target);
 
     public void updateIsDefeated();
 
