@@ -1,5 +1,3 @@
-import javax.naming.BinaryRefAddr;
-
 public class App {
     public static void main(String[] args) {
         BaseGameHeroes heroes = new BaseGameHeroes();
