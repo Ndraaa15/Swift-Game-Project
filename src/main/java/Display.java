@@ -565,8 +565,61 @@ public class Display {
         System.out.println("|                                 | keabadian pada dirinya          |");
         System.out.println("|                                 |                                 |");
         System.out.println("|=================================|=================================|");
+    }
 
-
+    void skillList() {
+        System.out.println("|===================================================================|");
+        System.out.println("|                             PICK SKILL                            |");
+        System.out.println("|===================================================================|");
+        System.out.println("| [01] FIREBALL BARAGE            | [13] FROST ARMOR                |");
+        System.out.println("|      Deal 3x atk to an enemy.   |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [02] ASHEN GROWN                | [14] WATER CANNON               |");
+        System.out.println("|      Taunts 3T and deal 0.5x    |                                 |");
+        System.out.println("|      atk to an enemy.           |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [03] FLAME ARMOR                | [15] HEALING WATER              |");
+        System.out.println("|      Increase all ally def by   |                                 |");
+        System.out.println("|      15% for 5T                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [04] ARMOR BURN                 | [16] BLIZZARD                   |");
+        System.out.println("|      All enemy def decreased    |                                 |");
+        System.out.println("|      60% 3T and deal 0.2x atk   |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [05] FIRE STAFF                 | [17] WATER SLASH                |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [06] INFERNAL SHOT              | [18] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [07] GRASSROOT GUARDIAN         | [19] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [08] DRAINING VINE              | [20] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [09] THORN ARROW                | [21] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [10] LIFE REBLOSSOM             | [22] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [11] NATURE CLEANSING           | [23] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [12] NEEDLE RAIN                | [24] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|===================================================================|");
     }
 
 
