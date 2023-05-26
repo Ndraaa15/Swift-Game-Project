@@ -255,4 +255,20 @@ class Effect {
         }
         return hasAnyEffect;
     }
+
+    public String getEffectDisplay() {
+        if (!hasAnyEffect()) return null;
+        String display = "";
+        if (isStunned()) display += "S ";
+        if (isTaunted()) display += "T ";
+        if (hasAtkBuff()) display += "AB ";
+        if (hasDefBuff()) display += "DB ";
+        if (hasAtkDebuff()) display += "AD ";
+        if (hasDefDebuff()) display += "DD ";
+
+        if (display.charAt(display.length() - 1) == ' ') {
+            display = display.substring(0, display.length() - 1);
+        }
+        return display;
+    }
 }

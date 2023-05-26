@@ -316,6 +316,15 @@ class Hero implements IHero {
         isDefeated = false;
     }
 
+    public String getCondition() {
+        if (isDefeated) {
+            return "DEEFEATED";
+        }
+        String display =  getEffect().getEffectDisplay();
+        if (display == null) return "";
+        return display;
+    }
+
     // DISPLAY
     @Override
     public void printHero() {

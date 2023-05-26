@@ -483,4 +483,12 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
     }
 
+    void heropedia() {
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                           HERO ALMANAC                            |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                                |                                  |");
+
+    }
+
 }
