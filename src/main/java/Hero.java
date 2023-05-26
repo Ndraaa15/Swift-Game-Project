@@ -331,8 +331,9 @@ class Hero implements IHero {
         if (isDefeated) {
             return "DEFEATED";
         }
-        String display =  getEffect().getEffectDisplay();
-        if (display == null) return "";
+        String display = "FX   : ";
+        display +=  getEffect().getEffectDisplay();
+        if (display.equals("FX   : null")) return "FX   :";
         return display;
     }
 
