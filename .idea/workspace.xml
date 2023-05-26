@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Edited a few name">
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Fix Consstructor -&gt; Initializer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
     </list>
@@ -17,6 +17,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Swift-Game" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -221,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685030325259</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix Consstructor -&gt; Initializer">
+      <created>1685069810377</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685069810377</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +281,7 @@
     <MESSAGE value="Added Hero Skills" />
     <MESSAGE value="Added More Hero Skills and applying Skill to all Heroes" />
     <MESSAGE value="Edited a few name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited a few name" />
+    <MESSAGE value="Fix Consstructor -&gt; Initializer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Consstructor -&gt; Initializer" />
   </component>
 </project>
