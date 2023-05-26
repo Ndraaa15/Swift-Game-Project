@@ -98,7 +98,7 @@ public class Display {
 
         //Enemy 3
         String hE3 = e3.getName();
-        int hE3l = hE2.length() + 8; int hE3r = 23 - hE3l;
+        int hE3l = hE3.length() + 8; int hE3r = 23 - hE3l;
 
         String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
         int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
@@ -231,7 +231,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                         Select (a | b | c)                        |");
+        System.out.println("|                        Select ( a | b | c )                       |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
@@ -246,7 +246,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                         Select (a | b | c)                        |");
+        System.out.println("|                          Select ( a | b )                         |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
@@ -329,7 +329,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                           Select (a | b)                          |");
+        System.out.println("|                          Select ( a | b )                         |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
@@ -344,22 +344,22 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                           Swift Games                             |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (a | b | c)                         |");
+        System.out.println("|                       Select ( a | b | c )                        |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
 
     void listHero (){
         System.out.println();
-        System.out.println("                       !Select Your 3 Heroes!                       ");
+        System.out.println("                        Select Your 3 Heroes                        ");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                            LIST HERO                              |");
         System.out.println("|===================================================================|");
         System.out.println("|         Fire         |        Grass        |        Water         |");
         System.out.println("|===================================================================|");
-        System.out.println("| [1] Murby  | Fighter | [5] Greysn| Tank    | [9]  Theseus| Tank   |");
+        System.out.println("| [1] Murby  | Fighter | [5] Grove | Tank    | [9]  Theseus| Tank   |");
         System.out.println("| [2] Helda  | Tank    | [6] Elisa | Mage    | [10] Atla   | Archer |");
-        System.out.println("| [3] Veldora| Mage    | [7] Lily  | Archer  | [11] Pomi   | Support|");
+        System.out.println("| [3] Veld   | Mage    | [7] Lily  | Archer  | [11] Marie  | Support|");
         System.out.println("| [4] Deus   | Archer  | [8] Fara  | Support | [12] Dillo  | Fighter|");
         System.out.println("|                      |                     |                      |");
         System.out.println("|===================================================================|");
@@ -371,16 +371,20 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                   Are you ready for the challenge ?               |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.print("Enter your name party : ");
+        System.out.print("| Enter your name party : ");
     }
 
     void brawlHeroes (){
-        System.out.println("░█▀▀█ ░█▀▀█ ─█▀▀█ ░█──░█ ░█─── 　 ░█─░█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀█ ░█▀▀▀ ░█▀▀▀█ ");
-        System.out.println("░█▀▀▄ ░█▄▄▀ ░█▄▄█ ░█░█░█ ░█─── 　 ░█▀▀█ ░█▀▀▀ ░█▄▄▀ ░█──░█ ░█▀▀▀ ─▀▀▀▄▄ ");
-        System.out.println("░█▄▄█ ░█─░█ ░█─░█ ░█▄▀▄█ ░█▄▄█ 　 ░█─░█ ░█▄▄▄ ░█─░█ ░█▄▄▄█ ░█▄▄▄ ░█▄▄▄█ ");
-        System.out.println();
-        System.out.println("               Unleash Your Team's Might in Brawl Heroes               ");
-        System.out.println("                    Triumph in Turn-based Battles!                     ");
+        System.out.println("░█▀▀█ ░█▀▀█ ─█▀▀█ ░█──░█ ░█───  ░█─░█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀█ ░█▀▀▀ ░█▀▀▀█ ");
+        System.out.println("░█▀▀▄ ░█▄▄▀ ░█▄▄█ ░█░█░█ ░█───  ░█▀▀█ ░█▀▀▀ ░█▄▄▀ ░█──░█ ░█▀▀▀ ─▀▀▀▄▄ ");
+        System.out.println("░█▄▄█ ░█─░█ ░█─░█ ░█▄▀▄█ ░█▄▄█  ░█─░█ ░█▄▄▄ ░█─░█ ░█▄▄▄█ ░█▄▄▄ ░█▄▄▄█ ");
+        System.out.println("|                              2023                                 |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|               Unleash Your Team's Might in Brawl Heroes           |");
+        System.out.println("|                    Triumph in Turn-based Battles!                 |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|              INDRA | JAVIER | RAFIQI | LUCAS | GRATIA             |");
+        System.out.println("---------------------------------------------------------------------");
         System.out.println();
     }
 
@@ -388,8 +392,9 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                           Create a Hero                           |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("          Unleash your imagination and forge an extraordinary        ");
-        System.out.println("                          hero from scratch!                         ");
+        System.out.println("|         Unleash your imagination and forge an extraordinary       |");
+        System.out.println("|                         hero from scratch!                        |");
+        System.out.println("---------------------------------------------------------------------");
         System.out.println();
     }
 
@@ -446,7 +451,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (a | b | c)                         |");
+        System.out.println("|                        Select (1 | 2 | 3)                         |");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -471,32 +476,29 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (a | b | c)                         |");
+        System.out.println("|                        Select (1 | 2 | 3)                         |");
         System.out.println("---------------------------------------------------------------------");
     }
 
     void listEnemy (IParty cpuParty){
         String h1 = cpuParty.getCharacters().get(0).getName();String h2 = cpuParty.getCharacters().get(1).getName();String h3 = cpuParty.getCharacters().get(2).getName();
-        int hl1 = 7 + h1.length()+1;
-        int hr1 = 22 - hl1 + 1;
+        int hr1 = 36 - h1.length();
 
-        int hl2 = 7 + h2.length();
-        int hr2 = 22 - hl2 + 1;
+        int hr2 = 36 - h2.length();
 
-        int hl3 = 7 + h3.length();
-        int hr3 = 22 - hl3 + 1;
+        int hr3 = 36 - h3.length();
 
         System.out.println("                       Choose your target hero                      ");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                             List Enemy                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.printf("|                          [1] %"+ hl1 + "s%" + hr1 + "s\n", h1, "|");
-        System.out.printf("|                          [2] %"+ hl2 + "s%" + hr2 + "s\n", h2, "|");
-        System.out.printf("|                          [3] %"+ hl3 + "s%" + hr3 + "s\n", h3, "|");
+        System.out.printf("|                            [1] %s%" + hr1 + "s\n", h1, "|");
+        System.out.printf("|                            [2] %s%" + hr2 + "s\n", h2, "|");
+        System.out.printf("|                            [3] %s%" + hr3 + "s\n", h3, "|");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (a | b | c)                         |");
+        System.out.println("|                        Select (1 | 2 | 3)                         |");
         System.out.println("---------------------------------------------------------------------");
 
     }
@@ -510,13 +512,13 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                               Skill                               |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        [a] Basic Attack                           |");
-        System.out.println("|                        [b] Special Attack                          |");
-        System.out.printf("|                        [c] %s%" + sr1 + "s\n", s1, "|");
+        System.out.println("|                        [1] Basic Attack                           |");
+        System.out.println("|                        [2] Special Attack                         |");
+        System.out.printf("|                        [3] %s%" + sr1 + "s\n", s1, "|");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                         Select (a | b | c)                        |");
+        System.out.println("|                        Select ( 1 | 2 | 3 )                       |");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -533,11 +535,11 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                        [a] Basic Attack                           |");
         System.out.println("|                        [b] Special Attack                          |");
-        System.out.printf("|                        [c] %s%" + sr1 + "s\n",s1, "|");
-        System.out.printf("|                        [c] %s%" + sr2 + "s\n", s2, "|");
+        System.out.printf("|                         [c] %s%" + sr1 + "s\n",s1, "|");
+        System.out.printf("|                         [c] %s%" + sr2 + "s\n", s2, "|");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                         Select (a | b | c)                        |");
+        System.out.println("|                      Select (a | b | c | d)                       |");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -571,70 +573,89 @@ public class Display {
         System.out.println("|===================================================================|");
         System.out.println("|                             PICK SKILL                            |");
         System.out.println("|===================================================================|");
-        System.out.println("| [01] FIREBALL BARAGE : 50       | [13] FROST ARMOR : 20           |");
-        System.out.println("|      Deal 3x atk to an enemy.   |      Increase an ally def by    |");
-        System.out.println("|                                 |      0.2 5T.                    |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [02] ASHEN GROWN : 55           | [14] WATER CANNON : 30          |");
-        System.out.println("|      Taunts 3T and deal 0.5x    |      Deal 25% max hp damage     |");
-        System.out.println("|      atk to an enemy.           |      to an enemy.               |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [03] FLAME ARMOR : 60           | [15] HEALING WATER : 30         |");
-        System.out.println("|      Increase all ally def by   |      Heal 20% max hp of         |");
-        System.out.println("|      15% for 5T.                |      an ally.                   |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [04] ARMOR BURN : 65            | [16] BLIZZARD : 80              |");
-        System.out.println("|      All enemy def decreased    |      Decrease all enemy atk     |");
-        System.out.println("|      60% 3T and deal 0.2x atk.  |      by 10% for 10 turns.       |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [05] FIRE STAFF : 30            | [17] WATER SLASH : 50           |");
-        System.out.println("|      Increase hero atk          |      Deal 3x true damage to     |");
-        System.out.println("|      by 2x 3T.                  |      an enemy.                  |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [06] INFERNAL SHOT : 30         | [18] -                          |");
-        System.out.println("|      Stun 1T and deal 1.5 atk   |                                 |");
-        System.out.println("|      to an enemy.               |                                 |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [07] GRASSROOT GUARDIAN : 60    | [19] -                          |");
-        System.out.println("|      10% heal, 20% def buff 2T  |                                 |");
-        System.out.println("|      to all ally.               |                                 |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [08] DRAINING VINE : 85         | [20] -                          |");
-        System.out.println("|      Drain 50% max mana and hp  |                                 |");
-        System.out.println("|      to an enemy.               |                                 |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [09] THORN ARROW : 20           | [21] -                          |");
-        System.out.println("|      1.5x true damage to an     |                                 |");
-        System.out.println("|      enemy.                     |                                 |");
-        System.out.println("|                                 |                                 |");
-        System.out.println("| [10] LIFE REBLOSSOM : 85        | [22] -                          |");
-        System.out.println("|      Resurrect an ally.         |                                 |");
+        System.out.println("| [01] FIREBALL BARAGE            | [13] FROST ARMOR                |");
+        System.out.println("|      Deal 3x atk to an enemy.   |                                 |");
         System.out.println("|                                 |                                 |");
         System.out.println("|                                 |                                 |");
-        System.out.println("| [11] NATURE CLEANSING : 20      | [23] -                          |");
-        System.out.println("|      Purify an ally debuffs.    |                                 |");
+        System.out.println("| [02] ASHEN GROWN                | [14] WATER CANNON               |");
+        System.out.println("|      Taunts 3T and deal 0.5x    |                                 |");
+        System.out.println("|      atk to an enemy.           |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [03] FLAME ARMOR                | [15] HEALING WATER              |");
+        System.out.println("|      Increase all ally def by   |                                 |");
+        System.out.println("|      15% for 5T                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [04] ARMOR BURN                 | [16] BLIZZARD                   |");
+        System.out.println("|      All enemy def decreased    |                                 |");
+        System.out.println("|      60% 3T and deal 0.2x atk   |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [05] FIRE STAFF                 | [17] WATER SLASH                |");
         System.out.println("|                                 |                                 |");
         System.out.println("|                                 |                                 |");
-        System.out.println("| [12] NEEDLE RAIN : 25           | [24] -                          |");
-        System.out.println("|      Deals 1x true damage to    |                                 |");
-        System.out.println("|      all enemy.                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [06] INFERNAL SHOT              | [18] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [07] GRASSROOT GUARDIAN         | [19] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [08] DRAINING VINE              | [20] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [09] THORN ARROW                | [21] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [10] LIFE REBLOSSOM             | [22] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [11] NATURE CLEANSING           | [23] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("| [12] NEEDLE RAIN                | [24] -                          |");
+        System.out.println("|                                 |                                 |");
+        System.out.println("|                                 |                                 |");
         System.out.println("|                                 |                                 |");
         System.out.println("|===================================================================|");
     }
 
 
     void playAgainOrNo (){
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                    Are you want to play again ?                   |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                             [y] Yes                               |");
+        System.out.println("|                             [n] No                                |");
+        System.out.println("|                                                                   |");
+        System.out.println("|                           Swift Games                             |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                         Select ( y | n )                          |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.print("Your Choice : ");
 
     }
-
 
     void thankYou (){
-
+        System.out.println("      ▀▀█▀▀ ▒█░▒█ ░█▀▀█ ▒█▄░▒█ ▒█░▄▀ 　 ▒█░░▒█ ▒█▀▀▀█ ▒█░▒█          ");
+        System.out.println("      ░▒█░░ ▒█▀▀█ ▒█▄▄█ ▒█▒█▒█ ▒█▀▄░ 　 ▒█▄▄▄█ ▒█░░▒█ ▒█░▒█          ");
+        System.out.println("      ░▒█░░ ▒█░▒█ ▒█░▒█ ▒█░░▀█ ▒█░▒█ 　 ░░▒█░░ ▒█▄▄▄█ ░▀▄▄▀          ");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                    For Playing Brawl Heroes                       |");
+        System.out.println("|                           Swift Games                             |");
+        System.out.println("|                              2023                                 |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|            INDRA | JAVIER | RAFIQI | LUCAS | GRATIA               |");
+        System.out.println("---------------------------------------------------------------------");
     }
 
-    void listSkill (){
-
+    void saveGame (){
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                     Save Game Succesfully                         |");
+        System.out.println("---------------------------------------------------------------------");
     }
-
-
 }
