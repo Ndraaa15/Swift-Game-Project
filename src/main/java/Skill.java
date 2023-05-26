@@ -61,10 +61,15 @@ class Skill {
     public void useSkill(Hero hero) {
         System.out.println("ERR 3");
     }
+
+    public void logSkill(String message) {
+        System.out.println("|===================================================================|");
+        System.out.printf("| %-65s |\n", message);
+        System.out.println("|===================================================================|");
+    }
 }
 // MURBY
 class FireballBarage extends Skill {
-
     private double damageMultiplier = 3;
     public FireballBarage() {
         super("Fireball Barage", 50, SkillTarget.SINGLE_ENEMY, "Deal 3x basic attack damage to an enemy");
@@ -75,6 +80,8 @@ class FireballBarage extends Skill {
         SkillFunctionality.modifiedBasicAtack(hero, target, damageMultiplier);
         target.updateIsDefeated();
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 
 }
@@ -92,7 +99,8 @@ class AshenGrowl extends Skill {
         SkillFunctionality.modifiedBasicAtack(hero, target, damageMultiplier);
         target.updateIsDefeated();
         deductMana(hero);
-
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 class FlameArmor extends Skill {
@@ -109,6 +117,8 @@ class FlameArmor extends Skill {
             SkillFunctionality.defBuff(target, duration, defMultiplier);
         }
         deductMana(hero);
+        String message = String.format("%s used %s on all allies", hero.getName(), getName());
+        logSkill(message);
     }
 }
 
@@ -130,6 +140,8 @@ class ArmorBurn extends Skill {
             target.updateIsDefeated();
         }
         deductMana(hero);
+        String message = String.format("%s used %s on all enemies", hero.getName(), getName());
+        logSkill(message);
     }
 }
 
@@ -145,6 +157,8 @@ class FireStaff extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.atkBuff(hero, duration, atkMultiplier);
         deductMana(hero);
+        String message = String.format("%s used %s", hero.getName(), getName());
+        logSkill(message);
     }
 }
 
@@ -162,6 +176,8 @@ class InfernalShot extends Skill {
         SkillFunctionality.modifiedBasicAtack(hero, target, damageMultiplier);
         SkillFunctionality.stun(target, duration);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -181,6 +197,8 @@ class GrassrootGuardian extends Skill {
             SkillFunctionality.defBuff(target, 2, defBuffMultiplier);
         }
         deductMana(hero);
+        String message = String.format("%s used %s on all allies", hero.getName(), getName());
+        logSkill(message);
     }
 }
 
@@ -197,6 +215,8 @@ class DrainingVine extends Skill {
         SkillFunctionality.healthDrainMaxHealth(target, multiplier);
         SkillFunctionality.manaDrainMaxManaBase(target, multiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -224,6 +244,8 @@ class LifeReblossom extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.resurrect(target);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -237,6 +259,8 @@ class NatureCleansing extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.purify(target);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -254,6 +278,8 @@ class NeedleRain extends Skill {
             SkillFunctionality.trueDamage(hero, target, damageMultiplier);
         }
         deductMana(hero);
+        String message = String.format("%s used %s on all enemies", hero.getName(), getName());
+        logSkill(message);
     }
 }
 
@@ -269,6 +295,8 @@ class FrostArmor extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.defBuff(target, duration, defMultiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -285,6 +313,8 @@ class WaterCannon extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.healthDrainMaxHealth(target, multiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -301,6 +331,8 @@ class HealingWater extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.healMaxHpBase(target, multiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -316,6 +348,8 @@ class Blizzard extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.atkDebuff(target, duration, multiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
@@ -332,6 +366,8 @@ class WaterSlash extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.trueDamage(hero, target, damageMultiplier);
         deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
