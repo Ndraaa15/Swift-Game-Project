@@ -88,7 +88,8 @@ class Hero implements IHero {
         target.updateIsDefeated();
 
         System.out.println("|===================================================================|");
-        System.out.printf("| %-65s |\n", String.format("% used basic attack on %s dealing %d dmg"), getName(), target.getName(), totalAtk);
+        System.out.printf("| %-65s |\n", String.format("%s used basic attack on %s", getName(), target.getName()));
+        System.out.printf("| %-65s |\n", String.format("dealing %d dmg", totalAtk));
         System.out.println("|===================================================================|");
     }
 
@@ -113,7 +114,8 @@ class Hero implements IHero {
         System.out.println(this.getName() + " atk " + target.getName() + " dmg: " + totalAtk);
         target.updateIsDefeated();
         System.out.println("|===================================================================|");
-        System.out.printf("| %-65s |\n", String.format("% special attack on %s dealing %d dmg"), getName(), target.getName(), totalAtk);
+        System.out.printf("| %-65s |\n", String.format("%s special attack on %s", getName(), target.getName()));
+        System.out.printf("| %-65s |\n", String.format("dealing %d dmg", totalAtk));
         System.out.println("|===================================================================|");
     }
 
