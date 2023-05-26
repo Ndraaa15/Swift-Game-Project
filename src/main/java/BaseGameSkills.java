@@ -4,7 +4,6 @@ class BaseGameSkills {
 
     private static ArrayList<Skill> baseGameSkills = new ArrayList<>();
     static {
-        // MURBY
         // Add skills to the baseGameSkills ArrayList
         baseGameSkills.add(new FireballBarage());     // MURBY
         baseGameSkills.add(new AshenGrowl());         // HELLDA

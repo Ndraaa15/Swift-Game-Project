@@ -51,6 +51,8 @@ class BaseGameHeroes {
 
         // SET HERO LORE DAN DESKRIPSI DIBAWAH INI
 
+        // Contoh untuk Murby
+        hero0.setHeroLore("Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.");
 
 
 
