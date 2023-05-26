@@ -1,172 +1,6 @@
 
 
 public class Display {
-    void gameFieldf (IParty playerParty, IParty cpuParty){
-        String team = playerParty.getPartyName() + "'s Team";
-        int x = 5 + team.length();
-        int y = 23 - x;
-
-        //Player
-        Hero h1 = playerParty.getCharacters().get(0);Hero h2 = playerParty.getCharacters().get(1);Hero h3 = playerParty.getCharacters().get(2);
-        //Hero 1
-        String hPla1 = h1.getName() + " | " + h1.getMana();
-        int hPla1l = hPla1.length() + 4; int hPla1r = 23 - hPla1l;
-
-        String atrH1 = h1.getHeroElement().toString() + " | " +h1.getHeroRole().toString();
-        int atrH1l = atrH1.length() + 4; int atrH1r = 23 - atrH1l;
-
-        String hpH1 = String.valueOf(h1.getHP());
-        int hpH1l = 2 + hpH1.length(); int hpH1r = 7 - hpH1l;
-
-        String atkH1 = String.valueOf(h1.getAttack());
-        int atkH1l = 2 + atkH1.length(); int atkH1r = 8 - atkH1l;
-
-        String defH1 = String.valueOf(h1.getDefense());
-        int defH1l = 2 + defH1.length(); int defH1r = 8 - defH1l;
-
-        String effH1 = "(" + h1.getEffect().getEffectDisplay() + ")";
-        int effH1l = (effH1.length()/2) + 10; int effh1r = 23 - effH1l;
-
-
-        //Hero 2
-        String hPla2 = h2.getName() + " | " + h2.getMana();
-        int hPla2l = hPla1.length() + 4 ; int hPla2r = 23 - hPla1l;
-
-        String atrH2 = h2.getHeroElement().toString() + " | " +h2.getHeroRole().toString();
-        int atrH2l = atrH2.length() + 4; int atrH2r = 23 - atrH2l;
-
-        String hpH2 = String.valueOf(h2.getHP());
-        int hpH2l = 2 + hpH2.length(); int hpH2r = 7 - hpH2l;
-
-        String atkH2 = String.valueOf(h2.getAttack());
-        int atkH2l = 2 + atkH1.length(); int atkH2r = 8 - atkH2l;
-
-        String defH2 = String.valueOf(h2.getDefense());
-        int defH2l = 2 + defH2.length(); int defH2r = 8 - defH2l;
-
-        String effH2 = "(" + h2.getEffect().getEffectDisplay() + ")";
-        int effH2l = (effH2.length()/2) + 10; int effh2r = 23 - effH2l;
-
-
-        //Hero 3
-        String hPla3 = h3.getName() + " | " + h3.getMana();
-        int hPla3l = hPla3.length() + 4; int hPla3r = 23 - hPla3l;
-
-        String atrH3 = h3.getHeroElement().toString() + " | " +h3.getHeroRole().toString();
-        int atrH3l = atrH3.length() + 4; int atrH3r = 23 - atrH3l;
-
-        String hpH3 = String.valueOf(h3.getHP());
-        int hpH3l = 2 + hpH3.length(); int hpH3r = 7 - hpH3l;
-
-        String atkH3 = String.valueOf(h3.getAttack());
-        int atkH3l = 2 + atkH3.length(); int atkH3r = 8 - atkH3l;
-
-        String defH3 = String.valueOf(h3.getDefense());
-        int defH3l = 2 + defH3.length(); int defH3r = 8 - defH3l;
-
-        String effH3 = "(" + h3.getEffect().getEffectDisplay() + ")";
-        int effH3l = (effH3.length()/2) + 10; int effh3r = 23 - effH3l;
-
-
-        //Enemy
-        Hero e1 = cpuParty.getCharacters().get(0);Hero e2 = cpuParty.getCharacters().get(1);Hero e3 = cpuParty.getCharacters().get(2);
-        //Enemy 1
-        String hE1 = e1.getName() + " | " + e1.getMana();
-        int hE1l = hE1.length() + 4; int hE1r = 23 - hE1l;
-
-        String atrE1 = e1.getHeroElement().toString() + " | " +e1.getHeroRole().toString();
-        int atrE1l = atrE1.length() + 4; int atrE1r = 23 - atrE1l;
-
-        String hpE1 = String.valueOf(e1.getHP());
-        int hpE1l = 2 + hpE1.length(); int hpE1r = 7 - hpH1l;
-
-        String atkE1 = String.valueOf(e1.getAttack());
-        int atkE1l = 2 + atkE1.length(); int atkE1r = 8 - atkH1l;
-
-        String defE1 = String.valueOf(e1.getDefense());
-        int defE1l = 2 + defE1.length(); int defE1r = 8 - defH1l;
-
-        String effE1 = "(" + e1.getEffect().getEffectDisplay() + ")";
-        int effE1l = (effE1.length()/2) + 10; int effE1r = 23 - effE1l;
-
-
-        //Enemy 2
-        String hE2 = e2.getName() +  " | " + e2.getMana();
-        int hE2l = hE2.length() + 4; int hE2r = 23 - hE2l;
-
-        String atrE2 = e2.getHeroElement().toString() + " | " +e2.getHeroRole().toString();
-        int atrE2l = atrE2.length() + 4; int atrE2r = 23 - atrE2l;
-
-        String hpE2 = String.valueOf(e2.getHP());
-        int hpE2l = 2 + hpE2.length(); int hpE2r = 7 - hpE2l;
-
-        String atkE2 = String.valueOf(e2.getAttack());
-        int atkE2l = 2 + atkE2.length(); int atkE2r = 8 - atkE2l;
-
-        String defE2 = String.valueOf(e2.getDefense());
-        int defE2l = 2 + defE2.length(); int defE2r = 8 - defE2l;
-
-        String effE2 = "(" + e2.getEffect().getEffectDisplay() + ")";
-        int effE2l =  (effE2.length()/2) + 10; int effE2r = 23 - effE2l;
-
-
-        //Enemy 3
-        String hE3 = e3.getName() + " | " + e3.getMana();
-        int hE3l = hE3.length() + 4; int hE3r = 23 - hE3l;
-
-        String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
-        int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
-
-        String hpE3 = String.valueOf(e3.getHP());
-        int hpE3l = 2 + hpE3.length(); int hpE3r = 7 - hpE3l;
-
-        String atkE3 = String.valueOf(e3.getAttack());
-        int atkE3l = 2 + atkE2.length(); int atkE3r = 8 - atkE3l;
-
-        String defE3 = String.valueOf(e3.getDefense());
-        int defE3l = 2 + defE3.length(); int defE3r = 8 - defE3l;
-
-        String effE3 = "(" + e3.getEffect().getEffectDisplay() + ")";
-        int effE3l =  (effE3.length()/2) + 10; int effE3r = 23 - effE3l;
-
-
-
-        System.out.println();
-        System.out.println("--------------------------------------------------------------------");
-        System.out.printf("|%" + x + "s%" + y + "s    BRAWL HEROES     |         COM     [ X ]|\n", team, "|");
-        System.out.println("|===================================================================|");
-        System.out.println("|          1           |                     |          1           |");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%" + hPla1l + "s%" + hPla1r + "s                     |%" + hE1l + "s%" + hE1r + "s\n", hPla1, "|", hE1, "|");
-        System.out.printf("|%" + atrH1l + "s%" + atrH1r + "s                     |%" + atrE1l + "s%" + atrE1r + "s\n", atrH1, "|", atrE1, "|");
-        System.out.printf("|%" + effH1l + "s%" + effh1r + "s                     |%" + effE1l + "s%" + effE1r + "s\n", effH1, "|", effE1, "|");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
-        System.out.println("|----------------------|                     |----------------------| ");
-        System.out.printf("|%"+hpH1l +"s%" + hpH1r + "s%" + defH1l + "s%" + defH1r + "s%" + atkH1l + "s%" + atkH1r + "s                     |%" + hpE1l + "s%" + hpE1r + "s%" + defE1l + "s%" + defE1r + "s%" + atkE1l + "s%" + atkE1r + "s\n" , hpH1, "|", defH1, "|", atkH1, "|", hpE1, "|", defE1, "|", atkE1, "|");
-        System.out.println("|======================|                     |======================|");
-        System.out.println("|          2           |                     |          2           |");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%" + hPla2l + "s%" + hPla2r + "s  ██      ██ ██████  |%" + hE2l + "s%" + hE2r +  "s\n", hPla2, "|", hE2, "|");
-        System.out.printf("|%" + atrH2l + "s%" + atrH2r + "s   ██    ██ ██       |%" + atrE2l + "s%" + atrE2r + "s\n", atrH2, "|", atrE2, "|");
-        System.out.printf("|%" + effH2l + "s%" + effh2r + "s    ██  ██   █████   |%" + effE2l + "s%" + effE2r + "s\n", effH2, "|", effE2, "|");
-        System.out.println("|----------------------|     ████        ██  |----------------------|");
-        System.out.println("|  HP  |  DEF  |  ATK  |      ██    ██████   |  HP  |  DEF  |  ATK  |");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%"+hpH2l +"s%" + hpH2r + "s%" + defH2l + "s%" + defH2r + "s%" + atkH2l + "s%" + atkH2r + "s                     |%" + hpE2l + "s%" + hpE2r + "s%" + defE2l + "s%" + defE2r + "s%" + atkE2l + "s%" + atkE2r + "s\n" , hpH2, "|", defH2, "|", atkH2, "|", hpE2, "|", defE2, "|", atkE2, "|");
-        System.out.println("|======================|                     |======================|");
-        System.out.println("|          3           |                     |          3           |");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%" + hPla3l + "s%" + hPla3r + "s                     |%" + hE3l + "s%" + hE3r + "s\n", hPla3, "|", hE3, "|");
-        System.out.printf("|%" + atrH3l + "s%" + atrH3r + "s                     |%" + atrE3l + "s%" + atrE3r + "s\n", atrH3, "|", atrE3, "|");
-        System.out.printf("|%" + effH3l + "s%" + effh3r + "s                     |%" + effE3l + "s%" + effE3r + "s\n", effH3, "|", effE3, "|");
-        System.out.println("|----------------------|                     |----------------------|");
-        System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
-        System.out.println("|----------------------|                     |----------------------| ");
-        System.out.printf("|%"+hpH3l +"s%" + hpH3r + "s%" + defH3l + "s%" + defH3r + "s%" + atkH3l + "s%" + atkH3r + "s                     |%" + hpE3l + "s%" + hpE3r + "s%" + defE3l + "s%" + defE3r + "s%" + atkE3l + "s%" + atkE3r + "s\n" , hpH3, "|", defH3, "|", atkH3, "|", hpE3, "|", defE3, "|", atkE3, "|");
-        System.out.println("|===================================================================|");
-    }
-
     void gameField (IParty playerParty, IParty cpuParty){
         String team = playerParty.getPartyName() + "'s Team";
         int x = 5 + team.length();
@@ -600,24 +434,18 @@ public class Display {
         System.out.print("Your Choice : ");
     }
 
-    void listAlly (IParty playerParty){
-        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();
-        int hl1 = 7 + h1.length()+1;
-        int hr1 = 22 - hl1 + 1;
-
-        int hl2 = 7 + h2.length();
-        int hr2 = 22 - hl2 + 1;
-
-        int hl3 = 7 + h3.length();
-        int hr3 = 22 - hl3 + 1;
-
+    void listAlly (IParty playerParty, String heroUseSkill){
         System.out.println("                       Choose your target hero                      ");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                             List Ally                             |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.printf("|                          [1] %"+ hl1 + "s%" + hr1 + "s\n", h1, "|");
-        System.out.printf("|                          [2] %"+ hl2 + "s%" + hr2 + "s\n", h2, "|");
-        System.out.printf("|                          [3] %"+ hl3 + "s%" + hr3 + "s\n", h3, "|");
+        for (int i = 0; i < playerParty.getCharacters().size(); i++) {
+            if (!playerParty.getCharacters().get(i).isDefeated() && !playerParty.getCharacters().get(i).getName().equals(heroUseSkill)){
+                String h = playerParty.getCharacters().get(i).getName();
+                int s = 36 - h.length();
+                System.out.printf("|                            [" + (i+1) + "] %s%" + s + "s\n", h, "|");
+            }
+        }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
@@ -626,23 +454,17 @@ public class Display {
     }
 
     void listDeadAlly (IParty playerParty){
-        String h1 = playerParty.getCharacters().get(0).getName();String h2 = playerParty.getCharacters().get(1).getName();String h3 = playerParty.getCharacters().get(2).getName();
-        int hl1 = 7 + h1.length()+1;
-        int hr1 = 22 - hl1 + 1;
-
-        int hl2 = 7 + h2.length();
-        int hr2 = 22 - hl2 + 1;
-
-        int hl3 = 7 + h3.length();
-        int hr3 = 22 - hl3 + 1;
-
         System.out.println("                       Choose your target hero                      ");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                             List Ally                             |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.printf("|                          [1] %"+ hl1 + "s%" + hr1 + "s\n", h1, "|");
-        System.out.printf("|                          [2] %"+ hl2 + "s%" + hr2 + "s\n", h2, "|");
-        System.out.printf("|                          [3] %"+ hl3 + "s%" + hr3 + "s\n", h3, "|");
+        for (int i = 0; i < playerParty.getCharacters().size(); i++) {
+            if (playerParty.getCharacters().get(i).isDefeated()){
+                String h = playerParty.getCharacters().get(i).getName();
+                int s = 36 - h.length();
+                System.out.printf("|                            [" + (i+1) + "] %s%" + s + "s\n", h, "|");
+            }
+        }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
@@ -651,20 +473,17 @@ public class Display {
     }
 
     void listEnemy (IParty cpuParty){
-        String h1 = cpuParty.getCharacters().get(0).getName();String h2 = cpuParty.getCharacters().get(1).getName();String h3 = cpuParty.getCharacters().get(2).getName();
-        int hr1 = 36 - h1.length();
-
-        int hr2 = 36 - h2.length();
-
-        int hr3 = 36 - h3.length();
-
         System.out.println("                       Choose your target hero                      ");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                             List Enemy                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.printf("|                            [1] %s%" + hr1 + "s\n", h1, "|");
-        System.out.printf("|                            [2] %s%" + hr2 + "s\n", h2, "|");
-        System.out.printf("|                            [3] %s%" + hr3 + "s\n", h3, "|");
+        for (int i = 0; i < cpuParty.getCharacters().size(); i++) {
+            if (!cpuParty.getCharacters().get(i).isDefeated()){
+                String h = cpuParty.getCharacters().get(i).getName();
+                int s = 36 - h.length();
+                System.out.printf("|                            [" + (i+1) + "] %s%" + s + "s\n", h, "|");
+            }
+        }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");

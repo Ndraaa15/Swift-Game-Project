@@ -91,7 +91,6 @@ public class GameEngine implements IGameEngine{
             throw new RuntimeException(e);
         }
 
-
         display.readyGameDisplay(this.playerParty);
         String select = sc.nextLine();
         boolean isTrue = true;
@@ -104,7 +103,7 @@ public class GameEngine implements IGameEngine{
                 case "n" -> {
                     start();
                 }
-                default -> System.out.println("Please choose between (y | n) !!!");
+                default -> System.out.println("Please choose between ( y | n ) !!!");
             }
         }while (isTrue);
     }
@@ -116,7 +115,11 @@ public class GameEngine implements IGameEngine{
 
     @Override
     public IParty winner() {
-        return null;
+        if (this.playerParty.isDefeated()){
+            return this.cpuParty;
+        }else {
+            return this.playerParty;
+        }
     }
 
     public void start (){
@@ -313,22 +316,27 @@ public class GameEngine implements IGameEngine{
                 cpuParty.setTurn(false);
                 playerParty.setTurn(true);
             }
+            display.gameField(this.playerParty, this.cpuParty);
         }
 
-        if (playerParty.isDefeated()){
-            display.winnerBanner(this.cpuParty);
-        }else {
-            display.winnerBanner(this.playerParty);
+        IParty winnerTeam = winner();
+        if (winnerTeam != null){
+            display.winnerBanner(winnerTeam);
         }
 
         display.playAgainOrNo();
-        String select = sc.nextLine();
 
-        if (select.equals("y")){
-            start();
-        } else if (select.equals("n")) {
-            display.thankYou();
-            _exitGame();
+        while (true){
+            String select = sc.nextLine();
+
+            if (select.equals("y")){
+                start();
+            } else if (select.equals("n")) {
+                display.thankYou();
+                _exitGame();
+            }else {
+                System.out.println("Please choose between ( y | n ) !!!");
+            }
         }
     }
 
@@ -396,13 +404,33 @@ public class GameEngine implements IGameEngine{
                         select = cpuAlgorihtm(listEnemy);
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
                         select = cpuAlgorihtmDeadAlly(listEnemy);
-                    } else {
-                        if (!cpuParty.isDefeated()){
+                        if (select == -1){
+                            continue;
+                        }
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
+                        if (!this.playerParty.isDefeated()){
                             hero.useSkill1(playerParty.getCharacters());
-                            isTrue = false;
+                            break;
                         }else {
 
                         }
+                        continue;
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ALLY) {
+                        if (!this.cpuParty.isDefeated()){
+                            hero.useSkill1(cpuParty.getCharacters());
+                            break;
+                        }else {
+
+                        }
+                        continue;
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.SELF) {
+                        if (!hero.isDefeated()){
+                            hero.useSkill1(hero);
+                            break;
+                        }else {
+
+                        }
+                        continue;
                     }
 
                     Hero player = listHero.get(select);
@@ -424,13 +452,30 @@ public class GameEngine implements IGameEngine{
                         if (select == -1){
                             continue;
                         }
-                    } else {
-                        if (!cpuParty.isDefeated()){
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
+                        if (!this.playerParty.isDefeated()){
                             hero.useSkill1(playerParty.getCharacters());
-                            isTrue = false;
+                            break;
                         }else {
 
                         }
+                        continue;
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ALLY) {
+                        if (!this.cpuParty.isDefeated()){
+                            hero.useSkill1(cpuParty.getCharacters());
+                            break;
+                        }else {
+
+                        }
+                        continue;
+                    } else if (hero.getSkill1().getTarget() == SkillTarget.SELF) {
+                        if (!hero.isDefeated()){
+                            hero.useSkill1(hero);
+                            break;
+                        }else {
+
+                        }
+                        continue;
                     }
 
                     Hero enemy = listHero.get(select);
@@ -444,8 +489,8 @@ public class GameEngine implements IGameEngine{
             }
             i++;
             hero.setTurn(true);
-            display.gameField(this.playerParty, this.cpuParty);
         }
+        decreamentEffect(listEnemy);
         resetHeroTurn(listEnemy);
     }
 
@@ -479,6 +524,9 @@ public class GameEngine implements IGameEngine{
 
             if (hero.isTurn()){
                 System.out.println("Please choose another hero, hero already used!");
+                continue;
+            } else if (hero.isDefeated()){
+                System.out.println("Please choose another hero, hero already defeated!");
                 continue;
             }
 
@@ -534,7 +582,7 @@ public class GameEngine implements IGameEngine{
                     if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
                         display.listEnemy(this.cpuParty);
                     } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        display.listAlly(this.playerParty);
+                        display.listAlly(this.playerParty, hero.getName());
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
                         display.listDeadAlly(this.playerParty);
                     } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
@@ -588,7 +636,7 @@ public class GameEngine implements IGameEngine{
                     if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
                         display.listEnemy(this.cpuParty);
                     } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        display.listAlly(this.playerParty);
+                        display.listAlly(this.playerParty, hero.getName());
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
                         display.listDeadAlly(this.playerParty);
                     } else {
@@ -620,8 +668,9 @@ public class GameEngine implements IGameEngine{
                 }
             }
             hero.setTurn(true);
-            display.gameField(this.playerParty, this.cpuParty);
+
         }
+        decreamentEffect(listHero);
         resetHeroTurn(listHero);
     }
 
@@ -746,11 +795,11 @@ public class GameEngine implements IGameEngine{
         int i = 0;
 
         for (int j = 1; j < playerParty.size(); j++) {
-            if (playerParty.get(i).getHP() >=  playerParty.get(j).getHP()){
-                if (!playerParty.get(j).isDefeated()){
-                    i = j;
-                    break;
-                }
+            if (playerParty.get(i).getHP() >=  playerParty.get(j).getHP() && (!playerParty.get(j).isDefeated())){
+
+                i = j;
+                break;
+
             }
         }
         return i;
@@ -780,6 +829,14 @@ public class GameEngine implements IGameEngine{
                 return 3;
             }else {
                 System.out.println("Please choose between ( a | b | c ) !!!");
+            }
+        }
+    }
+
+    private void decreamentEffect (ArrayList<Hero> listHero){
+        for (Hero hero : listHero) {
+            if (!hero.isDefeated()) {
+                hero.getEffect().decrementAll();
             }
         }
     }
