@@ -318,7 +318,7 @@ class Hero implements IHero {
 
     public String getCondition() {
         if (isDefeated) {
-            return "DEEFEATED";
+            return "DEFEATED";
         }
         String display =  getEffect().getEffectDisplay();
         if (display == null) return "";

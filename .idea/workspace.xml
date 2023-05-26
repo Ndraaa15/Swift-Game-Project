@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Make Hero effect atribute private">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added getCondition for getting effect end defeated String">
       <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Effect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685075538911</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added getCondition for getting effect end defeated String">
+      <created>1685078313795</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685078313795</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +301,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create : plot game" />
     <MESSAGE value="Create : character class &amp; skill" />
     <MESSAGE value="Create : Update Hero Class" />
     <MESSAGE value="Added further interface: BaseGameHeroes.java" />
@@ -322,6 +325,7 @@
     <MESSAGE value="Add safety to SkillFunctionality and effect usage in Hero basic and Special atk" />
     <MESSAGE value="Fix IHero" />
     <MESSAGE value="Make Hero effect atribute private" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make Hero effect atribute private" />
+    <MESSAGE value="Added getCondition for getting effect end defeated String" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getCondition for getting effect end defeated String" />
   </component>
 </project>

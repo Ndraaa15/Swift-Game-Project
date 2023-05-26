@@ -486,8 +486,23 @@ public class Display {
     void heropedia() {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                           HERO ALMANAC                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|===================================================================|");
+        System.out.println("|              MURBY             |               HELLDA             |");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+        System.out.println("|                                |                                  |");
+
 
     }
 
