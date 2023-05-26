@@ -3,7 +3,7 @@ import java.util.ArrayList;
 class BaseGameSkills {
 
     private static ArrayList<Skill> baseGameSkills = new ArrayList<>();
-    public BaseGameSkills() {
+    static {
         // MURBY
         Skill skill0 = new FireballBarage();
 
