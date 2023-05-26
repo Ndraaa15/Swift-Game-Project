@@ -15,12 +15,31 @@ public class Display {
         String atrH1 = h1.getHeroElement().toString() + " | " +h1.getHeroRole().toString();
         int atrH1l = atrH1.length() + 4; int atrH1r = 23 - atrH1l;
 
+        String hpH1 = String.valueOf(h1.getHP());
+        int hpH1l = 2 + hpH1.length(); int hpH1r = 7 - hpH1l;
+
+        String atkH1 = String.valueOf(h1.getAttack());
+        int atkH1l = 2 + atkH1.length(); int atkH1r = 8 - atkH1l;
+
+        String defH1 = String.valueOf(h1.getDefense());
+        int defH1l = 2 + defH1.length(); int defH1r = 8 - defH1l;
+
+
         //Hero 2
         String hPla2 = h2.getName();
         int hPla2l = hPla1.length() + 8; int hPla2r = 23 - hPla1l;
 
         String atrH2 = h2.getHeroElement().toString() + " | " +h2.getHeroRole().toString();
         int atrH2l = atrH2.length() + 4; int atrH2r = 23 - atrH2l;
+
+        String hpH2 = String.valueOf(h2.getHP());
+        int hpH2l = 2 + hpH2.length(); int hpH2r = 7 - hpH2l;
+
+        String atkH2 = String.valueOf(h2.getAttack());
+        int atkH2l = 2 + atkH1.length(); int atkH2r = 8 - atkH2l;
+
+        String defH2 = String.valueOf(h2.getDefense());
+        int defH2l = 2 + defH2.length(); int defH2r = 8 - defH2l;
 
 
         //Hero 3
@@ -30,43 +49,14 @@ public class Display {
         String atrH3 = h3.getHeroElement().toString() + " | " +h3.getHeroRole().toString();
         int atrH3l = atrH3.length() + 4; int atrH3r = 23 - atrH3l;
 
+        String hpH3 = String.valueOf(h3.getHP());
+        int hpH3l = 2 + hpH3.length(); int hpH3r = 7 - hpH3l;
 
-//        int hp1 = playerParty.getCharacters().get(0).getHP();int hp2 = playerParty.getCharacters().get(1).getHP();int hp3 = playerParty.getCharacters().get(2).getHP();
-//        int hpsl1 = 2 + String.valueOf(hp1).length();
-//        int hpsr1 = 6 - hpl1 + 1;
-//
-//        int hp13123l2 = 2 + String.valueOf(hp2).length();
-//        int hpr1231232 = 6 - hpl2 + 1;
-//
-//        int hpl21313 = 2 + String.valueOf(hp3).length();
-//        int f123 = 6 - hpl2 + 1;
+        String atkH3 = String.valueOf(h3.getAttack());
+        int atkH3l = 2 + atkH3.length(); int atkH3r = 8 - atkH3l;
 
-
-        int def1 = playerParty.getCharacters().get(0).getHP();int def2 = playerParty.getCharacters().get(1).getHP();int def3 = playerParty.getCharacters().get(2).getHP();
-
-        int defl1 = 2 + String.valueOf(def1).length();
-        int defr1 = 6 - defl1 + 1;
-
-        int defl2 = 2 + String.valueOf(def2).length();
-        int defr2 = 6 - defl2 + 1;
-
-        int defl3 = 2 + String.valueOf(def3).length();
-        int defr3 = 6 - defl3 + 1;
-
-
-        int atk1 = playerParty.getCharacters().get(0).getHP();int atk2 = playerParty.getCharacters().get(1).getHP();int atk3 = playerParty.getCharacters().get(2).getHP();
-
-        int atkl1 = 2 + String.valueOf(atk1).length();
-        int atkr1 = 6 - atkl1 + 1;
-
-        int atkl2 = 2 + String.valueOf(atk2).length();
-        int atkr2 = 6 - atkl2 + 1;
-
-        int atkl3 = 2 + String.valueOf(atk3).length();
-        int atkr3 = 6 - atkl3 + 1;
-
-
-
+        String defH3 = String.valueOf(h3.getDefense());
+        int defH3l = 2 + defH3.length(); int defH3r = 8 - defH3l;
 
 
         //Enemy
@@ -78,6 +68,16 @@ public class Display {
         String atrE1 = e1.getHeroElement().toString() + " | " +e1.getHeroRole().toString();
         int atrE1l = atrE1.length() + 4; int atrE1r = 23 - atrE1l;
 
+        String hpE1 = String.valueOf(e1.getHP());
+        int hpE1l = 2 + hpE1.length(); int hpE1r = 7 - hpH1l;
+
+        String atkE1 = String.valueOf(e1.getAttack());
+        int atkE1l = 2 + atkE1.length(); int atkE1r = 8 - atkH1l;
+
+        String defE1 = String.valueOf(e1.getDefense());
+        int defE1l = 2 + defE1.length(); int defE1r = 8 - defH1l;
+
+
         //Enemy 2
         String hE2 = e2.getName();
         int hE2l = hE2.length() + 8; int hE2r = 23 - hE2l;
@@ -85,12 +85,32 @@ public class Display {
         String atrE2 = e2.getHeroElement().toString() + " | " +e2.getHeroRole().toString();
         int atrE2l = atrE2.length() + 4; int atrE2r = 23 - atrE2l;
 
+        String hpE2 = String.valueOf(e2.getHP());
+        int hpE2l = 2 + hpE2.length(); int hpE2r = 7 - hpE2l;
+
+        String atkE2 = String.valueOf(e2.getAttack());
+        int atkE2l = 2 + atkE2.length(); int atkE2r = 8 - atkE2l;
+
+        String defE2 = String.valueOf(e2.getDefense());
+        int defE2l = 2 + defE2.length(); int defE2r = 8 - defE2l;
+
+
+
         //Enemy 3
         String hE3 = e3.getName();
         int hE3l = hE2.length() + 8; int hE3r = 23 - hE3l;
 
         String atrE3 = e3.getHeroElement().toString() + " | " +e3.getHeroRole().toString();
         int atrE3l = atrE3.length() + 4; int atrE3r = 23 - atrE3l;
+
+        String hpE3 = String.valueOf(e3.getHP());
+        int hpE3l = 2 + hpE3.length(); int hpE3r = 7 - hpE3l;
+
+        String atkE3 = String.valueOf(e3.getAttack());
+        int atkE3l = 2 + atkE2.length(); int atkE3r = 8 - atkE3l;
+
+        String defE3 = String.valueOf(e3.getDefense());
+        int defE3l = 2 + defE3.length(); int defE3r = 8 - defE3l;
 
 
 
@@ -106,7 +126,7 @@ public class Display {
         System.out.println("|----------------------|                     |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
-        System.out.println("|      |       |       |                     |      |       |       |");
+        System.out.printf("|%"+hpH1l +"s%" + hpH1r + "s%" + defH1l + "s%" + defH1r + "s%" + atkH1l + "s%" + atkH1r + "s                     |%" + hpE1l + "s%" + hpE1r + "s%" + defE1l + "s%" + defE1r + "s%" + atkE1l + "s%" + atkE1r + "s\n" , hpH1, "|", defH1, "|", atkH1, "|", hpE1, "|", defE1, "|", atkE1, "|");
         System.out.println("|=======================                     =======================|");
         System.out.println("|          2           |                     |          2           |");
         System.out.println("|----------------------|                     |----------------------|");
@@ -116,7 +136,7 @@ public class Display {
         System.out.println("|----------------------|     ████        ██  |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |      ██    ██████   |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------|");
-        System.out.println("|      |       |       |                     |      |       |       | ");
+        System.out.printf("|%"+hpH2l +"s%" + hpH2r + "s%" + defH2l + "s%" + defH2r + "s%" + atkH2l + "s%" + atkH2r + "s                     |%" + hpE2l + "s%" + hpE2r + "s%" + defE2l + "s%" + defE2r + "s%" + atkE2l + "s%" + atkE2r + "s\n" , hpH2, "|", defH2, "|", atkH2, "|", hpE2, "|", defE2, "|", atkE2, "|");
         System.out.println("|=======================                     =======================|");
         System.out.println("|          3           |                     |          3           |");
         System.out.println("|----------------------|                     |----------------------|");
@@ -126,7 +146,7 @@ public class Display {
         System.out.println("|----------------------|                     |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
-        System.out.println("|      |       |       |                     |      |       |       |");
+        System.out.printf("|%"+hpH3l +"s%" + hpH3r + "s%" + defH3l + "s%" + defH3r + "s%" + atkH3l + "s%" + atkH3r + "s                     |%" + hpE3l + "s%" + hpE3r + "s%" + defE3l + "s%" + defE3r + "s%" + atkE3l + "s%" + atkE3r + "s\n" , hpH3, "|", defH3, "|", atkH3, "|", hpE3, "|", defE3, "|", atkE3, "|");
         System.out.println("---------------------------------------------------------------------");
     }
 
