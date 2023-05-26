@@ -3,7 +3,7 @@ import java.util.*;
 enum HeroElement {
     FIRE,
     WATER,
-    GRASS;
+    GRASS,
 }
 
 enum HeroRole {

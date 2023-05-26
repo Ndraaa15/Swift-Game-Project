@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Added More Hero Skills and applying Skill to all Heroes">
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameHeroes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameSkills.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_16_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2023_16_53__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2023_07_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2023_07_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2023_12_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2023_12_31__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
