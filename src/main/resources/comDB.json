@@ -2,52 +2,14 @@
   "partyName": "COM",
   "characters": [
     {
-      "name": "Fara",
+      "name": "Lily",
       "hp": 380,
       "maxHp": 380,
       "mana": 100,
       "maxMana": 100,
-      "atk": 35,
-      "def": 20,
-      "heroElement": "GRASS",
-      "heroRole": "SUPPORT",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "name": "Life Reblossom",
-        "manaCost": 85,
-        "target": "DEAD_ALLY",
-        "description": "Resurrect an ally"
-      },
-      "skill2": {
-        "name": "Nature Cleansing",
-        "manaCost": 20,
-        "target": "SINGLE_ALLY",
-        "description": "Purify all debuff of an ally"
-      },
-      "heroLore": "Tabib kerajaan Gulsior dari aliran dewa ismich yang menerima rahmat untuk memberkati seluruh umatnya.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
-      "name": "Atla",
-      "hp": 375,
-      "maxHp": 375,
-      "mana": 100,
-      "maxMana": 100,
       "atk": 70,
-      "def": 11,
-      "heroElement": "WATER",
+      "def": 12,
+      "heroElement": "GRASS",
       "heroRole": "ARCHER",
       "effect": {
         "stunDuration": 0,
@@ -62,13 +24,13 @@
         "defDebuffModifier": 0.0
       },
       "skill1": {
-        "multiplier": 0.25,
-        "name": "Water Cannon",
-        "manaCost": 30,
+        "damageMultiplier": 1.5,
+        "name": "Thorn Arrow",
+        "manaCost": 20,
         "target": "SINGLE_ENEMY",
-        "description": "Deal 25% max Hp damage to an enemy"
+        "description": "1.5x true damage to an enemy"
       },
-      "heroLore": "Gadis setengah duyung pewaris panah legendaris Serpent, sang penakluk lautan asam yang mendiami pesisir Aquata dalam kegelapan yang fana.",
+      "heroLore": "Prajurit Elf terbaik pada dinasti Jadaxie dengan panah kayu Fieltcress tidak terbatas.",
       "isDefeated": false,
       "isTurn": false
     },
@@ -102,6 +64,47 @@
         "description": "Drain 50% max mana and HP to an enemy"
       },
       "heroLore": "Salah satu buku legendaris yang selamat dari tragedi perpustakaan alexandria ditemukan oleh elisa si gadis kecil. Eksistensi Bio-Fisika menyerap seluruh orang yang memiliki niat buruk.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Theseus",
+      "hp": 350,
+      "maxHp": 350,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 60,
+      "def": 11,
+      "heroElement": "WATER",
+      "heroRole": "MAGE",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "damageMultiplier": 1.0,
+        "name": "Needle Rain",
+        "manaCost": 25,
+        "target": "ALL_ENEMY",
+        "description": "Deals 1x true damage to all enemy"
+      },
+      "skill2": {
+        "defMultiplier": 0.2,
+        "duration": 5,
+        "name": "Frost Armor",
+        "manaCost": 20,
+        "target": "SINGLE_ALLY",
+        "description": "Increase an ally def by 0.2 for 5 turns"
+      },
+      "heroLore": "Memiliki setengah darah Poseidon membuatnya berambisi untuk menguasai samudra dalam. Penguasaan air yang baik membuatnya dapat bertarung dalam medan apapun.",
       "isDefeated": false,
       "isTurn": false
     }

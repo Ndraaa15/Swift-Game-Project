@@ -136,6 +136,9 @@ public class GameEngine implements IGameEngine{
                     loadGame();
                 }
                 case "c" -> {
+                    heroesPedia();
+                }
+                case "d" -> {
                     isTrue = false;
                     _exitGame();
                 }
@@ -146,6 +149,21 @@ public class GameEngine implements IGameEngine{
             }
         }
 
+    }
+
+
+    private void heroesPedia () {
+        display.heroespedia();
+
+        while (true) {
+            String select = sc.nextLine();
+            if (select.equals("b")) {
+                start();
+            } else {
+                System.out.println("Please choose ( b ) !!!");
+                System.out.print("Your Choice : ");
+            }
+        }
     }
 
     private void _newGame (){
@@ -171,7 +189,6 @@ public class GameEngine implements IGameEngine{
     }
 
 
-
     private void _exitGame (){
         System.exit(0);
     }
@@ -180,7 +197,10 @@ public class GameEngine implements IGameEngine{
         display.createTeam();
 
         String partyName = sc.nextLine();
-
+        if (partyName.length() > 10){
+            System.out.println("Your team name should be less than 10 letters");
+            _createPartyForPlayer();
+        }
         display.listHero();
 
         ArrayList <Hero> listHeroes = new ArrayList<>();
@@ -216,9 +236,10 @@ public class GameEngine implements IGameEngine{
 
         display.readyGameDisplay(this.playerParty);
 
-        String select = sc.nextLine();
         boolean isTrue = true;
-        do {
+        while (isTrue){
+            String select = sc.nextLine();
+
             switch (select) {
                 case "y" -> {
                     isTrue = false;
@@ -229,9 +250,12 @@ public class GameEngine implements IGameEngine{
                     isTrue = false;
                     _createPartyForPlayer();
                 }
-                default -> System.out.println("Please choose between (y | n) !!!");
+                default -> {
+                    System.out.println("Please choose between ( y | n ) !!!");
+                    System.out.print("Your Choice : ");
+                }
             }
-        }while (isTrue);
+        };
     }
 
 
@@ -264,8 +288,8 @@ public class GameEngine implements IGameEngine{
             playerParty.setTurn(true);
             cpuParty.setTurn(false);
         }else {
-            playerParty.setTurn(true);
-            cpuParty.setTurn(false);
+            playerParty.setTurn(false);
+            cpuParty.setTurn(true);
         }
 
         while (!playerParty.isDefeated() && !cpuParty.isDefeated()){
@@ -331,7 +355,7 @@ public class GameEngine implements IGameEngine{
                         select = random.nextInt(3);
                     }
                 } else if (hero.hasSkill2()) {
-                    if (hero.getMana() < hero.getSkill1().getManaCost() && hero.getMana() < hero.getSkill2().getManaCost()){
+                    if ((hero.getMana() < hero.getSkill1().getManaCost()) && (hero.getMana() < hero.getSkill2().getManaCost())){
                         select = random.nextInt(2);
                     } else{
                         select = random.nextInt(4);
@@ -339,11 +363,13 @@ public class GameEngine implements IGameEngine{
                 }
 
                 String strRand = String.valueOf(select + 1);
+
                 if (strRand.equals("1")){
 
                     int rAlgo = cpuAlgorihtm(listHero);
 
-                    Hero enemy = listEnemy.get(rAlgo);
+                    Hero enemy = listHero.get(rAlgo);
+
                     if (!enemy.isDefeated()){
                         hero.normalAttack(enemy);
                         isTrue = false;
@@ -353,7 +379,7 @@ public class GameEngine implements IGameEngine{
                 } else if (strRand.equals("2")) {
 
                     int rAlgo = cpuAlgorihtm(listHero);
-                    Hero enemy = listEnemy.get(rAlgo);
+                    Hero enemy = listHero.get(rAlgo);
 
                     if (!enemy.isDefeated()){
                         hero.specialAttack(enemy);
@@ -395,6 +421,9 @@ public class GameEngine implements IGameEngine{
                         select = cpuAlgorihtm(listEnemy);
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
                         select = cpuAlgorihtmDeadAlly(listEnemy);
+                        if (select == -1){
+                            continue;
+                        }
                     } else {
                         if (!cpuParty.isDefeated()){
                             hero.useSkill1(playerParty.getCharacters());
@@ -404,14 +433,13 @@ public class GameEngine implements IGameEngine{
                         }
                     }
 
-                    Hero enemy = listEnemy.get(select);
+                    Hero enemy = listHero.get(select);
                     if (!enemy.isDefeated()){
                         hero.useSkill1(enemy);
                         isTrue = false;
                     }else {
 
                     }
-
                 }
             }
             i++;
@@ -597,10 +625,6 @@ public class GameEngine implements IGameEngine{
         resetHeroTurn(listHero);
     }
 
-
-
-
-
     private Hero _createHero (){
         Hero hero = new Hero();
 
@@ -633,9 +657,14 @@ public class GameEngine implements IGameEngine{
         System.out.println("---------------------------------------------------------------------");
         display.skillList();
         for (int i = 0; i < 2; i++) {
-            System.out.print("Choose your favourite skill : ");
+            System.out.print("Choose favourite skill" + (i + 1) + " : ");
             select = sc.nextLine();
-
+            Skill skill = BaseGameSkills.getSkill(Integer.parseInt(select) - 1);
+            if (i == 0){
+                hero.setSkill1(skill);
+            }else {
+                hero.setSkill2(skill);
+            }
         }
 
 
@@ -720,6 +749,7 @@ public class GameEngine implements IGameEngine{
             if (playerParty.get(i).getHP() >=  playerParty.get(j).getHP()){
                 if (!playerParty.get(j).isDefeated()){
                     i = j;
+                    break;
                 }
             }
         }
@@ -727,14 +757,13 @@ public class GameEngine implements IGameEngine{
     }
 
     private int cpuAlgorihtmDeadAlly (ArrayList <Hero> cpuParty){
-        int i = 0;
+         int i = -1;
         for (int j = 1; j < cpuParty.size(); j++) {
             if (cpuParty.get(j).isDefeated()){
                 i = j;
                 break;
             }
         }
-
         return i;
     }
 

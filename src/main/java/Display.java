@@ -24,6 +24,9 @@ public class Display {
         String defH1 = String.valueOf(h1.getDefense());
         int defH1l = 2 + defH1.length(); int defH1r = 8 - defH1l;
 
+        String effH1 = "(" + h1.getEffect().getEffectDisplay() + ")";
+        int effH1l = (effH1.length()/2) + 10; int effh1r = 23 - effH1l;
+
 
         //Hero 2
         String hPla2 = h2.getName() + " | " + h2.getMana();
@@ -41,6 +44,9 @@ public class Display {
         String defH2 = String.valueOf(h2.getDefense());
         int defH2l = 2 + defH2.length(); int defH2r = 8 - defH2l;
 
+        String effH2 = "(" + h2.getEffect().getEffectDisplay() + ")";
+        int effH2l = (effH2.length()/2) + 10; int effh2r = 23 - effH2l;
+
 
         //Hero 3
         String hPla3 = h3.getName() + " | " + h3.getMana();
@@ -57,6 +63,9 @@ public class Display {
 
         String defH3 = String.valueOf(h3.getDefense());
         int defH3l = 2 + defH3.length(); int defH3r = 8 - defH3l;
+
+        String effH3 = "(" + h3.getEffect().getEffectDisplay() + ")";
+        int effH3l = (effH3.length()/2) + 10; int effh3r = 23 - effH3l;
 
 
         //Enemy
@@ -77,6 +86,9 @@ public class Display {
         String defE1 = String.valueOf(e1.getDefense());
         int defE1l = 2 + defE1.length(); int defE1r = 8 - defH1l;
 
+        String effE1 = "(" + e1.getEffect().getEffectDisplay() + ")";
+        int effE1l = (effE1.length()/2) + 10; int effE1r = 23 - effE1l;
+
 
         //Enemy 2
         String hE2 = e2.getName() +  " | " + e2.getMana();
@@ -94,6 +106,8 @@ public class Display {
         String defE2 = String.valueOf(e2.getDefense());
         int defE2l = 2 + defE2.length(); int defE2r = 8 - defE2l;
 
+        String effE2 = "(" + e2.getEffect().getEffectDisplay() + ")";
+        int effE2l =  (effE2.length()/2) + 10; int effE2r = 23 - effE2l;
 
 
         //Enemy 3
@@ -112,6 +126,9 @@ public class Display {
         String defE3 = String.valueOf(e3.getDefense());
         int defE3l = 2 + defE3.length(); int defE3r = 8 - defE3l;
 
+        String effE3 = "(" + e3.getEffect().getEffectDisplay() + ")";
+        int effE3l =  (effE3.length()/2) + 10; int effE3r = 23 - effE3l;
+
 
 
         System.out.println();
@@ -120,29 +137,29 @@ public class Display {
         System.out.println("|===================================================================|");
         System.out.println("|          1           |                     |          1           |");
         System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%" + hPla1l + "s%" + hPla1r + "s                     |%" + hE1l + "s%" + hE1r + "s\n", hPla1, "|", hE1, "|"); // Name
-        System.out.printf("|%" + atrH1l + "s%" + atrH1r + "s                     |%" + atrE1l + "s%" + atrE1r + "s\n", atrH1, "|", atrE1, "|"); //element | role
-        System.out.println("|                      |                     |                      |"); // Effect
+        System.out.printf("|%" + hPla1l + "s%" + hPla1r + "s                     |%" + hE1l + "s%" + hE1r + "s\n", hPla1, "|", hE1, "|");
+        System.out.printf("|%" + atrH1l + "s%" + atrH1r + "s                     |%" + atrE1l + "s%" + atrE1r + "s\n", atrH1, "|", atrE1, "|");
+        System.out.printf("|%" + effH1l + "s%" + effh1r + "s                     |%" + effE1l + "s%" + effE1r + "s\n", effH1, "|", effE1, "|");
         System.out.println("|----------------------|                     |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
         System.out.printf("|%"+hpH1l +"s%" + hpH1r + "s%" + defH1l + "s%" + defH1r + "s%" + atkH1l + "s%" + atkH1r + "s                     |%" + hpE1l + "s%" + hpE1r + "s%" + defE1l + "s%" + defE1r + "s%" + atkE1l + "s%" + atkE1r + "s\n" , hpH1, "|", defH1, "|", atkH1, "|", hpE1, "|", defE1, "|", atkE1, "|");
-        System.out.println("|=======================                     =======================|");
+        System.out.println("|======================|                     |======================|");
         System.out.println("|          2           |                     |          2           |");
         System.out.println("|----------------------|                     |----------------------|");
         System.out.printf("|%" + hPla2l + "s%" + hPla2r + "s  ██      ██ ██████  |%" + hE2l + "s%" + hE2r +  "s\n", hPla2, "|", hE2, "|");
         System.out.printf("|%" + atrH2l + "s%" + atrH2r + "s   ██    ██ ██       |%" + atrE2l + "s%" + atrE2r + "s\n", atrH2, "|", atrE2, "|");
-        System.out.println("|                      |    ██  ██   █████   |                      |");
+        System.out.printf("|%" + effH2l + "s%" + effh2r + "s    ██  ██   █████   |%" + effE2l + "s%" + effE2r + "s\n", effH2, "|", effE2, "|");
         System.out.println("|----------------------|     ████        ██  |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |      ██    ██████   |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------|");
         System.out.printf("|%"+hpH2l +"s%" + hpH2r + "s%" + defH2l + "s%" + defH2r + "s%" + atkH2l + "s%" + atkH2r + "s                     |%" + hpE2l + "s%" + hpE2r + "s%" + defE2l + "s%" + defE2r + "s%" + atkE2l + "s%" + atkE2r + "s\n" , hpH2, "|", defH2, "|", atkH2, "|", hpE2, "|", defE2, "|", atkE2, "|");
-        System.out.println("|=======================                     =======================|");
+        System.out.println("|======================|                     |======================|");
         System.out.println("|          3           |                     |          3           |");
         System.out.println("|----------------------|                     |----------------------|");
-        System.out.printf("|%" + hPla3l + "s%" + hPla3r + "s                     |%" + hE3l + "s%" + hE3r + "s\n", hPla3, "|", hE3, "|"); // Name
-        System.out.printf("|%" + atrH3l + "s%" + atrH3r + "s                     |%" + atrE3l + "s%" + atrE3r + "s\n", atrH3, "|", atrE3, "|"); //element | role
-        System.out.println("|                      |                     |                      |");
+        System.out.printf("|%" + hPla3l + "s%" + hPla3r + "s                     |%" + hE3l + "s%" + hE3r + "s\n", hPla3, "|", hE3, "|");
+        System.out.printf("|%" + atrH3l + "s%" + atrH3r + "s                     |%" + atrE3l + "s%" + atrE3r + "s\n", atrH3, "|", atrE3, "|");
+        System.out.printf("|%" + effH3l + "s%" + effh3r + "s                     |%" + effE3l + "s%" + effE3r + "s\n", effH3, "|", effE3, "|");
         System.out.println("|----------------------|                     |----------------------|");
         System.out.println("|  HP  |  DEF  |  ATK  |                     |  HP  |  DEF  |  ATK  |");
         System.out.println("|----------------------|                     |----------------------| ");
@@ -227,7 +244,8 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                           [a] New Game                            |");
         System.out.println("|                           [b] Load Game                           |");
-        System.out.println("|                           [c] Exit Game                           |");
+        System.out.println("|                           [c] HeroesPedia                         |");
+        System.out.println("|                           [d] Exit Game                           |");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
@@ -371,7 +389,7 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                   Are you ready for the challenge ?               |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.print("| Enter your name party : ");
+        System.out.print("| Enter your name party (max : 10 letters) : ");
     }
 
     void brawlHeroes (){
@@ -543,15 +561,15 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
     }
 
-    void heropedia() {
+    void heroespedia() {
         System.out.println("|===================================================================|");
         System.out.println("|                           HERO ALMANAC                            |");
         System.out.println("|===================================================================|");
         System.out.println("|             MURBY               |               HELLDA            |");
         System.out.println("|         FIRE | FIGHTER          |            FIRE | TANK          |");
-        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("| HP : 400 | ATK : 55 | DEF : 16  | HP : 490 | ATK : 35 | DEF : 24  |");
-        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("| FIREBALL BARAGE:                | ASHEN GROWL:                    |");
         System.out.println("| Deal 3x atk to an enemy         | Deal 0.5 atk and taunts         |");
         System.out.println("|                                 | an enemy for 3 turns            |");
@@ -559,14 +577,17 @@ public class Display {
         System.out.println("|                                 | FLAME ARMOR:                    |");
         System.out.println("|                                 | Increase all ally defense       |");
         System.out.println("|                                 | by 15% for 5 turns              |");
-        System.out.println("|---------------------------------|---------------------------------|");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("| LORE:                           | LORE:                           |");
         System.out.println("| Fell Orc yang bangkit dari      | Prajurit yang tumbuh besar di   |");
         System.out.println("| neraka dan mewarisi Cullenors   | desa suku minotaurus, Helzores. |");
         System.out.println("| axe dari api kegelapan.         | Api Ofyhz bernaung memberikan   |");
         System.out.println("|                                 | keabadian pada dirinya          |");
         System.out.println("|                                 |                                 |");
-        System.out.println("|=================================|=================================|");
+        System.out.println("|===================================================================|");
+        System.out.println("|                              [b] Back                             |");
+        System.out.println("|===================================================================|");
+        System.out.print("Your Choice : ");
     }
 
     void skillList() {
