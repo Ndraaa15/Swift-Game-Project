@@ -1,11 +1,11 @@
 {
-  "partyName": "indra",
+  "partyName": "INdra",
   "characters": [
     {
       "name": "Murby",
       "hp": 400,
       "maxHp": 400,
-      "mana": 100,
+      "mana": 50,
       "maxMana": 100,
       "atk": 55,
       "def": 16,
@@ -32,7 +32,7 @@
       },
       "heroLore": "Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.",
       "isDefeated": false,
-      "isTurn": false
+      "isTurn": true
     },
     {
       "name": "Helda",
@@ -78,7 +78,7 @@
     },
     {
       "name": "Veld",
-      "hp": 300,
+      "hp": 195,
       "maxHp": 300,
       "mana": 100,
       "maxMana": 100,

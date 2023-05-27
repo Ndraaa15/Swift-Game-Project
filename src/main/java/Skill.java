@@ -31,7 +31,7 @@ class Skill {
     }
 
     public boolean hasEnoughMana(Hero hero) {
-        return hero.getMana() > manaCost;
+        return hero.getMana() >= manaCost;
     }
 
     public void deductMana(Hero hero) {

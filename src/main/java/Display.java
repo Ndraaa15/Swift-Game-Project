@@ -171,37 +171,37 @@ public class Display {
 
         int hp1 = winnerTeam.getCharacters().get(0).getHP();int hp2 = winnerTeam.getCharacters().get(1).getHP();int hp3 = winnerTeam.getCharacters().get(2).getHP();
         int hpl1 = 2 + String.valueOf(hp1).length();
-        int hpr1 = 6 - hpl1 + 1;
+        int hpr1 = 7 - hpl1;
 
         int hpl2 = 2 + String.valueOf(hp2).length();
-        int hpr2 = 6 - hpl2 + 1;
+        int hpr2 = 7 - hpl2;
 
         int hpl3 = 2 + String.valueOf(hp3).length();
-        int hpr3 = 6 - hpl2 + 1;
+        int hpr3 = 7 - hpl3;
 
 
-        int def1 = winnerTeam.getCharacters().get(0).getHP();int def2 = winnerTeam.getCharacters().get(1).getHP();int def3 = winnerTeam.getCharacters().get(2).getHP();
+        int def1 = winnerTeam.getCharacters().get(0).getDefense();int def2 = winnerTeam.getCharacters().get(1).getDefense();int def3 = winnerTeam.getCharacters().get(2).getDefense();
 
         int defl1 = 2 + String.valueOf(def1).length();
         int defr1 = 6 - defl1 + 1;
 
         int defl2 = 2 + String.valueOf(def2).length();
-        int defr2 = 6 - defl2 + 1;
+        int defr2 = 7 - defl2;
 
         int defl3 = 2 + String.valueOf(def3).length();
-        int defr3 = 6 - defl3 + 1;
+        int defr3 = 7 - defl3;
 
 
-        int atk1 = winnerTeam.getCharacters().get(0).getHP();int atk2 = winnerTeam.getCharacters().get(1).getHP();int atk3 = winnerTeam.getCharacters().get(2).getHP();
+        int atk1 = winnerTeam.getCharacters().get(0).getAttack();int atk2 = winnerTeam.getCharacters().get(1).getAttack();int atk3 = winnerTeam.getCharacters().get(2).getAttack();
 
         int atkl1 = 2 + String.valueOf(atk1).length();
-        int atkr1 = 6 - atkl1 + 1;
+        int atkr1 = 7 - atkl1;
 
         int atkl2 = 2 + String.valueOf(atk2).length();
-        int atkr2 = 6 - atkl2 + 1;
+        int atkr2 = 7 - atkl2;
 
         int atkl3 = 2 + String.valueOf(atk3).length();
-        int atkr3 = 6 - atkl3 + 1;
+        int atkr3 = 7 - atkl3;
 
         System.out.println();
         System.out.println("          ██        ██ ██ ███   ██ ███   ██ ███████ ██████           ");
@@ -282,7 +282,7 @@ public class Display {
         int hpr3 = 6 - hpl2 + 1;
 
 
-        int def1 = playerParty.getCharacters().get(0).getHP();int def2 = playerParty.getCharacters().get(1).getHP();int def3 = playerParty.getCharacters().get(2).getHP();
+        int def1 = playerParty.getCharacters().get(0).getDefense();int def2 = playerParty.getCharacters().get(1).getDefense();int def3 = playerParty.getCharacters().get(2).getDefense();
 
         int defl1 = 2 + String.valueOf(def1).length();
         int defr1 = 6 - defl1 + 1;
@@ -294,7 +294,7 @@ public class Display {
         int defr3 = 6 - defl3 + 1;
 
 
-        int atk1 = playerParty.getCharacters().get(0).getHP();int atk2 = playerParty.getCharacters().get(1).getHP();int atk3 = playerParty.getCharacters().get(2).getHP();
+        int atk1 = playerParty.getCharacters().get(0).getAttack();int atk2 = playerParty.getCharacters().get(1).getAttack();int atk3 = playerParty.getCharacters().get(2).getAttack();
 
         int atkl1 = 2 + String.valueOf(atk1).length();
         int atkr1 = 6 - atkl1 + 1;
@@ -440,7 +440,7 @@ public class Display {
         System.out.println("|                             List Ally                             |");
         System.out.println("---------------------------------------------------------------------");
         for (int i = 0; i < playerParty.getCharacters().size(); i++) {
-            if (!playerParty.getCharacters().get(i).isDefeated() && !playerParty.getCharacters().get(i).getName().equals(heroUseSkill)){
+            if (playerParty.getCharacters().get(i).isDefeated() && !playerParty.getCharacters().get(i).getName().equals(heroUseSkill)){
                 String h = playerParty.getCharacters().get(i).getName();
                 int s = 36 - h.length();
                 System.out.printf("|                            [" + (i+1) + "] %s%" + s + "s\n", h, "|");
@@ -449,7 +449,15 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (1 | 2 | 3)                         |");
+        String a = "Select ( ";
+        for (int i = 0; i < playerParty.getCharacters().size(); i++) {
+            if (playerParty.getCharacters().get(i).isDefeated()){
+                a += (i + 1) + " | ";
+            }
+        }
+        a += ")";
+        int al = 24 + a.length(); int ar = 68 - al;
+        System.out.printf("|%" + al + "s%" + ar + "s\n", a, "|");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -468,7 +476,15 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (1 | 2 | 3)                         |");
+        String a = "Select ( ";
+        for (int i = 0; i < playerParty.getCharacters().size(); i++) {
+            if (playerParty.getCharacters().get(i).isDefeated()){
+                a += (i + 1) + " | ";
+            }
+        }
+        a += ")";
+        int al = 24 + a.length(); int ar = 68 - al;
+        System.out.printf("|%" + al + "s%" + ar + "s\n", a, "|");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -487,7 +503,15 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (1 | 2 | 3)                         |");
+        String a = "Select ( ";
+        for (int i = 0; i < cpuParty.getCharacters().size(); i++) {
+            if (!cpuParty.getCharacters().get(i).isDefeated()){
+                a += (i + 1) + " | ";
+            }
+        }
+        a += ")";
+        int al = 24 + a.length(); int ar = 68 - al;
+        System.out.printf("|%" + al + "s%" + ar + "s\n", a, "|");
         System.out.println("---------------------------------------------------------------------");
 
     }
@@ -507,7 +531,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select ( 1 | 2 | 3 )                       |");
+        System.out.println("|                        Select ( 1 | 2 | 3  )                      |");
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -522,13 +546,14 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                               Skill                               |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        [a] Basic Attack                           |");
-        System.out.println("|                        [b] Special Attack                          |");
-        System.out.printf("|                         [c] %s%" + sr1 + "s\n",s1, "|");
-        System.out.printf("|                         [c] %s%" + sr2 + "s\n", s2, "|");
+        System.out.println("|                        [1] Basic Attack                           |");
+        System.out.println("|                        [2] Special Attack                          |");
+        System.out.printf("|                         [3] %s%" + sr1 + "s\n",s1, "|");
+        System.out.printf("|                         [4] %s%" + sr2 + "s\n", s2, "|");
+        System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                      Select (a | b | c | d)                       |");
+        System.out.println("|                       Select ( 1 | 2 | 3 | 4 )                    |");
         System.out.println("---------------------------------------------------------------------");
     }
 

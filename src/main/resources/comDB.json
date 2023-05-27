@@ -2,41 +2,8 @@
   "partyName": "COM",
   "characters": [
     {
-      "name": "Lily",
-      "hp": 380,
-      "maxHp": 380,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 70,
-      "def": 12,
-      "heroElement": "GRASS",
-      "heroRole": "ARCHER",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "damageMultiplier": 1.5,
-        "name": "Thorn Arrow",
-        "manaCost": 20,
-        "target": "SINGLE_ENEMY",
-        "description": "1.5x true damage to an enemy"
-      },
-      "heroLore": "Prajurit Elf terbaik pada dinasti Jadaxie dengan panah kayu Fieltcress tidak terbatas.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
       "name": "Elisa",
-      "hp": 360,
+      "hp": 205,
       "maxHp": 360,
       "mana": 100,
       "maxMana": 100,
@@ -45,7 +12,7 @@
       "heroElement": "GRASS",
       "heroRole": "MAGE",
       "effect": {
-        "stunDuration": 0,
+        "stunDuration": -1,
         "tauntDuration": 0,
         "atkBuffDuration": 0,
         "atkBuffModifier": 0.0,
@@ -68,17 +35,17 @@
       "isTurn": false
     },
     {
-      "name": "Theseus",
-      "hp": 350,
-      "maxHp": 350,
+      "name": "Marie",
+      "hp": 375,
+      "maxHp": 375,
       "mana": 100,
       "maxMana": 100,
-      "atk": 60,
-      "def": 11,
+      "atk": 40,
+      "def": 18,
       "heroElement": "WATER",
-      "heroRole": "MAGE",
+      "heroRole": "SUPPORT",
       "effect": {
-        "stunDuration": 0,
+        "stunDuration": -1,
         "tauntDuration": 0,
         "atkBuffDuration": 0,
         "atkBuffModifier": 0.0,
@@ -90,21 +57,59 @@
         "defDebuffModifier": 0.0
       },
       "skill1": {
-        "damageMultiplier": 1.0,
-        "name": "Needle Rain",
-        "manaCost": 25,
-        "target": "ALL_ENEMY",
-        "description": "Deals 1x true damage to all enemy"
+        "multiplier": 0.2,
+        "name": "Healing Water",
+        "manaCost": 30,
+        "target": "SINGLE_ALLY",
+        "description": "Heal 20% max Hp of an ally"
       },
       "skill2": {
-        "defMultiplier": 0.2,
-        "duration": 5,
-        "name": "Frost Armor",
+        "duration": 10,
+        "multiplier": 0.1,
+        "name": "Blizzard",
+        "manaCost": 65,
+        "target": "ALL_ENEMY",
+        "description": "Decrease all enemy attack by 10% for 10 turns"
+      },
+      "heroLore": "Penghuni Themscira, tanah selir para dewa. Marielle dengan kekuatan air suci mengabdi dengan julukan \"The Holy Maiden\".",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Fara",
+      "hp": 380,
+      "maxHp": 380,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 35,
+      "def": 20,
+      "heroElement": "GRASS",
+      "heroRole": "SUPPORT",
+      "effect": {
+        "stunDuration": -1,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "name": "Life Reblossom",
+        "manaCost": 85,
+        "target": "DEAD_ALLY",
+        "description": "Resurrect an ally"
+      },
+      "skill2": {
+        "name": "Nature Cleansing",
         "manaCost": 20,
         "target": "SINGLE_ALLY",
-        "description": "Increase an ally def by 0.2 for 5 turns"
+        "description": "Purify all debuff of an ally"
       },
-      "heroLore": "Memiliki setengah darah Poseidon membuatnya berambisi untuk menguasai samudra dalam. Penguasaan air yang baik membuatnya dapat bertarung dalam medan apapun.",
+      "heroLore": "Tabib kerajaan Gulsior dari aliran dewa ismich yang menerima rahmat untuk memberkati seluruh umatnya.",
       "isDefeated": false,
       "isTurn": false
     }

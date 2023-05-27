@@ -125,7 +125,7 @@ class Hero implements IHero {
             setMana(0);
             getEffect().nullifyAll();
             System.out.println("|===================================================================|");
-            System.out.printf("| %-65s |\n", String.format("%s is defeated"), getName());
+            System.out.printf("| %-65s |\n", String.format("%s is defeated",getName() ));
             System.out.println("|===================================================================|");
         }
     }
