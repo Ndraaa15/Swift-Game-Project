@@ -337,6 +337,10 @@ class Hero implements IHero {
         return display;
     }
 
+    public void incrementManaPerTurn() {
+        setMana(getMana() + 10);
+    }
+
     // DISPLAY
     @Override
     public void printHero() {
