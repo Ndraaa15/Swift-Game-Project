@@ -547,10 +547,10 @@ public class GameEngine implements IGameEngine{
                 continue;
             }
 
-            if (hero.hasSkill1()){
-                display.hasSkill1(hero);
-            } else if (hero.hasSkill2()) {
+            if (hero.hasSkill1() && hero.hasSkill2()){
                 display.hasSkill2(hero);
+            } else  {
+                display.hasSkill1(hero);
             }
 
             boolean isTrue = true;

@@ -548,8 +548,8 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                        [1] Basic Attack                           |");
         System.out.println("|                        [2] Special Attack                          |");
-        System.out.printf("|                         [3] %s%" + sr1 + "s\n",s1, "|");
-        System.out.printf("|                         [4] %s%" + sr2 + "s\n", s2, "|");
+        System.out.printf("|                        [3] %s%" + sr1 + "s\n",s1, "|");
+        System.out.printf("|                        [4] %s%" + sr2 + "s\n", s2, "|");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
