@@ -229,7 +229,11 @@ class ThornArrow extends Skill {
 
     @Override
     public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
         SkillFunctionality.trueDamage(hero, target, damageMultiplier);
+        deductMana(hero);
+        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        logSkill(message);
     }
 }
 
