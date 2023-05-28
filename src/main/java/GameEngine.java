@@ -38,8 +38,8 @@ public class GameEngine implements IGameEngine{
 
     @Override
     public void saveGame() {
-        String path1 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\playerDB.json";
-        String path2 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\comDB.json";
+        String path1 = "playerDB.json";
+        String path2 = "comDB.json";
         Gson gson = new GsonBuilder()
                .setPrettyPrinting()
                .create();
@@ -69,8 +69,8 @@ public class GameEngine implements IGameEngine{
                 .setPrettyPrinting()
                 .create();
 
-        String path1 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\playerDB.json";
-        String path2 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\comDB.json";
+        String path1 = "playerDB.json";
+        String path2 = "comDB.json";
         try (FileReader reader1 = new FileReader(path1);){
             Type playerPartyToken = new TypeToken<Party>(){}.getType();
             this.playerParty = gson.fromJson(reader1, playerPartyToken);

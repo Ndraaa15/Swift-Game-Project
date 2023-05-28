@@ -1,0 +1,107 @@
+{
+  "partyName": "COM",
+  "characters": [
+    {
+      "name": "Dillo",
+      "hp": 425,
+      "maxHp": 425,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 60,
+      "def": 16,
+      "heroElement": "WATER",
+      "heroRole": "FIGHTER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "damageMultiplier": 3.0,
+        "name": "Water Slash",
+        "manaCost": 35,
+        "target": "SINGLE_ENEMY",
+        "description": "Deal 3x true damage to an enemy"
+      },
+      "heroLore": "Nelayan dengan kesehariannya bertarung melawan siluman ikan hidup dengan tombak kebanggaannya, Culbert.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Grove",
+      "hp": 480,
+      "maxHp": 480,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 30,
+      "def": 27,
+      "heroElement": "GRASS",
+      "heroRole": "TANK",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "healMultiplier": 0.1,
+        "defBuffMultiplier": 0.2,
+        "name": "Grassroot Guardian",
+        "manaCost": 60,
+        "target": "ALL_ALLY",
+        "description": "10% heal and 20% def buff for 2 turns to all ally"
+      },
+      "heroLore": "Berkah surgawi mengubah biji matahari menjadi seorang half-human yang memberikan kehangatan pada pijakan kakinya.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Deus",
+      "hp": 340,
+      "maxHp": 340,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 70,
+      "def": 10,
+      "heroElement": "FIRE",
+      "heroRole": "ARCHER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "damageMultiplier": 1.5,
+        "duration": 1,
+        "name": "Infernal Shot",
+        "manaCost": 30,
+        "target": "SINGLE_ENEMY",
+        "description": "Stun and deal 1.5 damage to an enemy"
+      },
+      "heroLore": "Lulusan terbaik sekolah sihir dengan passion memanahnya. Pengabdian, pengorbanan, dan kegigihan membuatnya dijuluki \"Muff Blessed\" oleh musuhnya.",
+      "isDefeated": false,
+      "isTurn": false
+    }
+  ],
+  "isTurn": false
+}
