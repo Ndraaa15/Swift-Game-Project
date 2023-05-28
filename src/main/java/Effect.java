@@ -33,6 +33,7 @@ class Effect {
     }
 
     public void decrementStunDuration() {
+        if (stunDuration == 0) return;
         stunDuration--;
     }
 
