@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken;
 
 
 public class GameEngine implements IGameEngine{
-    Random random = new Random();
+    private Random random = new Random();
     private BaseGameHeroes heroes;
     private Scanner sc = new Scanner(System.in);
     private IParty playerParty;
@@ -28,7 +28,6 @@ public class GameEngine implements IGameEngine{
 
     @Override
     public IParty createPlayerParty(String partyName, Hero ICharacter1, Hero ICharacter2, Hero ICharacter3) {
-
         return new Party(partyName, ICharacter1, ICharacter2, ICharacter3);
     }
 
@@ -41,26 +40,27 @@ public class GameEngine implements IGameEngine{
     public void saveGame() {
         String path1 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\playerDB.json";
         String path2 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\comDB.json";
-       Gson gson = new GsonBuilder()
+        Gson gson = new GsonBuilder()
                .setPrettyPrinting()
                .create();
+
        try (FileWriter writer1 = new FileWriter(path1)){
            gson.toJson(this.playerParty, writer1);
-
        }catch (IOException e){
-           throw new RuntimeException(e);
+           e.printStackTrace();
+           throw new RuntimeException("Failed to write file to : " + path1, e);
        }
 
        try ( FileWriter writer2 = new FileWriter(path2)){
            gson.toJson(this.cpuParty, writer2);
-
        }catch (IOException e){
-           throw new RuntimeException(e);
+           e.printStackTrace();
+           throw new RuntimeException("Failed to write file to : " + path2, e);
        }
 
+       display.saveGame();
        display.thankYou();
-       _exitGame();
-
+       exitGame();
     }
 
     @Override
@@ -71,30 +71,36 @@ public class GameEngine implements IGameEngine{
 
         String path1 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\playerDB.json";
         String path2 = "C:\\Users\\indra\\Documents\\Developments\\Java\\Object Oriented Progamming\\Swift-Game\\src\\main\\resources\\comDB.json";
-        try {
-            FileReader reader1 = new FileReader(path1);
+        try (FileReader reader1 = new FileReader(path1);){
             Type playerPartyToken = new TypeToken<Party>(){}.getType();
-
             this.playerParty = gson.fromJson(reader1, playerPartyToken);
-
         }catch (IOException e){
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new RuntimeException("Failed to read file : " + path1, e);
         }
 
-        try {
-            FileReader reader2 = new FileReader(path2);
+        try (FileReader reader2 = new FileReader(path2);){
             Type cpuPartyToken = new TypeToken<Party>(){}.getType();
-
             this.cpuParty = gson.fromJson(reader2, cpuPartyToken);
-
         }catch (IOException e){
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new RuntimeException("Failed to read file : " + path2, e);
         }
 
+        if (this.playerParty == null && this.cpuParty == null){
+            System.out.println("---------------------------------------------------------------------");
+            System.out.println("|  Sorry, you haven't save any game before, please choose new game  |");
+            System.out.println("---------------------------------------------------------------------");
+            System.out.println();
+            System.out.println();
+            start();
+        }
+
+        assert this.playerParty != null;
         display.readyGameDisplay(this.playerParty);
         String select = sc.nextLine();
         boolean isTrue = true;
-        do {
+        while (isTrue){
             switch (select) {
                 case "y" -> {
                     isTrue = false;
@@ -105,7 +111,7 @@ public class GameEngine implements IGameEngine{
                 }
                 default -> System.out.println("Please choose between ( y | n ) !!!");
             }
-        }while (isTrue);
+        }
     }
 
     @Override
@@ -132,7 +138,7 @@ public class GameEngine implements IGameEngine{
             switch (select) {
                 case "a" -> {
                     isTrue = false;
-                    _newGame();
+                    newGame();
                 }
                 case "b" -> {
                     isTrue = false;
@@ -143,10 +149,10 @@ public class GameEngine implements IGameEngine{
                 }
                 case "d" -> {
                     isTrue = false;
-                    _exitGame();
+                    exitGame();
                 }
                 default -> {
-                    System.out.println("Please choose between ( a | b | c ) !!!");
+                    System.out.println("Please choose between ( a | b | c | d) !!!");
                     System.out.print("Your Choice : ");
                 }
             }
@@ -157,10 +163,11 @@ public class GameEngine implements IGameEngine{
 
     private void heroesPedia () {
         display.heroespedia();
-
-        while (true) {
+        boolean isTrue = true;
+        while (isTrue) {
             String select = sc.nextLine();
             if (select.equals("b")) {
+                isTrue = false;
                 start();
             } else {
                 System.out.println("Please choose ( b ) !!!");
@@ -169,15 +176,16 @@ public class GameEngine implements IGameEngine{
         }
     }
 
-    private void _newGame (){
+    private void newGame (){
         display.newGameMenu();
         boolean isTrue = true;
+
         while (isTrue){
             String select = sc.nextLine();
             switch (select) {
                 case "a" -> {
                     isTrue = false;
-                    _createPartyForPlayer();
+                    createPartyForPlayer();
                 }
                 case "b" -> {
                     isTrue = false;
@@ -192,18 +200,19 @@ public class GameEngine implements IGameEngine{
     }
 
 
-    private void _exitGame (){
+    private void exitGame (){
         System.exit(0);
     }
 
-    private void _createPartyForPlayer (){
+    private void createPartyForPlayer (){
         display.createTeam();
 
         String partyName = sc.nextLine();
-        if (partyName.length() > 10){
-            System.out.println("Your team name should be less than 10 letters");
-            _createPartyForPlayer();
+        if (partyName.length() > 13){
+            System.out.println("Your team name should be less than 12 letters");
+            createPartyForPlayer();
         }
+
         display.listHero();
 
         ArrayList <Hero> listHeroes = new ArrayList<>();
@@ -242,16 +251,15 @@ public class GameEngine implements IGameEngine{
         boolean isTrue = true;
         while (isTrue){
             String select = sc.nextLine();
-
             switch (select) {
                 case "y" -> {
                     isTrue = false;
-                    _createPartyForCPU();
+                    createPartyForCPU();
                     gameON();
                 }
                 case "n" -> {
                     isTrue = false;
-                    _createPartyForPlayer();
+                    createPartyForPlayer();
                 }
                 default -> {
                     System.out.println("Please choose between ( y | n ) !!!");
@@ -262,31 +270,26 @@ public class GameEngine implements IGameEngine{
     }
 
 
-    private void _createPartyForCPU (){
-        ArrayList <Hero> listHeroes = new ArrayList<>();
+    private void createPartyForCPU (){
+        ArrayList <Hero> listHeroesCOM = new ArrayList<>();
 
-        int i = 1;
-        while (listHeroes.size() < 3){
+        while (listHeroesCOM.size() < 3){
             int rNum = random.nextInt(12);
             Hero result = selectHero(String.valueOf(rNum + 1));
 
-            if (listHeroes.contains(result)){
-                continue;
-            }else {
+            if (!listHeroesCOM.contains(result)){
                 if (result != null && !heroes.isUsed(result.getName())){
-                    listHeroes.add(result);
-                    i++;
-                }else {
-                    continue;
+                    listHeroesCOM.add(result);
                 }
             }
         }
-        this.cpuParty = createCPUParty("COM", listHeroes.get(0), listHeroes.get(1), listHeroes.get(2));
+        this.cpuParty = createCPUParty("COM", listHeroesCOM.get(0), listHeroesCOM.get(1), listHeroesCOM.get(2));
     }
 
 
     private void gameON (){
         int rNUm = random.nextInt(2);
+
         if (rNUm == 0){
             playerParty.setTurn(true);
             cpuParty.setTurn(false);
@@ -316,62 +319,120 @@ public class GameEngine implements IGameEngine{
                 cpuParty.setTurn(false);
                 playerParty.setTurn(true);
             }
-
-            //Implementation of increasing mana and decreasing effect
-            //
-            //
-            //
-            //
+            decreamentEffect(this.playerParty.getCharacters());
+            decreamentEffect(this.cpuParty.getCharacters());
+            increamentManaPerTurn (this.playerParty.getCharacters(), this.cpuParty.getCharacters());
         }
 
         IParty winnerTeam = winner();
+
         if (winnerTeam != null){
             display.winnerBanner(winnerTeam);
         }
 
         display.playAgainOrNo();
 
-        while (true){
+        boolean isTrue = true;
+        while (isTrue){
             String select = sc.nextLine();
-
             if (select.equals("y")){
+                isTrue = false;
                 start();
             } else if (select.equals("n")) {
+                isTrue = false;
                 display.thankYou();
-                _exitGame();
+                exitGame();
             }else {
                 System.out.println("Please choose between ( y | n ) !!!");
             }
         }
     }
 
-    private void cpuTurn(){
-        ArrayList<Hero> listHero = playerParty.getCharacters();
-        ArrayList<Hero> listEnemy = cpuParty.getCharacters();
-        int i = 0;
-        int select = 0;
+    private void increamentManaPerTurn (ArrayList<Hero> listHeroPlayer, ArrayList<Hero> listHeroCOM){
+        for (Hero hero : listHeroPlayer){
+            if (!hero.isDefeated()){
+                hero.incrementManaPerTurn();
+            }
+        }
 
-        while ((!listEnemy.get(0).isTurn() && !listEnemy.get(0).isDefeated()) || (!listEnemy.get(1).isTurn() && !listEnemy.get(1).isDefeated()) || (!listEnemy.get(2).isTurn() && !listEnemy.get(2).isDefeated())){
-            Hero hero = listEnemy.get(i);
+        for (Hero hero : listHeroCOM){
+            if (!hero.isDefeated()){
+                hero.incrementManaPerTurn();
+            }
+        }
+    }
+
+
+    private void cpuTurn(){
+        ArrayList<Hero> listHeroPlayer = this.playerParty.getCharacters();
+        ArrayList<Hero> listHeroCOM = this.cpuParty.getCharacters();
+
+        int i = 0;
+        int select;
+
+        while ((!listHeroCOM.get(0).isTurn() && !listHeroCOM.get(0).isDefeated()) || (!listHeroCOM.get(1).isTurn() && !listHeroCOM.get(1).isDefeated()) || (!listHeroCOM.get(2).isTurn() && !listHeroCOM.get(2).isDefeated())){
+
+            if (i == 3){
+                break;
+            }
+
+            Hero hero = listHeroCOM.get(i);
 
             if (hero.isTurn() || hero.isDefeated()){
                 i++;
                 continue;
             }
 
+            if (hero.getEffect().isStunned()){
+                System.out.println("Hero got stunned !");
+                hero.setTurn(true);
+                i++;
+                continue;
+            } else if (hero.getEffect().isTaunted()) {
+                Hero heroTaunting = hero.getEffect().getTauntingHero();
+                System.out.println("Hero got taunted, hero only can use basic attack or special attack!");
+                display.tauntedSkill();
+                boolean isTrue = true;
+                while (isTrue){
+                    select = random.nextInt(2);
+                    String strRand = String.valueOf(select + 1);
+                    if (strRand.equals("1")){
+                        if (!heroTaunting.isDefeated()){
+                            hero.normalAttack(heroTaunting);
+                            hero.setTurn(true);
+                            i++;
+                            break;
+                        }else {
+                            isTrue = false;
+                            hero.getEffect().nullifyTaunt();
+                        }
+                    } else if (strRand.equals("2")) {
+                        if (!heroTaunting.isDefeated()){
+                            hero.specialAttack(heroTaunting);
+                            hero.setTurn(true);
+                            i++;
+                            break;
+                        }else {
+                            isTrue = false;
+                            hero.getEffect().nullifyTaunt();
+                        }
+                    }
+                }
+            }
+
             boolean isTrue = true;
             while (isTrue){
-                if (hero.hasSkill1()){
-                    if (hero.getMana() < hero.getSkill1().getManaCost()){
-                        select = random.nextInt(2);
-                    }else {
-                        select = random.nextInt(3);
-                    }
-                } else if (hero.hasSkill2()) {
+                if (hero.hasSkill1() && hero.hasSkill2()){
                     if ((hero.getMana() < hero.getSkill1().getManaCost()) && (hero.getMana() < hero.getSkill2().getManaCost())){
                         select = random.nextInt(2);
-                    } else{
+                    }else {
                         select = random.nextInt(4);
+                    }
+                } else {
+                    if (hero.getMana() < hero.getSkill1().getManaCost()){
+                        select = random.nextInt(2);
+                    } else{
+                        select = random.nextInt(3);
                     }
                 }
 
@@ -379,10 +440,9 @@ public class GameEngine implements IGameEngine{
 
                 if (strRand.equals("1")){
 
-                    int rAlgo = cpuAlgorihtmForEnemy(listHero);
+                    int rAlgo = cpuAlgorihtmForEnemy(listHeroPlayer);
 
-                    Hero player = listHero.get(rAlgo);
-
+                    Hero player = listHeroPlayer.get(rAlgo);
 
                     if (!player.isDefeated()){
                         hero.normalAttack(player);
@@ -390,10 +450,11 @@ public class GameEngine implements IGameEngine{
                     }else {
                         continue;
                     }
+
                 } else if (strRand.equals("2")) {
 
-                    int rAlgo = cpuAlgorihtmForEnemy(listHero);
-                    Hero player = listHero.get(rAlgo);
+                    int rAlgo = cpuAlgorihtmForEnemy(listHeroPlayer);
+                    Hero player = listHeroPlayer.get(rAlgo);
 
                     if (!player.isDefeated()){
                         hero.specialAttack(player);
@@ -403,47 +464,72 @@ public class GameEngine implements IGameEngine{
                     }
 
                 } else if (strRand.equals("3")) {
-
                     if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
-                        do {
-                            select = cpuAlgorihtmForEnemy(listHero);
-                        } while (select == -1);
+
+                        select = cpuAlgorihtmForEnemy(listHeroPlayer);
+                        if (select == -1){
+                            continue;
+                        }
+
                     } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        do {
-                            select = cpuAlgorihtmForAlly(listEnemy);
-                        } while (select == -1);
+
+                        select = cpuAlgorihtmForAlly(listHeroCOM);
+                        if (select == -1){
+                            continue;
+                        }
 
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
-                        do {
-                            select = cpuAlgorihtmDeadAlly(listEnemy);
-                        } while (select == -1);
+
+                        select = cpuAlgorihtmDeadAlly(listHeroCOM);
+                        if (select == -1){
+                            continue;
+                        }
+
+                        Hero player = listHeroCOM.get(select);
+                        if (!player.isDefeated()){
+                            hero.useSkill1(player);
+                            hero.setTurn(true);
+                            i++;
+                            break;
+                        }else {
+                            continue;
+                        }
+
                     } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
+
                         if (!this.playerParty.isDefeated()){
-                            hero.useSkill1(this.playerParty.getCharacters());
+                            hero.useSkill1(listHeroPlayer);
+                            hero.setTurn(true);
                             i++;
                             break;
                         }else {
                             continue;
                         }
+
                     } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ALLY) {
+
                         if (!this.cpuParty.isDefeated()){
-                            hero.useSkill1(cpuParty.getCharacters());
+                            hero.useSkill1(listHeroCOM);
+                            hero.setTurn(true);
                             i++;
-                            break;
                         }else {
                             continue;
                         }
+
                     } else if (hero.getSkill1().getTarget() == SkillTarget.SELF) {
+
                         if (!hero.isDefeated()){
                             hero.useSkill1(hero);
+                            hero.setTurn(true);
                             i++;
                             break;
                         }else {
                             continue;
                         }
+
                     }
 
-                    Hero player = listHero.get(select);
+                    Hero player = listHeroPlayer.get(select);
                     if (!player.isDefeated()){
                         hero.useSkill1(player);
                         isTrue = false;
@@ -454,31 +540,42 @@ public class GameEngine implements IGameEngine{
                 } else if (strRand.equals("4")) {
 
                     if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ENEMY){
-                        select = cpuAlgorihtmForEnemy(listHero);
+
+                        select = cpuAlgorihtmForEnemy(listHeroPlayer);
                         if (select == -1){
                             continue;
                         }
+
                     } else if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        select = cpuAlgorihtmForAlly(listEnemy);
+
+                        select = cpuAlgorihtmForAlly(listHeroCOM);
                         if (select == -1){
                             continue;
                         }
+
                     } else if (hero.getSkill2().getTarget() == SkillTarget.DEAD_ALLY) {
-                        select = cpuAlgorihtmDeadAlly(listEnemy);
+
+                        select = cpuAlgorihtmDeadAlly(listHeroCOM);
                         if (select == -1){
                             continue;
                         }
+
                     } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ENEMY){
+
                         if (!this.playerParty.isDefeated()){
-                            hero.useSkill2(playerParty.getCharacters());
+                            hero.useSkill2(listHeroPlayer);
+                            hero.setTurn(true);
                             i++;
                             break;
                         }else {
                             continue;
                         }
+
                     } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ALLY) {
+
                         if (!this.cpuParty.isDefeated()){
-                            hero.useSkill2(cpuParty.getCharacters());
+                            hero.useSkill2(listHeroCOM);
+                            hero.setTurn(true);
                             i++;
                             break;
                         }else {
@@ -486,18 +583,21 @@ public class GameEngine implements IGameEngine{
                         }
 
                     } else if (hero.getSkill2().getTarget() == SkillTarget.SELF) {
+
                         if (!hero.isDefeated()){
                             hero.useSkill2(hero);
+                            hero.setTurn(true);
                             i++;
                             break;
                         }else {
                             continue;
                         }
+
                     }
 
-                    Hero enemy = listHero.get(select);
+                    Hero enemy = listHeroPlayer.get(select);
                     if (!enemy.isDefeated()){
-                        hero.useSkill1(enemy);
+                        hero.useSkill2(enemy);
                         isTrue = false;
                     }else {
                         continue;
@@ -507,16 +607,15 @@ public class GameEngine implements IGameEngine{
             i++;
             hero.setTurn(true);
         }
-        decreamentEffect(listEnemy);
-        resetHeroTurn(listEnemy);
+        resetHeroTurn(listHeroCOM);
     }
 
 
     private void playerTurn (){
-        ArrayList<Hero> listHero = playerParty.getCharacters();
-        ArrayList<Hero> listEnemy = cpuParty.getCharacters();
+        ArrayList<Hero> listHeroPlayer = playerParty.getCharacters();
+        ArrayList<Hero> listHeroCOM = cpuParty.getCharacters();
 
-        while ((!listHero.get(0).isTurn() && !listHero.get(0).isDefeated()) || (!listHero.get(1).isTurn() && !listHero.get(1).isDefeated()) || (!listHero.get(2).isTurn() && !listHero.get(2).isDefeated())){
+        while ((!listHeroPlayer.get(0).isTurn() && !listHeroPlayer.get(0).isDefeated()) || (!listHeroPlayer.get(1).isTurn() && !listHeroPlayer.get(1).isDefeated()) || (!listHeroPlayer.get(2).isTurn() && !listHeroPlayer.get(2).isDefeated())){
             System.out.print("Choose your hero  : ");
             String select = sc.nextLine();
 
@@ -524,11 +623,11 @@ public class GameEngine implements IGameEngine{
                 display.menuGameWhenPlay();
                 select = sc.nextLine();
                 if (select.equals("b")){
-                    int result = _exitGameWhenPlay();
+                    int result = exitGameWhenPlay();
                     if (result == 1){
                         saveGame();
                     } else if (result == 2) {
-                        _exitGame();
+                        exitGame();
                     } else {
                         continue;
                     }
@@ -536,35 +635,69 @@ public class GameEngine implements IGameEngine{
                     continue;
                 }
             }
+            try {
+                Hero hero = listHeroPlayer.get(Integer.parseInt(select) - 1);
 
-            Hero hero = listHero.get(Integer.parseInt(select) - 1);
+                if (hero.isTurn()){
+                    System.out.println("Please choose another hero, hero already used!");
+                    continue;
+                } else if (hero.isDefeated()){
+                    System.out.println("Please choose another hero, hero already defeated!");
+                    continue;
+                }
 
-            if (hero.isTurn()){
-                System.out.println("Please choose another hero, hero already used!");
-                continue;
-            } else if (hero.isDefeated()){
-                System.out.println("Please choose another hero, hero already defeated!");
-                continue;
-            }
+                if (hero.getEffect().isStunned()){
+                    System.out.println("Hero got stunned please choose another hero!");
+                    hero.setTurn(true);
+                    continue;
+                } else if (hero.getEffect().isTaunted()) {
+                    Hero heroTaunting = hero.getEffect().getTauntingHero();
+                    System.out.println("Hero got taunted, your hero only can use basic attack or special attack!");
+                    display.tauntedSkill();
+                    boolean isTrue = true;
+                    while (isTrue){
+                        System.out.print("Choose your skill : ");
+                        select = sc.nextLine();
+                        if (select.equals("1")){
+                            if (!heroTaunting.isDefeated()){
+                                hero.normalAttack(heroTaunting);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                isTrue = false;
+                                hero.getEffect().nullifyTaunt();
+                            }
+                        } else if (select.equals("2")) {
+                            if (!heroTaunting.isDefeated()){
+                                hero.specialAttack(heroTaunting);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                isTrue = false;
+                                hero.getEffect().nullifyTaunt();
+                            }
+                        }
+                    }
+                }
 
-            if (hero.hasSkill1() && hero.hasSkill2()){
-                display.hasSkill2(hero);
-            } else  {
-                display.hasSkill1(hero);
-            }
+                if (hero.hasSkill1() && hero.hasSkill2()){
+                    display.hasSkill2(hero);
+                } else  {
+                    display.hasSkill1(hero);
+                }
 
-            boolean isTrue = true;
-            while (isTrue){
-                System.out.print("Choose your skill : ");
-                select = sc.nextLine();
-
-                if (select.equals("1")){
-                    display.listEnemy(this.cpuParty);
-
-                    System.out.print("Choose your target : ");
+                boolean isTrue = true;
+                while (isTrue){
+                    System.out.print("Choose your skill : ");
                     select = sc.nextLine();
 
-                        Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
+                    if (select.equals("1")){
+                        display.listEnemy(this.cpuParty);
+
+                        System.out.print("Choose your target : ");
+                        select = sc.nextLine();
+
+                        Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
                         if (!enemy.isDefeated()){
                             hero.normalAttack(enemy);
                             isTrue = false;
@@ -572,13 +705,12 @@ public class GameEngine implements IGameEngine{
                             System.out.println("Sorry your target is already defeated, please choose another target!");
                         }
 
+                    } else if (select.equals("2")) {
+                        display.listEnemy(this.cpuParty);
+                        System.out.print("Choose your target : ");
+                        select = sc.nextLine();
 
-                } else if (select.equals("2")) {
-                    display.listEnemy(this.cpuParty);
-                    System.out.print("Choose your target : ");
-                    select = sc.nextLine();
-
-                        Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
+                        Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
                         if (!enemy.isDefeated()){
                             hero.specialAttack(enemy);
                             isTrue = false;
@@ -587,52 +719,53 @@ public class GameEngine implements IGameEngine{
                         }
 
 
-                } else if (select.equals("3")) {
-                    if (hero.getMana() < hero.getSkill1().getManaCost()){
-                        System.out.println("Sorry your mana is not enough, please use another skill!");
-                        continue;
-                    }
-
-                    if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
-                        display.listEnemy(this.cpuParty);
-                    } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        display.listAlly(this.playerParty, hero.getName());
-                    } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
-                        display.listDeadAlly(this.playerParty);
-                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
-                        if (!this.cpuParty.isDefeated()){
-                            hero.useSkill1(cpuParty.getCharacters());
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target team is already defeated, please choose another target!");
+                    } else if (select.equals("3")) {
+                        if (hero.getMana() < hero.getSkill1().getManaCost()){
+                            System.out.println("Sorry your mana is not enough, please use another skill!");
+                            continue;
                         }
-                        continue;
-                    } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ALLY) {
-                        if (!this.playerParty.isDefeated()){
-                            hero.useSkill1(this.playerParty.getCharacters());
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target team is already defeated, please choose another target!");
-                        }
-                        continue;
-                    } else if (hero.getSkill1().getTarget() == SkillTarget.SELF) {
-                        if (!hero.isDefeated()){
-                            hero.useSkill1(hero);
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target hero is already defeated, please choose another target!");
-                        }
-                        continue;
-                    }
 
-                    while (true){
-                        System.out.print("Choose your target : ");
-                        select = sc.nextLine();
+                        if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
+                            display.listEnemy(this.cpuParty);
+                        } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
+                            display.listAlly(this.playerParty, hero.getName());
+                        } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
+                            display.listDeadAlly(this.playerParty);
+                        } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
 
-                            Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
+                            if (!this.cpuParty.isDefeated()){
+                                hero.useSkill1(listHeroCOM);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your target team is already defeated, please choose another target!");
+                            }
+                            continue;
+                        } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ALLY) {
+                            if (!this.playerParty.isDefeated()){
+                                hero.useSkill1(listHeroPlayer);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your target team is already defeated, please choose another target!");
+                            }
+                            continue;
+                        } else if (hero.getSkill1().getTarget() == SkillTarget.SELF) {
+                            if (!hero.isDefeated()){
+                                hero.useSkill1(hero);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your  hero is already defeated, please choose another target!");
+                            }
+                            continue;
+                        }
+
+                        while (true){
+                            System.out.print("Choose your target : ");
+                            select = sc.nextLine();
+
+                            Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
                             if (!enemy.isDefeated()){
                                 hero.useSkill1(enemy);
                                 isTrue = false;
@@ -640,56 +773,60 @@ public class GameEngine implements IGameEngine{
                             }else {
                                 System.out.println("Sorry your target is already defeated, please choose another target!");
                             }
-
-
-                    }
-
-                } else if (select.equals("4")) {
-                    if (hero.getMana() < hero.getSkill2().getManaCost()){
-                        System.out.println("Sorry your mana is not enough, please use another skill!");
-                        continue;
-                    }
-
-                    if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ENEMY){
-                        display.listEnemy(this.cpuParty);
-                    } else if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ALLY) {
-                        display.listAlly(this.playerParty, hero.getName());
-                    } else if (hero.getSkill2().getTarget() == SkillTarget.DEAD_ALLY) {
-                        display.listDeadAlly(this.playerParty);
-                    } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ENEMY){
-                        if (!this.cpuParty.isDefeated()){
-                            hero.useSkill2(cpuParty.getCharacters());
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target team is already defeated, please choose another target!");
                         }
-                        continue;
-                    } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ALLY) {
-                        if (!this.playerParty.isDefeated()){
-                            hero.useSkill2(this.playerParty.getCharacters());
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target team is already defeated, please choose another target!");
-                        }
-                        continue;
-                    } else if (hero.getSkill2().getTarget() == SkillTarget.SELF) {
-                        if (!hero.isDefeated()){
-                            hero.useSkill2(hero);
-                            hero.setTurn(true);
-                            break;
-                        }else {
-                            System.out.println("Sorry your target hero is already defeated, please choose another target!");
-                        }
-                        continue;
-                    }
 
-                    while (true) {
-                        System.out.print("Choose your target : ");
-                        select = sc.nextLine();
+                    } else if (select.equals("4")) {
+                        if (hero.getMana() < hero.getSkill2().getManaCost()){
+                            System.out.println("Sorry your mana is not enough, please use another skill!");
+                            continue;
+                        }
 
-                            Hero enemy = listEnemy.get(Integer.parseInt(select) - 1);
+                        if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ENEMY){
+                            display.listEnemy(this.cpuParty);
+                        } else if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ALLY) {
+                            display.listAlly(this.playerParty, hero.getName());
+                        } else if (hero.getSkill2().getTarget() == SkillTarget.DEAD_ALLY) {
+                            display.listDeadAlly(this.playerParty);
+                        } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ENEMY){
+
+                            if (!this.cpuParty.isDefeated()){
+                                hero.useSkill2(listHeroCOM);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your target team is already defeated, please choose another target!");
+                            }
+                            continue;
+
+                        } else if (hero.getSkill2().getTarget() == SkillTarget.ALL_ALLY) {
+
+                            if (!this.playerParty.isDefeated()){
+                                hero.useSkill2(listHeroPlayer);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your target team is already defeated, please choose another target!");
+                            }
+                            continue;
+
+                        } else if (hero.getSkill2().getTarget() == SkillTarget.SELF) {
+
+                            if (!hero.isDefeated()){
+                                hero.useSkill2(hero);
+                                hero.setTurn(true);
+                                break;
+                            }else {
+                                System.out.println("Sorry your target hero is already defeated, please choose another target!");
+                            }
+                            continue;
+
+                        }
+
+                        while (true) {
+                            System.out.print("Choose your target : ");
+                            select = sc.nextLine();
+
+                            Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
                             if (!enemy.isDefeated()) {
                                 hero.useSkill2(enemy);
                                 isTrue = false;
@@ -697,52 +834,54 @@ public class GameEngine implements IGameEngine{
                             } else {
                                 System.out.println("Sorry your target is already defeated, please choose another target!");
                             }
+                        }
 
+                    } else{
+                        continue;
                     }
-
-                } else{
-                    continue;
                 }
+                hero.setTurn(true);
+            }catch (Exception e){
+                System.out.println("Please select hero between 1 - 3 !");
+                continue;
             }
-            hero.setTurn(true);
         }
-        decreamentEffect(listHero);
-        resetHeroTurn(listHero);
+        resetHeroTurn(listHeroPlayer);
     }
 
-    private Hero _createHero (){
-        Hero hero = new Hero();
 
+    private Hero createHero (){
         display.createHero();
         display.element();
 
 
         String select = sc.nextLine();
-        hero.setHeroElement(selectHeroElement(select));
+        HeroElement heroElement = selectHeroElement(select);
 
         display.role();
 
         select = sc.nextLine();
-        hero.setHeroRole(selectHeroRole(select));
+        HeroRole heroRole = (selectHeroRole(select));
 
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                           Hero Details                            |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Name      : ");
-        String name = sc.nextLine(); hero.setName(name);
+        String name = sc.nextLine();
         System.out.print("HP        : ");
-        String HP = sc.nextLine(); hero.setHP(Integer.parseInt(HP));
+        String HP = sc.nextLine();
         System.out.print("ATK       : ");
-        String ATK = sc.nextLine(); hero.setAttack(Integer.parseInt(ATK));
+        String ATK = sc.nextLine();
         System.out.print("DEF       : ");
-        String DEF = sc.nextLine(); hero.setAttack(Integer.parseInt(DEF));
+        String DEF = sc.nextLine();;
+        Hero hero = new Hero(name, Integer.parseInt(HP), Integer.parseInt(ATK), Integer.parseInt(DEF), heroElement, heroRole);
 
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                            Hero SKills                            |");
         System.out.println("---------------------------------------------------------------------");
         display.skillList();
         for (int i = 0; i < 2; i++) {
-            System.out.print("Choose favourite skill" + (i + 1) + " : ");
+            System.out.print("Choose your favourite skill" + (i + 1) + " : ");
             select = sc.nextLine();
             Skill skill = BaseGameSkills.getSkill(Integer.parseInt(select) - 1);
             if (i == 0){
@@ -788,7 +927,7 @@ public class GameEngine implements IGameEngine{
         } else if (select.equals("12")){
             temp = heroes.getHero("Dillo");
         } else if (select.equalsIgnoreCase("c")){
-            temp = _createHero();
+            temp = createHero();
         }else {
             return null;
         }
@@ -864,7 +1003,7 @@ public class GameEngine implements IGameEngine{
         return i;
     }
 
-    private int _exitGameWhenPlay (){
+    private int exitGameWhenPlay (){
         display.validateQuitGame();
 
         while (true){

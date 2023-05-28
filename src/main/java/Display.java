@@ -413,7 +413,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                        Select (a | b | c)                         |");
+        System.out.println("|                      Select ( a | b | c )                         |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
@@ -429,7 +429,7 @@ public class Display {
         System.out.println("|                           [d] Support                             |");
         System.out.println("|                           [e] Mage                                |");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                    Select (a | b | c | d | e)                     |");
+        System.out.println("|                  Select ( a | b | c | d | e )                     |");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Your Choice : ");
     }
@@ -535,6 +535,19 @@ public class Display {
         System.out.println("---------------------------------------------------------------------");
     }
 
+    void tauntedSkill (){
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                               Skill                               |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                        [1] Basic Attack                           |");
+        System.out.println("|                        [2] Special Attack                         |");
+        System.out.println("|                                                                   |");
+        System.out.println("|                            Swift Games                            |");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|                         Select ( 1 | 2 )                          |");
+        System.out.println("---------------------------------------------------------------------");
+    }
+
     void hasSkill2 (Hero hero){
 
         String s1 = hero.getSkill1().getName();
@@ -547,7 +560,7 @@ public class Display {
         System.out.println("|                               Skill                               |");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|                        [1] Basic Attack                           |");
-        System.out.println("|                        [2] Special Attack                          |");
+        System.out.println("|                        [2] Special Attack                         |");
         System.out.printf("|                        [3] %s%" + sr1 + "s\n",s1, "|");
         System.out.printf("|                        [4] %s%" + sr2 + "s\n", s2, "|");
         System.out.println("|                                                                   |");

@@ -2,91 +2,17 @@
   "partyName": "COM",
   "characters": [
     {
-      "name": "Elisa",
-      "hp": 205,
-      "maxHp": 360,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 60,
-      "def": 10,
-      "heroElement": "GRASS",
-      "heroRole": "MAGE",
-      "effect": {
-        "stunDuration": -1,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "multiplier": 0.5,
-        "name": "Draining Vine",
-        "manaCost": 85,
-        "target": "SINGLE_ENEMY",
-        "description": "Drain 50% max mana and HP to an enemy"
-      },
-      "heroLore": "Salah satu buku legendaris yang selamat dari tragedi perpustakaan alexandria ditemukan oleh elisa si gadis kecil. Eksistensi Bio-Fisika menyerap seluruh orang yang memiliki niat buruk.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
-      "name": "Marie",
-      "hp": 375,
-      "maxHp": 375,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 40,
-      "def": 18,
-      "heroElement": "WATER",
-      "heroRole": "SUPPORT",
-      "effect": {
-        "stunDuration": -1,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "multiplier": 0.2,
-        "name": "Healing Water",
-        "manaCost": 30,
-        "target": "SINGLE_ALLY",
-        "description": "Heal 20% max Hp of an ally"
-      },
-      "skill2": {
-        "duration": 10,
-        "multiplier": 0.1,
-        "name": "Blizzard",
-        "manaCost": 65,
-        "target": "ALL_ENEMY",
-        "description": "Decrease all enemy attack by 10% for 10 turns"
-      },
-      "heroLore": "Penghuni Themscira, tanah selir para dewa. Marielle dengan kekuatan air suci mengabdi dengan julukan \"The Holy Maiden\".",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
-      "name": "Fara",
+      "name": "Lily",
       "hp": 380,
       "maxHp": 380,
       "mana": 100,
       "maxMana": 100,
-      "atk": 35,
-      "def": 20,
+      "atk": 70,
+      "def": 12,
       "heroElement": "GRASS",
-      "heroRole": "SUPPORT",
+      "heroRole": "ARCHER",
       "effect": {
-        "stunDuration": -1,
+        "stunDuration": 0,
         "tauntDuration": 0,
         "atkBuffDuration": 0,
         "atkBuffModifier": 0.0,
@@ -98,18 +24,81 @@
         "defDebuffModifier": 0.0
       },
       "skill1": {
-        "name": "Life Reblossom",
-        "manaCost": 85,
-        "target": "DEAD_ALLY",
-        "description": "Resurrect an ally"
-      },
-      "skill2": {
-        "name": "Nature Cleansing",
+        "damageMultiplier": 1.5,
+        "name": "Thorn Arrow",
         "manaCost": 20,
-        "target": "SINGLE_ALLY",
-        "description": "Purify all debuff of an ally"
+        "target": "SINGLE_ENEMY",
+        "description": "1.5x true damage to an enemy"
       },
-      "heroLore": "Tabib kerajaan Gulsior dari aliran dewa ismich yang menerima rahmat untuk memberkati seluruh umatnya.",
+      "heroLore": "Prajurit Elf terbaik pada dinasti Jadaxie dengan panah kayu Fieltcress tidak terbatas.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Deus",
+      "hp": 340,
+      "maxHp": 340,
+      "mana": 80,
+      "maxMana": 100,
+      "atk": 70,
+      "def": 10,
+      "heroElement": "FIRE",
+      "heroRole": "ARCHER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "damageMultiplier": 1.5,
+        "duration": 1,
+        "name": "Infernal Shot",
+        "manaCost": 30,
+        "target": "SINGLE_ENEMY",
+        "description": "Stun and deal 1.5 damage to an enemy"
+      },
+      "heroLore": "Lulusan terbaik sekolah sihir dengan passion memanahnya. Pengabdian, pengorbanan, dan kegigihan membuatnya dijuluki \"Muff Blessed\" oleh musuhnya.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Grove",
+      "hp": 480,
+      "maxHp": 480,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 30,
+      "def": 27,
+      "heroElement": "GRASS",
+      "heroRole": "TANK",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "healMultiplier": 0.1,
+        "defBuffMultiplier": 0.2,
+        "name": "Grassroot Guardian",
+        "manaCost": 60,
+        "target": "ALL_ALLY",
+        "description": "10% heal and 20% def buff for 2 turns to all ally"
+      },
+      "heroLore": "Berkah surgawi mengubah biji matahari menjadi seorang half-human yang memberikan kehangatan pada pijakan kakinya.",
       "isDefeated": false,
       "isTurn": false
     }

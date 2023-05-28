@@ -38,7 +38,11 @@ class Hero implements IHero {
     private boolean isTurn;
 
 
-    public Hero() {}
+    public Hero() {
+        this.effect = new Effect();
+        this.isDefeated = false;
+        this.isTurn= false;
+    }
 
 
     public Hero(String name, int hp, int atk, int def, HeroElement heroElement, HeroRole heroRole) {
