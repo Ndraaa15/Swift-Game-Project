@@ -377,7 +377,7 @@ public class GameEngine implements IGameEngine{
 
         while ((!listHeroCOM.get(0).isTurn() && !listHeroCOM.get(0).isDefeated()) || (!listHeroCOM.get(1).isTurn() && !listHeroCOM.get(1).isDefeated()) || (!listHeroCOM.get(2).isTurn() && !listHeroCOM.get(2).isDefeated())){
 
-            if (this.playerParty.isDefeated() && this.cpuParty.isDefeated()){
+            if (this.playerParty.isDefeated() || this.cpuParty.isDefeated()){
                 winnerGame();
             }
 
@@ -649,7 +649,7 @@ public class GameEngine implements IGameEngine{
         ArrayList<Hero> listHeroCOM = cpuParty.getCharacters();
 
         while ((!listHeroPlayer.get(0).isTurn() && !listHeroPlayer.get(0).isDefeated()) || (!listHeroPlayer.get(1).isTurn() && !listHeroPlayer.get(1).isDefeated()) || (!listHeroPlayer.get(2).isTurn() && !listHeroPlayer.get(2).isDefeated())){
-            if (this.playerParty.isDefeated() && this.cpuParty.isDefeated()){
+            if (this.playerParty.isDefeated() || this.cpuParty.isDefeated()){
                 winnerGame();
             }
 
