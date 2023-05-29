@@ -324,6 +324,25 @@ public class GameEngine implements IGameEngine{
             increamentManaPerTurn (this.playerParty.getCharacters(), this.cpuParty.getCharacters());
         }
 
+        winnerGame();
+
+    }
+
+    private void increamentManaPerTurn (ArrayList<Hero> listHeroPlayer, ArrayList<Hero> listHeroCOM){
+        for (Hero hero : listHeroPlayer){
+            if (!hero.isDefeated()){
+                hero.incrementManaPerTurn();
+            }
+        }
+
+        for (Hero hero : listHeroCOM){
+            if (!hero.isDefeated()){
+                hero.incrementManaPerTurn();
+            }
+        }
+    }
+
+    private void winnerGame (){
         IParty winnerTeam = winner();
 
         if (winnerTeam != null){
@@ -348,20 +367,6 @@ public class GameEngine implements IGameEngine{
         }
     }
 
-    private void increamentManaPerTurn (ArrayList<Hero> listHeroPlayer, ArrayList<Hero> listHeroCOM){
-        for (Hero hero : listHeroPlayer){
-            if (!hero.isDefeated()){
-                hero.incrementManaPerTurn();
-            }
-        }
-
-        for (Hero hero : listHeroCOM){
-            if (!hero.isDefeated()){
-                hero.incrementManaPerTurn();
-            }
-        }
-    }
-
 
     private void cpuTurn(){
         ArrayList<Hero> listHeroPlayer = this.playerParty.getCharacters();
@@ -371,6 +376,10 @@ public class GameEngine implements IGameEngine{
         int select;
 
         while ((!listHeroCOM.get(0).isTurn() && !listHeroCOM.get(0).isDefeated()) || (!listHeroCOM.get(1).isTurn() && !listHeroCOM.get(1).isDefeated()) || (!listHeroCOM.get(2).isTurn() && !listHeroCOM.get(2).isDefeated())){
+
+            if (this.playerParty.isDefeated() && this.cpuParty.isDefeated()){
+                winnerGame();
+            }
 
             if (i == 3){
                 break;
@@ -640,6 +649,10 @@ public class GameEngine implements IGameEngine{
         ArrayList<Hero> listHeroCOM = cpuParty.getCharacters();
 
         while ((!listHeroPlayer.get(0).isTurn() && !listHeroPlayer.get(0).isDefeated()) || (!listHeroPlayer.get(1).isTurn() && !listHeroPlayer.get(1).isDefeated()) || (!listHeroPlayer.get(2).isTurn() && !listHeroPlayer.get(2).isDefeated())){
+            if (this.playerParty.isDefeated() && this.cpuParty.isDefeated()){
+                winnerGame();
+            }
+
             System.out.print("Choose your hero  : ");
             String select = sc.nextLine();
 
