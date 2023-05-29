@@ -471,12 +471,29 @@ public class GameEngine implements IGameEngine{
                             continue;
                         }
 
+                        Hero player = listHeroPlayer.get(select);
+                        if (!player.isDefeated()){
+                            hero.useSkill1(player);
+                            isTrue = false;
+                        }else {
+                            continue;
+                        }
+
                     } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
 
                         select = cpuAlgorihtmForAlly(listHeroCOM);
                         if (select == -1){
                             continue;
                         }
+
+                        Hero player = listHeroCOM.get(select);
+                        if (!player.isDefeated()){
+                            hero.useSkill1(player);
+                            isTrue = false;
+                        }else {
+                            continue;
+                        }
+
 
                     } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
 
@@ -528,21 +545,20 @@ public class GameEngine implements IGameEngine{
                         }
 
                     }
-
-                    Hero player = listHeroPlayer.get(select);
-                    if (!player.isDefeated()){
-                        hero.useSkill1(player);
-                        isTrue = false;
-                    }else {
-                        continue;
-                    }
-
                 } else if (strRand.equals("4")) {
 
                     if (hero.getSkill2().getTarget() == SkillTarget.SINGLE_ENEMY){
 
                         select = cpuAlgorihtmForEnemy(listHeroPlayer);
                         if (select == -1){
+                            continue;
+                        }
+
+                        Hero enemy = listHeroPlayer.get(select);
+                        if (!enemy.isDefeated()){
+                            hero.useSkill2(enemy);
+                            isTrue = false;
+                        }else {
                             continue;
                         }
 
@@ -553,10 +569,26 @@ public class GameEngine implements IGameEngine{
                             continue;
                         }
 
+                        Hero enemy = listHeroCOM.get(select);
+                        if (!enemy.isDefeated()){
+                            hero.useSkill2(enemy);
+                            isTrue = false;
+                        }else {
+                            continue;
+                        }
+
                     } else if (hero.getSkill2().getTarget() == SkillTarget.DEAD_ALLY) {
 
                         select = cpuAlgorihtmDeadAlly(listHeroCOM);
                         if (select == -1){
+                            continue;
+                        }
+
+                        Hero enemy = listHeroCOM.get(select);
+                        if (!enemy.isDefeated()){
+                            hero.useSkill2(enemy);
+                            isTrue = false;
+                        }else {
                             continue;
                         }
 
@@ -593,14 +625,6 @@ public class GameEngine implements IGameEngine{
                             continue;
                         }
 
-                    }
-
-                    Hero enemy = listHeroPlayer.get(select);
-                    if (!enemy.isDefeated()){
-                        hero.useSkill2(enemy);
-                        isTrue = false;
-                    }else {
-                        continue;
                     }
                 }
             }
@@ -727,10 +751,46 @@ public class GameEngine implements IGameEngine{
 
                         if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ENEMY){
                             display.listEnemy(this.cpuParty);
+                            while (true){
+                                System.out.print("Choose your target : ");
+                                select = sc.nextLine();
+                                Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
+                                if (!enemy.isDefeated()){
+                                    hero.useSkill1(enemy);
+                                    isTrue = false;
+                                    break;
+                                }else {
+                                    System.out.println("Sorry your target is already defeated, please choose another target!");
+                                }
+                            }
                         } else if (hero.getSkill1().getTarget() == SkillTarget.SINGLE_ALLY) {
                             display.listAlly(this.playerParty, hero.getName());
+                            while (true){
+                                System.out.print("Choose your target : ");
+                                select = sc.nextLine();
+                                Hero enemy = listHeroPlayer.get(Integer.parseInt(select) - 1);
+                                if (!enemy.isDefeated()){
+                                    hero.useSkill1(enemy);
+                                    isTrue = false;
+                                    break;
+                                }else {
+                                    System.out.println("Sorry your target is already defeated, please choose another target!");
+                                }
+                            }
                         } else if (hero.getSkill1().getTarget() == SkillTarget.DEAD_ALLY) {
                             display.listDeadAlly(this.playerParty);
+                            while (true){
+                                System.out.print("Choose your target : ");
+                                select = sc.nextLine();
+                                Hero enemy = listHeroPlayer.get(Integer.parseInt(select) - 1);
+                                if (!enemy.isDefeated()){
+                                    hero.useSkill1(enemy);
+                                    isTrue = false;
+                                    break;
+                                }else {
+                                    System.out.println("Sorry your target is already defeated, please choose another target!");
+                                }
+                            }
                         } else if (hero.getSkill1().getTarget() == SkillTarget.ALL_ENEMY){
 
                             if (!this.cpuParty.isDefeated()){
@@ -759,20 +819,6 @@ public class GameEngine implements IGameEngine{
                                 System.out.println("Sorry your  hero is already defeated, please choose another target!");
                             }
                             continue;
-                        }
-
-                        while (true){
-                            System.out.print("Choose your target : ");
-                            select = sc.nextLine();
-
-                            Hero enemy = listHeroCOM.get(Integer.parseInt(select) - 1);
-                            if (!enemy.isDefeated()){
-                                hero.useSkill1(enemy);
-                                isTrue = false;
-                                break;
-                            }else {
-                                System.out.println("Sorry your target is already defeated, please choose another target!");
-                            }
                         }
 
                     } else if (select.equals("4")) {
