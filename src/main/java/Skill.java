@@ -175,6 +175,7 @@ class InfernalShot extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.modifiedBasicAtack(hero, target, damageMultiplier);
         SkillFunctionality.stun(target, duration);
+        target.updateIsDefeated();
         deductMana(hero);
         String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
         logSkill(message);
@@ -214,6 +215,7 @@ class DrainingVine extends Skill {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.healthDrainMaxHealth(target, multiplier);
         SkillFunctionality.manaDrainMaxManaBase(target, multiplier);
+        target.updateIsDefeated();
         deductMana(hero);
         String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
         logSkill(message);
@@ -231,6 +233,7 @@ class ThornArrow extends Skill {
     public void useSkill(Hero hero, Hero target) {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.trueDamage(hero, target, damageMultiplier);
+        target.updateIsDefeated();
         deductMana(hero);
         String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
         logSkill(message);
@@ -247,6 +250,7 @@ class LifeReblossom extends Skill {
     public void useSkill(Hero hero, Hero target) {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.resurrect(target);
+        target.updateIsDefeated();
         deductMana(hero);
         String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
         logSkill(message);
@@ -280,6 +284,7 @@ class NeedleRain extends Skill {
         if (!hasEnoughMana(hero)) return;
         for (Hero target : targets) {
             SkillFunctionality.trueDamage(hero, target, damageMultiplier);
+            target.updateIsDefeated();
         }
         deductMana(hero);
         String message = String.format("%s used %s on all enemies", hero.getName(), getName());
@@ -316,6 +321,7 @@ class WaterCannon extends Skill {
     public void useSkill(Hero hero, Hero target) {
         if (!hasEnoughMana(hero)) return;
         SkillFunctionality.healthDrainMaxHealth(target, multiplier);
+        target.updateIsDefeated();
         deductMana(hero);
         String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
         logSkill(message);
@@ -348,11 +354,14 @@ class Blizzard extends Skill {
     }
 
     @Override
-    public void useSkill(Hero hero, Hero target) {
+    public void useSkill(Hero hero, ArrayList<Hero> targets) {
         if (!hasEnoughMana(hero)) return;
-        SkillFunctionality.atkDebuff(target, duration, multiplier);
-        deductMana(hero);
-        String message = String.format("%s used %s on %s", hero.getName(), getName(), target.getName());
+        for (Hero target : targets) {
+            SkillFunctionality.atkDebuff(target, duration, multiplier);
+            target.updateIsDefeated();
+            deductMana(hero);
+        }
+        String message = String.format("%s used %s on all enemies", hero.getName(), getName());
         logSkill(message);
     }
 }

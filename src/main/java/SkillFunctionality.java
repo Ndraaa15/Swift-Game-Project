@@ -20,7 +20,6 @@ public class SkillFunctionality {
         totalAtk -= getDefenceAfterEffect(target);
         if (totalAtk <= 0) totalAtk = 1;
         target.setHP(target.getHP() - totalAtk);
-        target.updateIsDefeated();
     }
 
     public static void trueDamage(Hero hero, Hero target, double multiplier) {
@@ -28,14 +27,12 @@ public class SkillFunctionality {
         int totalAtk = (int) (getAttackAfterEffect(hero) * multiplier);
         if (totalAtk <= 0) totalAtk = 1;
         target.setHP(target.getHP() - totalAtk);
-        target.updateIsDefeated();
     }
 
     public static void healthDrainMaxHealth(Hero target, double multiplier) {
         if (target.isDefeated()) return;
         int totalDamage = (int) (target.getMaxHp() * multiplier);
         target.setHP(target.getHP() - totalDamage);
-        target.updateIsDefeated();
     }
 
     public static void stun(Hero target, int duration) {
