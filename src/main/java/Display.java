@@ -210,7 +210,7 @@ public class Display {
         System.out.println("           ████  ████  ██ ██  ████ ██  ████ ██      ██   ██          ");
         System.out.println("            ██    ██   ██ ██   ███ ██   ███ ███████ ██   ██          ");
         System.out.println("                                                                     ");
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("|--------------------------------------------------------------------|");
         System.out.printf("|%"+ x +"s" +"%" + y +"s\n"  , team, "|");
         System.out.println("|====================================================================|");
         System.out.printf("|%" + hl1 + "s%" + hr1 + "s%" + hl2 + "s%" + hr2 + "s%" + hl3 + "s%" + hr3 + "s\n", h1, "|", h2, "|", h3, "|");
@@ -225,33 +225,33 @@ public class Display {
 
 
     void menuGame (){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                                Menu                               |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                           [a] New Game                            |");
         System.out.println("|                           [b] Load Game                           |");
-        System.out.println("|                           [c] HeroesPedia                         |");
+        System.out.println("|                           [c] Hero Almanac                        |");
         System.out.println("|                           [d] Exit Game                           |");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                        Select ( a | b | c )                       |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
     void newGameMenu (){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                              Options                              |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                           [a] Create Party                        |");
         System.out.println("|                           [b] Back                                |");
         System.out.println("|                                                                   |");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                          Select ( a | b )                         |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
@@ -308,7 +308,7 @@ public class Display {
 
         System.out.println();
         System.out.println();
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("|--------------------------------------------------------------------|");
         System.out.printf("|%"+ x +"s" +"%" + y +"s\n"  , team, "|");
         System.out.println("|====================================================================|");
         System.out.printf("|%" + hl1 + "s%" + hr1 + "s%" + hl2 + "s%" + hr2 + "s%" + hl3 + "s%" + hr3 + "s\n", h1, "|", h2, "|", h3, "|");
@@ -319,45 +319,45 @@ public class Display {
         System.out.printf("|%" + hpl1 + "s%" + hpr1 + "s%" + defl1 + "s %" + defr1 + "s%" + atkl1 + "s %" + atkr1 + "s%" + hpl2 + "s%" + hpr2 + "s%" + defl2 + "s %" + defr2 + "s%" + atkl2 + "s %" + atkr2 + "s%" + hpl3 + "s%" + hpr3 + "s%" + defl3 + "s %" + defr3 + "s%" + atkl3 + "s %" + atkr3 + "s\n", hp1, "|", def1, "|", atk1, "|", hp2, "|", def2, "|", atk2, "|", hp3, "|", def3, "|", atk3, "|");
         System.out.println("|====================================================================|");
         System.out.println("|                         Start play (y/n) ?                         |");
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("|--------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
     void menuGameWhenPlay (){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                              Options                              | ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                           [a] Continue                            |");
         System.out.println("|                           [b] Quit Game                           |");
         System.out.println("|                                                                   |");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                          Select ( a | b )                         |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
     void validateQuitGame (){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                     Are you sure to quit game ?                   |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                        [a] Yes (save game)                        |");
         System.out.println("|                        [b] Yes (not save)                         |");
         System.out.println("|                        [c] No                                     |");
         System.out.println("|                                                                   |");
         System.out.println("|                           Swift Games                             |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                       Select ( a | b | c )                        |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
     void listHero (){
         System.out.println();
         System.out.println("                        Select Your 3 Heroes                        ");
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                            LIST HERO                              |");
+        System.out.println("|-------------------------------------------------------------------|");
+        System.out.println("|                            HERO LIST                              |");
         System.out.println("|===================================================================|");
         System.out.println("|         Fire         |        Grass        |        Water         |");
         System.out.println("|===================================================================|");
@@ -372,10 +372,10 @@ public class Display {
     }
 
     void createTeam(){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                   Are you ready for the challenge ?               |");
-        System.out.println("---------------------------------------------------------------------");
-        System.out.print("| Enter your name party (max : 10 letters) : ");
+        System.out.println("|-------------------------------------------------------------------|");
+        System.out.print("| Enter your party name (max : 10 letters) : ");
     }
 
     void brawlHeroes (){
@@ -383,38 +383,38 @@ public class Display {
         System.out.println("░█▀▀▄ ░█▄▄▀ ░█▄▄█ ░█░█░█ ░█───  ░█▀▀█ ░█▀▀▀ ░█▄▄▀ ░█──░█ ░█▀▀▀ ─▀▀▀▄▄ ");
         System.out.println("░█▄▄█ ░█─░█ ░█─░█ ░█▄▀▄█ ░█▄▄█  ░█─░█ ░█▄▄▄ ░█─░█ ░█▄▄▄█ ░█▄▄▄ ░█▄▄▄█ ");
         System.out.println("|                              2023                                 |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|               Unleash Your Team's Might in Brawl Heroes           |");
         System.out.println("|                    Triumph in Turn-based Battles!                 |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|              INDRA | JAVIER | RAFIQI | LUCAS | GRATIA             |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println();
     }
 
     void createHero(){
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                           Create a Hero                           |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|         Unleash your imagination and forge an extraordinary       |");
         System.out.println("|                         hero from scratch!                        |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println();
     }
 
     void element (){
         System.out.println("                       Choose your hero element                      ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                              Element                              |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                             [a] Fire                              |");
         System.out.println("|                             [b] Water                             |");
         System.out.println("|                             [c] Grass                             |");
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                      Select ( a | b | c )                         |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
@@ -428,17 +428,17 @@ public class Display {
         System.out.println("|                           [c] Archer                              |");
         System.out.println("|                           [d] Support                             |");
         System.out.println("|                           [e] Mage                                |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                  Select ( a | b | c | d | e )                     |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }
 
     void listAlly (IParty playerParty, String heroUseSkill){
-        System.out.println("                       Choose your target hero                      ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("                          Choose your target                         ");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                             List Ally                             |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         for (int i = 0; i < playerParty.getCharacters().size(); i++) {
             if (playerParty.getCharacters().get(i).isDefeated() && !playerParty.getCharacters().get(i).getName().equals(heroUseSkill)){
                 String h = playerParty.getCharacters().get(i).getName();
@@ -448,7 +448,7 @@ public class Display {
         }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         String a = "Select ( ";
         for (int i = 0; i < playerParty.getCharacters().size(); i++) {
             if (playerParty.getCharacters().get(i).isDefeated()){
@@ -458,14 +458,14 @@ public class Display {
         a += ")";
         int al = 24 + a.length(); int ar = 68 - al;
         System.out.printf("|%" + al + "s%" + ar + "s\n", a, "|");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
     }
 
     void listDeadAlly (IParty playerParty){
-        System.out.println("                       Choose your target hero                      ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("                          Choose your target                         ");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                             List Ally                             |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         for (int i = 0; i < playerParty.getCharacters().size(); i++) {
             if (playerParty.getCharacters().get(i).isDefeated()){
                 String h = playerParty.getCharacters().get(i).getName();
@@ -475,7 +475,7 @@ public class Display {
         }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         String a = "Select ( ";
         for (int i = 0; i < playerParty.getCharacters().size(); i++) {
             if (playerParty.getCharacters().get(i).isDefeated()){
@@ -485,14 +485,14 @@ public class Display {
         a += ")";
         int al = 24 + a.length(); int ar = 68 - al;
         System.out.printf("|%" + al + "s%" + ar + "s\n", a, "|");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
     }
 
     void listEnemy (IParty cpuParty){
         System.out.println("                       Choose your target hero                      ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                             List Enemy                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         for (int i = 0; i < cpuParty.getCharacters().size(); i++) {
             if (!cpuParty.getCharacters().get(i).isDefeated()){
                 String h = cpuParty.getCharacters().get(i).getName();
@@ -502,7 +502,7 @@ public class Display {
         }
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         String a = "Select ( ";
         for (int i = 0; i < cpuParty.getCharacters().size(); i++) {
             if (!cpuParty.getCharacters().get(i).isDefeated()){
@@ -657,7 +657,7 @@ public class Display {
         System.out.println("|---------------------------------|---------------------------------|");
         System.out.println("| Needle Rain:                    | Water Cannon:                   |");
         System.out.println("| Deals 1x true damage to all     | Deal 25% max Hp damage to an    |");
-        System.out.println("| enemy.                          | enemy.                           |");
+        System.out.println("| enemy.                          | enemy.                          |");
         System.out.println("|                                 |                                 |");
         System.out.println("| Frost Armor:                    |                                 |");
         System.out.println("| Increase an ally def by 0.2 for |                                 |");
@@ -751,16 +751,16 @@ public class Display {
 
 
     void playAgainOrNo (){
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                    Are you want to play again ?                   |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
+        System.out.println("|                     Do you want to play again ?                   |");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                             [y] Yes                               |");
         System.out.println("|                             [n] No                                |");
         System.out.println("|                                                                   |");
         System.out.println("|                           Swift Games                             |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                         Select ( y | n )                          |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
 
     }
@@ -769,18 +769,18 @@ public class Display {
         System.out.println("      ▀▀█▀▀ ▒█░▒█ ░█▀▀█ ▒█▄░▒█ ▒█░▄▀ 　 ▒█░░▒█ ▒█▀▀▀█ ▒█░▒█          ");
         System.out.println("      ░▒█░░ ▒█▀▀█ ▒█▄▄█ ▒█▒█▒█ ▒█▀▄░ 　 ▒█▄▄▄█ ▒█░░▒█ ▒█░▒█          ");
         System.out.println("      ░▒█░░ ▒█░▒█ ▒█░▒█ ▒█░░▀█ ▒█░▒█ 　 ░░▒█░░ ▒█▄▄▄█ ░▀▄▄▀          ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|                    For Playing Brawl Heroes                       |");
         System.out.println("|                           Swift Games                             |");
         System.out.println("|                              2023                                 |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
         System.out.println("|            INDRA | JAVIER | RAFIQI | LUCAS | GRATIA               |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
     }
 
     void saveGame (){
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println("|                     Save Game Succesfully                         |");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|-------------------------------------------------------------------|");
+        System.out.println("|                      Game is Saved Succesfully                    |");
+        System.out.println("|-------------------------------------------------------------------|");
     }
 }
