@@ -88,12 +88,14 @@ class Hero implements IHero {
         int totalAtk = SkillFunctionality.getAttackAfterEffect(this) - SkillFunctionality.getDefenceAfterEffect(target);
         if (totalAtk <= 0) totalAtk = 1;
         target.setHP(target.getHP() - totalAtk);
-        target.updateIsDefeated();
+
 
         System.out.println("|===================================================================|");
         System.out.printf("| %-65s |\n", String.format("%s used basic attack on %s", getName(), target.getName()));
         System.out.printf("| %-65s |\n", String.format("dealing %d dmg", totalAtk));
         System.out.println("|===================================================================|");
+
+        target.updateIsDefeated();
     }
 
     public void specialAttack(Hero target) {
@@ -114,11 +116,13 @@ class Hero implements IHero {
         if (totalAtk <= 0) totalAtk = 1;
 
         target.setHP(target.getHP() - totalAtk);
-        target.updateIsDefeated();
+
         System.out.println("|===================================================================|");
         System.out.printf("| %-65s |\n", String.format("%s special attack on %s", getName(), target.getName()));
         System.out.printf("| %-65s |\n", String.format("dealing %d dmg", totalAtk));
         System.out.println("|===================================================================|");
+
+        target.updateIsDefeated();
     }
 
     @Override
