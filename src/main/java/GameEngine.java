@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -74,7 +75,10 @@ public class GameEngine implements IGameEngine{
         try (FileReader reader1 = new FileReader(path1);){
             Type playerPartyToken = new TypeToken<Party>(){}.getType();
             this.playerParty = gson.fromJson(reader1, playerPartyToken);
-        }catch (IOException e){
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            throw new RuntimeException("File not found : " + path1, e);
+        } catch (IOException e){
             e.printStackTrace();
             throw new RuntimeException("Failed to read file : " + path1, e);
         }
@@ -82,6 +86,9 @@ public class GameEngine implements IGameEngine{
         try (FileReader reader2 = new FileReader(path2);){
             Type cpuPartyToken = new TypeToken<Party>(){}.getType();
             this.cpuParty = gson.fromJson(reader2, cpuPartyToken);
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            throw new RuntimeException("File not found : " + path2, e);
         }catch (IOException e){
             e.printStackTrace();
             throw new RuntimeException("Failed to read file : " + path2, e);
