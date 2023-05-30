@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="fix minor bug in game engine" />
+    <list default="true" id="aa13a6e0-9ca5-4965-975b-793a343e6c14" name="Changes" comment="Tidying upp Display">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comDB.json" beforeDir="false" afterPath="$PROJECT_DIR$/comDB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playerDB.json" beforeDir="false" afterPath="$PROJECT_DIR$/playerDB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -317,14 +323,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685341538711</updated>
     </task>
-    <task id="LOCAL-00035" summary="fix minor bug in game engine">
-      <created>1685343816917</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1685343816917</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -169,6 +169,15 @@ class FireStaff extends Skill {
         String message = String.format("%s used %s", hero.getName(), getName());
         logSkill(message);
     }
+
+    @Override
+    public void useSkill(Hero hero, Hero target) {
+        if (!hasEnoughMana(hero)) return;
+        SkillFunctionality.atkBuff(hero, duration, atkMultiplier);
+        deductMana(hero);
+        String message = String.format("%s used %s", hero.getName(), getName());
+        logSkill(message);
+    }
 }
 
 // Deus

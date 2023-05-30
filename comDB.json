@@ -2,41 +2,8 @@
   "partyName": "COM",
   "characters": [
     {
-      "name": "Dillo",
-      "hp": 425,
-      "maxHp": 425,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 60,
-      "def": 16,
-      "heroElement": "WATER",
-      "heroRole": "FIGHTER",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "damageMultiplier": 3.0,
-        "name": "Water Slash",
-        "manaCost": 35,
-        "target": "SINGLE_ENEMY",
-        "description": "Deal 3x true damage to an enemy"
-      },
-      "heroLore": "Nelayan dengan kesehariannya bertarung melawan siluman ikan hidup dengan tombak kebanggaannya, Culbert.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
       "name": "Grove",
-      "hp": 480,
+      "hp": 406,
       "maxHp": 480,
       "mana": 100,
       "maxMana": 100,
@@ -69,14 +36,14 @@
       "isTurn": false
     },
     {
-      "name": "Deus",
-      "hp": 340,
-      "maxHp": 340,
+      "name": "Atla",
+      "hp": 375,
+      "maxHp": 375,
       "mana": 100,
       "maxMana": 100,
       "atk": 70,
-      "def": 10,
-      "heroElement": "FIRE",
+      "def": 11,
+      "heroElement": "WATER",
       "heroRole": "ARCHER",
       "effect": {
         "stunDuration": 0,
@@ -91,14 +58,46 @@
         "defDebuffModifier": 0.0
       },
       "skill1": {
-        "damageMultiplier": 1.5,
-        "duration": 1,
-        "name": "Infernal Shot",
+        "multiplier": 0.25,
+        "name": "Water Cannon",
         "manaCost": 30,
         "target": "SINGLE_ENEMY",
-        "description": "Stun and deal 1.5 damage to an enemy"
+        "description": "Deal 25% max Hp damage to an enemy"
       },
-      "heroLore": "Lulusan terbaik sekolah sihir dengan passion memanahnya. Pengabdian, pengorbanan, dan kegigihan membuatnya dijuluki \"Muff Blessed\" oleh musuhnya.",
+      "heroLore": "Gadis setengah duyung pewaris panah legendaris Serpent, sang penakluk lautan asam yang mendiami pesisir Aquata dalam kegelapan yang fana.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Murby",
+      "hp": 400,
+      "maxHp": 400,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 55,
+      "def": 16,
+      "heroElement": "FIRE",
+      "heroRole": "FIGHTER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
+      },
+      "skill1": {
+        "damageMultiplier": 3.0,
+        "name": "Fireball Barage",
+        "manaCost": 50,
+        "target": "SINGLE_ENEMY",
+        "description": "Deal 3x basic attack damage to an enemy"
+      },
+      "heroLore": "Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.",
       "isDefeated": false,
       "isTurn": false
     }

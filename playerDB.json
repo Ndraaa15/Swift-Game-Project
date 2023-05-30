@@ -1,39 +1,6 @@
 {
-  "partyName": "a",
+  "partyName": "q",
   "characters": [
-    {
-      "name": "Murby",
-      "hp": 400,
-      "maxHp": 400,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 55,
-      "def": 16,
-      "heroElement": "FIRE",
-      "heroRole": "FIGHTER",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "damageMultiplier": 3.0,
-        "name": "Fireball Barage",
-        "manaCost": 50,
-        "target": "SINGLE_ENEMY",
-        "description": "Deal 3x basic attack damage to an enemy"
-      },
-      "heroLore": "Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.",
-      "isDefeated": false,
-      "isTurn": false
-    },
     {
       "name": "Helda",
       "hp": 490,
@@ -77,14 +44,14 @@
       "isTurn": false
     },
     {
-      "name": "Veld",
-      "hp": 300,
-      "maxHp": 300,
+      "name": "Elisa",
+      "hp": 180,
+      "maxHp": 360,
       "mana": 100,
       "maxMana": 100,
-      "atk": 50,
+      "atk": 60,
       "def": 10,
-      "heroElement": "FIRE",
+      "heroElement": "GRASS",
       "heroRole": "MAGE",
       "effect": {
         "stunDuration": 0,
@@ -99,23 +66,46 @@
         "defDebuffModifier": 0.0
       },
       "skill1": {
-        "duration": 3,
-        "debuffMultiplier": 0.6,
-        "damageMultiplier": 0.2,
-        "name": "Armor Burn",
-        "manaCost": 65,
-        "target": "ALL_ENEMY",
-        "description": "Decrease 60% defense for 3 turns and deal 20% basic attack to all enemy"
+        "multiplier": 0.5,
+        "name": "Draining Vine",
+        "manaCost": 85,
+        "target": "SINGLE_ENEMY",
+        "description": "Drain 50% max mana and HP to an enemy"
       },
-      "skill2": {
-        "duration": 3,
-        "atkMultiplier": 2.0,
-        "name": "Fire Staff",
-        "manaCost": 30,
-        "target": "SELF",
-        "description": "Increase hero attack by 2x for 3 turns"
+      "heroLore": "Salah satu buku legendaris yang selamat dari tragedi perpustakaan alexandria ditemukan oleh elisa si gadis kecil. Eksistensi Bio-Fisika menyerap seluruh orang yang memiliki niat buruk.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Dillo",
+      "hp": 425,
+      "maxHp": 425,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 60,
+      "def": 16,
+      "heroElement": "WATER",
+      "heroRole": "FIGHTER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 0,
+        "defDebuffModifier": 0.0
       },
-      "heroLore": "Manusia setengah naga yang dikutuk oleh dewa azilatur. Sisik di tubuhnya menyerap segala bentuk energi di sekitarnya ketika matahari telah terbenam.",
+      "skill1": {
+        "damageMultiplier": 3.0,
+        "name": "Water Slash",
+        "manaCost": 35,
+        "target": "SINGLE_ENEMY",
+        "description": "Deal 3x true damage to an enemy"
+      },
+      "heroLore": "Nelayan dengan kesehariannya bertarung melawan siluman ikan hidup dengan tombak kebanggaannya, Culbert.",
       "isDefeated": false,
       "isTurn": false
     }
