@@ -671,6 +671,7 @@ public class GameEngine implements IGameEngine{
                     if (result == 1){
                         saveGame();
                     } else if (result == 2) {
+                        display.thankYou();
                         exitGame();
                     } else {
                         continue;

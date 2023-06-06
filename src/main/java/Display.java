@@ -235,7 +235,7 @@ public class Display {
         System.out.println("|                                                                   |");
         System.out.println("|                            Swift Games                            |");
         System.out.println("|-------------------------------------------------------------------|");
-        System.out.println("|                        Select ( a | b | c )                       |");
+        System.out.println("|                       Select ( a | b | c | d )                    |");
         System.out.println("|-------------------------------------------------------------------|");
         System.out.print("Your Choice : ");
     }

@@ -2,8 +2,125 @@
   "partyName": "COM",
   "characters": [
     {
+      "name": "Deus",
+      "hp": 108,
+      "maxHp": 340,
+      "mana": 80,
+      "maxMana": 100,
+      "atk": 70,
+      "def": 10,
+      "heroElement": "FIRE",
+      "heroRole": "ARCHER",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 3,
+        "tauntingHero": {
+          "name": "Helda",
+          "hp": 444,
+          "maxHp": 490,
+          "mana": 10,
+          "maxMana": 100,
+          "atk": 35,
+          "def": 24,
+          "heroElement": "FIRE",
+          "heroRole": "TANK",
+          "effect": {
+            "stunDuration": 0,
+            "tauntDuration": 0,
+            "atkBuffDuration": 0,
+            "atkBuffModifier": 0.0,
+            "defBuffDuration": 0,
+            "defBuffModifier": 0.0,
+            "atkDebuffDuration": 0,
+            "atkDebuffModifier": 0.0,
+            "defDebuffDuration": 0,
+            "defDebuffModifier": 0.0
+          },
+          "skill1": {
+            "duration": 3,
+            "damageMultiplier": 0.5,
+            "name": "Ashen Growl",
+            "manaCost": 55,
+            "target": "SINGLE_ENEMY",
+            "description": "Deal half basic attack and taunt an enemy for 3 turns"
+          },
+          "skill2": {
+            "duration": 5,
+            "defMultiplier": 1.15,
+            "name": "Flame Armor",
+            "manaCost": 60,
+            "target": "ALL_ALLY",
+            "description": "Increase all ally defense by 15% for 5 turns"
+          },
+          "heroLore": "Prajurit yang tumbuh besar di desa suku minotaurus, Helzores. Api Ofyhz bernaung di dirinya memberikan keabadian selama-lamanya.",
+          "isDefeated": false,
+          "isTurn": true
+        },
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 1,
+        "defDebuffModifier": 0.6
+      },
+      "skill1": {
+        "damageMultiplier": 1.5,
+        "duration": 1,
+        "name": "Infernal Shot",
+        "manaCost": 30,
+        "target": "SINGLE_ENEMY",
+        "description": "Stun and deal 1.5 damage to an enemy"
+      },
+      "heroLore": "Lulusan terbaik sekolah sihir dengan passion memanahnya. Pengabdian, pengorbanan, dan kegigihan membuatnya dijuluki \"Muff Blessed\" oleh musuhnya.",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
+      "name": "Marie",
+      "hp": 373,
+      "maxHp": 375,
+      "mana": 100,
+      "maxMana": 100,
+      "atk": 40,
+      "def": 18,
+      "heroElement": "WATER",
+      "heroRole": "SUPPORT",
+      "effect": {
+        "stunDuration": 0,
+        "tauntDuration": 0,
+        "atkBuffDuration": 0,
+        "atkBuffModifier": 0.0,
+        "defBuffDuration": 0,
+        "defBuffModifier": 0.0,
+        "atkDebuffDuration": 0,
+        "atkDebuffModifier": 0.0,
+        "defDebuffDuration": 1,
+        "defDebuffModifier": 0.6
+      },
+      "skill1": {
+        "multiplier": 0.2,
+        "name": "Healing Water",
+        "manaCost": 30,
+        "target": "SINGLE_ALLY",
+        "description": "Heal 20% max Hp of an ally"
+      },
+      "skill2": {
+        "duration": 10,
+        "multiplier": 0.1,
+        "name": "Blizzard",
+        "manaCost": 65,
+        "target": "ALL_ENEMY",
+        "description": "Decrease all enemy attack by 10% for 10 turns"
+      },
+      "heroLore": "Penghuni Themscira, tanah selir para dewa. Marielle dengan kekuatan air suci mengabdi dengan julukan \"The Holy Maiden\".",
+      "isDefeated": false,
+      "isTurn": false
+    },
+    {
       "name": "Grove",
-      "hp": 406,
+      "hp": 479,
       "maxHp": 480,
       "mana": 100,
       "maxMana": 100,
@@ -20,8 +137,8 @@
         "defBuffModifier": 0.0,
         "atkDebuffDuration": 0,
         "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
+        "defDebuffDuration": 1,
+        "defDebuffModifier": 0.6
       },
       "skill1": {
         "healMultiplier": 0.1,
@@ -32,72 +149,6 @@
         "description": "10% heal and 20% def buff for 2 turns to all ally"
       },
       "heroLore": "Berkah surgawi mengubah biji matahari menjadi seorang half-human yang memberikan kehangatan pada pijakan kakinya.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
-      "name": "Atla",
-      "hp": 375,
-      "maxHp": 375,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 70,
-      "def": 11,
-      "heroElement": "WATER",
-      "heroRole": "ARCHER",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "multiplier": 0.25,
-        "name": "Water Cannon",
-        "manaCost": 30,
-        "target": "SINGLE_ENEMY",
-        "description": "Deal 25% max Hp damage to an enemy"
-      },
-      "heroLore": "Gadis setengah duyung pewaris panah legendaris Serpent, sang penakluk lautan asam yang mendiami pesisir Aquata dalam kegelapan yang fana.",
-      "isDefeated": false,
-      "isTurn": false
-    },
-    {
-      "name": "Murby",
-      "hp": 400,
-      "maxHp": 400,
-      "mana": 100,
-      "maxMana": 100,
-      "atk": 55,
-      "def": 16,
-      "heroElement": "FIRE",
-      "heroRole": "FIGHTER",
-      "effect": {
-        "stunDuration": 0,
-        "tauntDuration": 0,
-        "atkBuffDuration": 0,
-        "atkBuffModifier": 0.0,
-        "defBuffDuration": 0,
-        "defBuffModifier": 0.0,
-        "atkDebuffDuration": 0,
-        "atkDebuffModifier": 0.0,
-        "defDebuffDuration": 0,
-        "defDebuffModifier": 0.0
-      },
-      "skill1": {
-        "damageMultiplier": 3.0,
-        "name": "Fireball Barage",
-        "manaCost": 50,
-        "target": "SINGLE_ENEMY",
-        "description": "Deal 3x basic attack damage to an enemy"
-      },
-      "heroLore": "Fell Orc yang bangkit dari dimensi lain dan mewarisi Cullenors Axe dari api abadi.",
       "isDefeated": false,
       "isTurn": false
     }
